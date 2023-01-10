@@ -1,0 +1,44 @@
+.section-ps {
+  padding: 9.6rem 0;
+  background-color: #e6f0ff;
+}
+
+.ps-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: capitalize;
+  margin-bottom: 4.8rem;
+}
+
+.ps-list-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9.6rem;
+}
+
+.ps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.ps-list li {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.ps-design {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  text-transform: capitalize;
+}
+
+.ps-design:last-child {
+  margin-bottom: 0;
+}

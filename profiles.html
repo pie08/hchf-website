@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/profiles.css" rel="stylesheet" />
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/queries.css" rel="stylesheet" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <title>HCHF - Client Profiles</title>
+  </head>
+
+  <body>
+    <header class="navigation">
+      <div class="navigation-container">
+        <a href="index.html" class="navigation-logo">
+          <picture>
+            <img
+              src="content/HCHF-website-content/logos/HCHF-logo-black.png"
+              class="navigation-logo"
+              alt="Half century health and fitness logo"
+            />
+          </picture>
+        </a>
+
+        <nav class="main-nav">
+          <ul class="navigation-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <div class="services-container">
+                <button class="services-btn">Services</button>
+                <div class="services-content">
+                  <a href="adult-training.html">Adult Training</a>
+                  <a href="post-surgery.html">Post-Surgical Training</a>
+                  <a href="baseball.html">Baseball/Softball</a>
+                  <a href="#">Online Consulting</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="aging.html">Aging & Hormones</a></li>
+            <li><a href="profiles.html">Client Profiles</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li>
+              <!--<a href="contact.html" class="btn btn--main">Contact</a>-->
+              <button class="btn btn--main btn-contact">Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-mobile-nav">
+          <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+      </div>
+    </header>
+    <div class="modal-contact hidden-secondary">
+      <div class="contact-text">
+        <h2 class="contact-heading heading-secondary">Contact Information</h2>
+        <p class="contact-description">
+          To contact me, please send an email or please call.
+        </p>
+        <div class="contact-info-box">
+          <a class="btn btn--main btn--contact" href="tel:603-953-3807"
+            >(603) 953-3807</a
+          >
+          <a
+            class="btn btn--main btn--contact"
+            href="mailto:abietrained@yahoo.com"
+            >abietrained@yahoo.com</a
+          >
+        </div>
+      </div>
+      <img
+        src="content/HCHF-website-content/logos/HCHF-logo-silver.png"
+        class="contact-logo"
+        alt="Half century health and fitness logo"
+      />
+      <ion-icon class="modal-close" name="close-outline"></ion-icon>
+    </div>
+    <div class="overlay hidden-secondary"></div>
+
+    <section class="section-profiles">
+      <div class="container">
+        <p class="subheading margin-bottom-md query-center">
+          Adult Training / Post-Surgical Training
+        </p>
+      </div>
+      <div class="container grid grid--3-cols grid-row-gap-bg">
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of man doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/keith-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Keith</p>
+            <p class="profile-age">Age 67</p>
+            <li class="profile-purpose">Rotator cuff surgury</li>
+            <li class="profile-duration">Client for 2 years</li>
+            <li class="profile-hobby">Activities: Skiing, Sailing, Hiking</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of woman doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/elaine-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Elaine</p>
+            <p class="profile-age">Age 66</p>
+            <li class="profile-purpose">General fitness / Osteoporosis</li>
+            <li class="profile-duration">Client for 5 years</li>
+            <li class="profile-hobby">Activities: Gardening, Sailing</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of man doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/ray-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Ray</p>
+            <p class="profile-age">Age 62</p>
+            <li class="profile-purpose">Knee replacement surgury</li>
+            <li class="profile-duration">Client for 6 years</li>
+            <li class="profile-hobby">Activities: Skiing, Hiking, Boating</li>
+            <li class="profile-ex">Prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of woman doing various workouts"
+          >
+            <!-- CHANGE - ends in black screen -->
+            <source
+              src="content/HCHF-website-content/client-profiles/anna-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Anna</p>
+            <p class="profile-age">Age 60</p>
+            <li class="profile-purpose">
+              Knee replacement surgury<br />General Fitness
+            </li>
+            <li class="profile-duration">Client for 2.5 years</li>
+            <li class="profile-hobby">Activities:</li>
+            <li class="profile-ex">Prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of man doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/tom-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Tom</p>
+            <p class="profile-age">Age 70</p>
+            <li class="profile-purpose">Rotator cuff surgury</li>
+            <li class="profile-duration">Client for 1 year</li>
+            <li class="profile-hobby">Activities: Tennis, Surfing, Skiing</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of man doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/anna-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">John</p>
+            <p class="profile-age">Age 65</p>
+            <li class="profile-purpose">
+              Shoulder and rotator cuff replacement
+            </li>
+            <li class="profile-duration">Client for 7 years</li>
+            <li class="profile-hobby">Activities:</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-profiles-baseball">
+      <div class="container">
+        <p class="subheading margin-bottom-md query-center">
+          Baseball / Softball Players
+        </p>
+      </div>
+      <div class="container grid grid--3-cols grid-row-gap-bg">
+        <div class="profile baseball-profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of young man doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/alex-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Alex</p>
+            <p class="profile-age">Age 16</p>
+            <li class="profile-purpose">Baseball / Pitcher</li>
+            <li>Increased Velocity: 70mph - 87mph</li>
+            <li class="profile-duration">Client for 2.5 years</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+
+        <div class="profile baseball-profile">
+          <video
+            autoplay
+            loop
+            muted
+            class="profile-vid"
+            aria-label="Video of young woman doing various workouts"
+          >
+            <source
+              src="content/HCHF-website-content/client-profiles/hailey-profile.mp4"
+            />
+          </video>
+          <ul class="profile-text">
+            <p class="profile-name">Hailey</p>
+            <p class="profile-age">Age 17</p>
+            <li class="profile-purpose">Softball / Pitcher</li>
+            <li class="profile-duration">Client for 4 years</li>
+            <li class="profile-ex">No prior gym experience</li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-container">
+        <a href="index.html" class="to-page-link">Go back to home page</a>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container grid--footer">
+        <img
+          src="content/HCHF-website-content/logos/HCHF-logo-black.png"
+          alt="Half century health and fitness logo"
+          class="footer-logo"
+        />
+
+        <nav class="footer-nav">
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-list">
+            <li>
+              <a class="footer-link" href="tel:603-953-3807">(603) 953-3807</a>
+            </li>
+            <li>
+              <a class="footer-link" href="mailto:abietrained@yahoo.com"
+                >abietrained@yahoo.com</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <p class="footer-heading">Resources</p>
+          <ul class="footer-list">
+            <li>
+              <a class="footer-link" href="privacy-policy.html"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

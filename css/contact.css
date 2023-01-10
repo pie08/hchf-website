@@ -1,0 +1,78 @@
+body {
+  background-color: #001f4c;
+}
+
+.section-contact {
+  padding: 9.6rem 0;
+}
+
+.contact {
+  padding: 8rem;
+  /* background-color: #e6f0ff; */
+  border-radius: 4px;
+  /* box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075); */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.contact-text {
+  color: #e6f0ff;
+}
+
+.contact-heading {
+  color: #e6f0ff;
+  margin-bottom: 3.2rem;
+}
+
+.contact-description {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.btn--contact:link,
+.btn--contact:visited {
+  background-color: #fff;
+  color: #001f4c;
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  display: inline-block;
+  margin-right: 2.4rem;
+}
+
+.btn--contact:hover,
+.btn--contact:active {
+  background: transparent;
+  color: #e6f0ff;
+  box-shadow: inset 0 0 0 2px #e6f0ff;
+}
+
+.contact-logo {
+  width: 50%;
+  transform: scale(2);
+  justify-self: center;
+}
+
+.return-box {
+  display: flex;
+  justify-content: center;
+}
+
+.back-home:link,
+.back-home:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #e6f0ff;
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.back-home:hover,
+.back-home:active {
+  border-bottom: 1px solid transparent;
+}

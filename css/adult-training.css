@@ -1,0 +1,39 @@
+.section-at {
+  padding: 9.6rem 0;
+  background-color: #e6f0ff;
+}
+
+.at-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: capitalize;
+  margin-bottom: 4.8rem;
+}
+
+.at-list-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9.6rem;
+}
+
+.at-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.at-list li {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.at-design {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: capitalize;
+}
