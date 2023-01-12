@@ -1,3 +1,3 @@
 # hchf-website
 
-Webiste files for https://halfcenturyhealthandfitness.com
+Webiste files and folders for https://halfcenturyhealthandfitness.com
