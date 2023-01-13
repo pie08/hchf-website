@@ -45,6 +45,10 @@
   .container {
     max-width: 110rem;
   }
+
+  .aging-list-heading {
+    font-size: 3rem !important;
+  }
 }
 
 /************************************/

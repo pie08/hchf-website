@@ -145,6 +145,7 @@
 }
 
 .step-vid,
+.consulting-img,
 .baseball-img,
 .ps-img,
 .at-img {
@@ -157,6 +158,9 @@
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-play-state: running;
+}
+.consulting-img {
+  box-shadow: none;
 }
 
 @keyframes simpleTrans {
