@@ -102,6 +102,10 @@
     font-size: 3.6rem;
   }
 
+  .container--hero {
+    max-width: 120rem;
+  }
+
   .hero-description {
     font-size: 1.8rem;
   }
@@ -617,3 +621,67 @@
 - SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
+
+/************************************/
+/* FIXING FLEXGAP IN SAFARI */
+/************************************/
+
+.no-flexbox-gap .aging-list li:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .contact-info span:not(:last-child) {
+  margin-right: 9.6rem;
+}
+
+.no-flexbox-gap .at-list li:not(:last-child),
+.no-flexbox-gap .baseball-list li:not(:last-child),
+.no-flexbox-gap .ps-list li:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.no-flexbox-gap .aging-list li:not(:last-child),
+.no-flexbox-gap .factors-list li:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .navigation-links li:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.no-flexbox-gap .services-content a:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .footer-list li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+.no-flexbox-gap .contact-info-box a:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+@media (max-width: 88em) {
+  .no-flexbox-gap .contact-info-box:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+@media (max-width: 60em) {
+  .no-flexbox-gap .navigation-links li:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .no-flexbox-gap .contact-info:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+@media (max-width: 38em) {
+  .no-flexbox-gap .services-content:not(:last-child) {
+    margin-bottom: 4.8rem;
+    margin-right: 0;
+  }
+}

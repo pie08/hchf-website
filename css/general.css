@@ -72,6 +72,12 @@ body {
   padding: 0 2.4rem;
 }
 
+.container--hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
 .grid {
   display: grid;
   gap: 6.4rem;
@@ -227,7 +233,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
-  z-index: 5;
+  z-index: 9998;
   transition: all 0.3s;
 }
 
@@ -294,6 +300,7 @@ body {
   background-color: transparent;
   border: none;
   font-family: "Playfair Display";
+  transition: all 0.3s;
 }
 
 .services-btn:hover {
@@ -350,6 +357,23 @@ body {
   color: #555;
 }
 
+/* Sticky Navigation */
+.sticky .navigation {
+  position: fixed !important;
+  top: -9.6rem;
+  transition: all 0.3s;
+  width: 100%;
+  z-index: 999;
+}
+
+.sticky .navigation {
+  transform: translateY(100% );
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
 /* Nav Modal */
 .btn-contact {
   font-family: inherit;
@@ -371,7 +395,7 @@ body {
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
   width: 60%;
-  z-index: 10;
+  z-index: 9999;
   transition: all 0.3s;
 }
 
@@ -400,6 +424,11 @@ body {
   line-height: 1.3;
 }
 
+.contact-info-box {
+  display: flex;
+  gap: 2.4rem;
+}
+
 .btn--contact:link,
 .btn--contact:visited {
   background-color: #fff;
@@ -408,7 +437,6 @@ body {
   font-weight: 700;
 
   display: inline-block;
-  margin-right: 2.4rem;
 }
 
 .btn--contact:last-child {
