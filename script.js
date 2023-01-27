@@ -1,5 +1,3 @@
-// DEV BRANCH TEST
-
 let position = 0;
 const testimonials = document.getElementsByClassName("testimonial");
 const btnNext = document.getElementsByClassName("btn-next");
@@ -150,6 +148,13 @@ const servicesContainer = document.querySelector(".services-container");
 services.addEventListener("click", function () {
   servicesContainer.classList.toggle("open");
 });
+
+///////////////////////////////////////////////////////////////////
+// Slider
+const carousel = document.querySelectorAll(".carousel-box");
+const slides = document.querySelectorAll(".slide");
+
+let curSlide = 0;
 
 ///////////////////////////////////////////////////////////////////
 // Modal window
