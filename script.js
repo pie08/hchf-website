@@ -151,11 +151,69 @@ services.addEventListener("click", function () {
 
 ///////////////////////////////////////////////////////////////////
 // Slider
-const carousel = document.querySelectorAll(".carousel-box");
-const slides = document.querySelectorAll(".slide");
+const slider = function (slides, btnNext, btnPrev, maxSlides) {
+  let curSlide = 0;
 
-let curSlide = 0;
+  slides.forEach(
+    (slide, i) => (slide.style.transform = `translate(${100 * i}%)`)
+  );
 
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  btnNext.addEventListener("click", function (e) {
+    if (curSlide === maxSlides) {
+      curSlide = 0;
+      goToSlide(curSlide);
+    } else {
+      curSlide++;
+      goToSlide(curSlide);
+    }
+  });
+
+  btnPrev.addEventListener("click", function (e) {
+    if (curSlide === 0) {
+      curSlide = maxSlides;
+      goToSlide(curSlide);
+    } else {
+      curSlide--;
+      goToSlide(curSlide);
+    }
+  });
+};
+
+const sliderAtInit = function () {
+  const slides = document.querySelectorAll(".slideAt");
+  const btnNext = document.querySelector(".at-btn-next");
+  const btnPrev = document.querySelector(".at-btn-prev");
+  const maxSlides = slides.length - 1;
+
+  slider(slides, btnNext, btnPrev, maxSlides);
+};
+sliderAtInit();
+
+const sliderPsInit = function () {
+  const slides = document.querySelectorAll(".slidePs");
+  const btnNext = document.querySelector(".ps-btn-next");
+  const btnPrev = document.querySelector(".ps-btn-prev");
+  const maxSlides = slides.length - 1;
+
+  slider(slides, btnNext, btnPrev, maxSlides);
+};
+sliderPsInit();
+
+const sliderBsInit = function () {
+  const slides = document.querySelectorAll(".slideBs");
+  const btnNext = document.querySelector(".baseball-btn-next");
+  const btnPrev = document.querySelector(".baseball-btn-prev");
+  const maxSlides = slides.length - 1;
+
+  slider(slides, btnNext, btnPrev, maxSlides);
+};
+sliderBsInit();
 ///////////////////////////////////////////////////////////////////
 // Modal window
 const showModal = document.querySelectorAll(".btn-contact");

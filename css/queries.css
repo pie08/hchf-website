@@ -245,13 +245,13 @@
   .at-btn-prev,
   .ps-btn-prev,
   .baseball-btn-prev {
-    transform: translateX(100%);
+    transform: translate(0%, -50%);
   }
 
   .at-btn-next,
   .ps-btn-next,
   .baseball-btn-next {
-    transform: translateX(-100%);
+    transform: translate(0%, -50%);
   }
 
   .aging-list-container {
