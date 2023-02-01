@@ -1,38 +1,42 @@
 ///////////////////////////////////////////////////////////////////
 // Slider
-const slider = function (slides, btnNext, btnPrev, maxSlides) {
-  let curSlide = 0;
+class Slider {
+  constructor(slides, maxSlides) {
+    this.curSlide = 0;
+    this.slides = slides;
+    this.maxSlides = maxSlides;
 
-  slides.forEach(
-    (slide, i) => (slide.style.transform = `translate(${100 * i}%)`)
-  );
+    this.slides.forEach(
+      (slide, i) => (slide.style.transform = `translate(${100 * i}%)`)
+    );
+  }
 
-  const goToSlide = function (slide) {
-    slides.forEach(
+  goToSlide(slide) {
+    this.slides.forEach(
       (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
     );
-  };
+  }
 
-  btnNext.addEventListener("click", function (e) {
-    if (curSlide === maxSlides) {
-      curSlide = 0;
-      goToSlide(curSlide);
+  goToNextSlide() {
+    if (this.curSlide === this.maxSlides) {
+      this.curSlide = 0;
+      this.goToSlide(this.curSlide);
     } else {
-      curSlide++;
-      goToSlide(curSlide);
+      this.curSlide++;
+      this.goToSlide(this.curSlide);
     }
-  });
+  }
 
-  btnPrev.addEventListener("click", function (e) {
-    if (curSlide === 0) {
-      curSlide = maxSlides;
-      goToSlide(curSlide);
+  goToPrevSlide() {
+    if (this.curSlide === 0) {
+      this.curSlide = this.maxSlides;
+      this.goToSlide(this.curSlide);
     } else {
-      curSlide--;
-      goToSlide(curSlide);
+      this.curSlide--;
+      this.goToSlide(this.curSlide);
     }
-  });
-};
+  }
+}
 
 const sliderAtInit = function () {
   const slides = document.querySelectorAll(".slideAt");
@@ -40,7 +44,10 @@ const sliderAtInit = function () {
   const btnPrev = document.querySelector(".at-btn-prev");
   const maxSlides = slides.length - 1;
 
-  slider(slides, btnNext, btnPrev, maxSlides);
+  const slider = new Slider(slides, maxSlides);
+
+  btnNext.addEventListener("click", slider.goToNextSlide.bind(slider));
+  btnPrev.addEventListener("click", slider.goToPrevSlide.bind(slider));
 };
 sliderAtInit();
 
@@ -50,7 +57,10 @@ const sliderPsInit = function () {
   const btnPrev = document.querySelector(".ps-btn-prev");
   const maxSlides = slides.length - 1;
 
-  slider(slides, btnNext, btnPrev, maxSlides);
+  const slider = new Slider(slides, maxSlides);
+
+  btnNext.addEventListener("click", slider.goToNextSlide.bind(slider));
+  btnPrev.addEventListener("click", slider.goToPrevSlide.bind(slider));
 };
 sliderPsInit();
 
@@ -60,7 +70,10 @@ const sliderBsInit = function () {
   const btnPrev = document.querySelector(".baseball-btn-prev");
   const maxSlides = slides.length - 1;
 
-  slider(slides, btnNext, btnPrev, maxSlides);
+  const slider = new Slider(slides, maxSlides);
+
+  btnNext.addEventListener("click", slider.goToNextSlide.bind(slider));
+  btnPrev.addEventListener("click", slider.goToPrevSlide.bind(slider));
 };
 sliderBsInit();
 ///////////////////////////////////////////////////////////////////
