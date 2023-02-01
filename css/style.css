@@ -119,7 +119,9 @@
   justify-content: center;
   font-size: 2.4rem;
   border: none;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1.2rem;
+  border-radius: 50%;
 }
 
 .baseball-btn:hover,
@@ -134,9 +136,6 @@
   top: 50%;
   right: 0;
   transform: translate(0%, -50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 1.2rem;
-  border-radius: 50%;
 }
 
 .baseball-btn-prev,
@@ -145,17 +144,14 @@
   top: 50%;
   left: 0;
   transform: translate(0%, -50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 1.2rem;
-  border-radius: 50%;
 }
 
 .slider {
   width: 26rem;
   height: 46rem;
   position: relative;
-  margin: 0 auto;
   overflow: hidden;
+  margin: 0 auto;
   border-radius: 4px;
 }
 
@@ -168,7 +164,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 46rem;
+  height: 100%;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }

@@ -214,18 +214,19 @@
     grid-template-columns: 0.5fr 2fr;
   }
 
-  .carousel-box:nth-child(3) {
+  .slider:nth-child(3) {
     grid-column: 2;
     grid-row: 1;
   }
 
-  .carousel-box:nth-child(7) {
+  .slider:nth-child(7) {
     grid-column: 2;
     grid-row: 5;
   }
 
-  .carousel-box {
+  .slider {
     width: 60%;
+    height: 84rem;
     justify-self: center;
     transform: translateY(2.4rem);
   }
@@ -240,6 +241,15 @@
 
   .step-text:last-child {
     padding-bottom: 0;
+  }
+
+  .baseball-btn,
+  .ps-btn,
+  .at-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2.4rem;
+    border-radius: 50%;
+    font-size: 3.2rem;
   }
 
   .at-btn-prev,
@@ -365,6 +375,10 @@
     padding: 1.6rem 3.2rem;
   }
 
+  .slider {
+    height: 95rem;
+  }
+
   .to-page-link {
     padding: 1.6rem 3.2rem !important;
   }
@@ -396,7 +410,7 @@
     right: -100%;
   }
 
-  .carousel-box {
+  .slider {
     grid-column: 1 !important;
     width: 70%;
   }
@@ -544,7 +558,7 @@
     font-size: 2.4rem !important;
   }
 
-  .carousel-box {
+  .slider {
     width: 100%;
   }
 
@@ -597,7 +611,7 @@
     font-weight: 700;
   }
 
-  .carousel-box {
+  .slider {
     width: 120%;
   }
 
