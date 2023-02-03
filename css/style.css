@@ -264,8 +264,23 @@
   position: relative;
   height: 37rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+}
+
+.testimonial-overflow {
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 37rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s;
 }
 
 .testimonial-text {
@@ -299,13 +314,14 @@
   left: 0;
   top: 50%;
   transform: translate(-100%, -50%);
-  transform: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-next {
   right: 0;
   top: 50%;
   transform: translate(100%, -50%);
+  transition: all 0.3s;
 }
 
 .btn-prev:hover,

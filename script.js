@@ -76,6 +76,19 @@ const sliderBsInit = function () {
   btnPrev.addEventListener("click", slider.goToPrevSlide.bind(slider));
 };
 sliderBsInit();
+
+const testimonialInit = function () {
+  const slides = document.querySelectorAll(".testimonial");
+  const btnNext = document.querySelector(".btn-next");
+  const btnPrev = document.querySelector(".btn-prev");
+  const maxSlides = slides.length - 1;
+
+  const slider = new Slider(slides, maxSlides);
+
+  btnNext.addEventListener("click", slider.goToNextSlide.bind(slider));
+  btnPrev.addEventListener("click", slider.goToPrevSlide.bind(slider));
+};
+testimonialInit();
 ///////////////////////////////////////////////////////////////////
 // Modal window
 const showModal = document.querySelectorAll(".btn-contact");
