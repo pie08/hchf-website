@@ -143,10 +143,6 @@
     font-size: 2.4rem;
   }
 
-  .testimonial-overflow {
-    overflow-y: scroll;
-  }
-
   /* MOBILE NAV */
   .btn-mobile-nav {
     display: block;

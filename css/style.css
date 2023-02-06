@@ -197,16 +197,6 @@
   box-shadow: none;
 }
 
-@keyframes simpleTrans {
-  from {
-    opacity: 0.5;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 /************************************/
 /* CLIENT PROFILES */
 /************************************/
@@ -263,24 +253,27 @@
 .testimonial-container {
   position: relative;
   height: 37rem;
-  display: flex;
-  justify-content: center;
 }
 
 .testimonial-overflow {
-  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .testimonial {
   position: absolute;
   top: 0;
   left: 0;
-  height: 37rem;
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 1s;
+
+  min-height: 100%;
+  width: 100%;
+  transition: transform 0.5s;
 }
 
 .testimonial-text {
