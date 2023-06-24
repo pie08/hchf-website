@@ -1,0 +1,20 @@
+.contact-info {
+  display: flex;
+  gap: 9.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: auto;
+  text-transform: lowercase;
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: #555;
+    transition: all 0.3s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: #333;
+  }
+}

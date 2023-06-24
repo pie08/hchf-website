@@ -1,0 +1,40 @@
+.section--hero {
+  padding: 9.6rem 0;
+  background-color: $color-primary-tint-2;
+  padding-bottom: 9.6rem;
+}
+
+.hero__text {
+  text-transform: capitalize;
+}
+
+.hero__description {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: $color-text-light-1;
+  margin-bottom: 4.8rem;
+}
+
+.hero__emphasize {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: #333;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $color-primary-shade-2;
+  }
+}
+
+.hero__video-wrapper {
+  justify-content: space-around;
+}
+
+.hero__video {
+  width: 65%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}

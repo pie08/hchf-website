@@ -266,6 +266,13 @@ body {
 .navigation {
   background-color: #99c2ff;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+
+  font-size: 2rem;
 }
 
 .navigation-logo {
@@ -274,16 +281,6 @@ body {
 
 .navigation-logo:hover {
   cursor: pointer;
-}
-
-.navigation-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 9.6rem;
-  padding: 0 4.8rem;
-
-  font-size: 2rem;
 }
 
 .navigation-links {
@@ -367,7 +364,7 @@ body {
 }
 
 .sticky .navigation {
-  transform: translateY(100% );
+  transform: translateY(100%);
 }
 
 .sticky .section-hero {

@@ -1,0 +1,90 @@
+.navigation {
+  background-color: #99c2ff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  font-size: 2rem;
+
+  &__logo-wrapper {
+    height: 100%;
+  }
+
+  &__services button {
+    color: #333;
+    font-weight: 600;
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    font-family: "Playfair Display";
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: #555;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 3.2rem;
+    list-style: none;
+    align-items: center;
+
+    & li {
+      & a:link,
+      & a:visited {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      & a:hover,
+      & a:active {
+        color: #555;
+      }
+    }
+  }
+}
+
+.logo {
+  height: 100%;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+// .services-content {
+//   display: flex;
+//   justify-content: center;
+//   gap: 4.8rem;
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   width: 100%;
+
+//   padding: 2.4rem 1.2rem;
+//   border-radius: 4px;
+//   font-size: 1.8rem;
+//   background-color: #fff;
+//   box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.075);
+
+//   opacity: 0;
+//   pointer-events: none;
+//   visibility: hidden;
+//   transition: opacity 0.3s;
+// }
+
+// .open .services-content {
+//   opacity: 1;
+//   pointer-events: all;
+//   visibility: visible;
+// }
+
+// .services-content:hover a {
+//   color: #555;
+// }
