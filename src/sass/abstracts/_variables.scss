@@ -1,12 +1,15 @@
-$color-primary: #0066ff;
-$color-primary-tint-1: #99c2ff;
-$color-primary-tint-2: #e6f0ff;
-$color-primary-shade-1: #005ce6;
-$color-primary-shade-2: #003380;
+:root {
+  --color-primary: #0066ff;
+  --color-primary-tint-1: #99c2ff;
+  --color-primary-tint-2: #e6f0ff;
+  --color-primary-shade-1: #005ce6;
+  --color-primary-shade-2: #003380;
 
-$color-text: #333;
-$color-text-light-1: #555;
+  --color-text: #333;
+  --color-text-light-1: #555;
 
-$color-gray-light: #bbb;
+  --color-gray-light-1: #bbb;
+  --color-gray-light-2: #ddd;
 
-$color-white: #fff;
+  --color-white: #fff;
+}

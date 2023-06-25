@@ -1,0 +1,32 @@
+.sectionServices {
+  padding: 9.6rem 0;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 3.2rem;
+  row-gap: 9.6rem;
+}
+
+.step__description {
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+.services__headingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.consultingLogo {
+  width: 60%;
+  align-self: center;
+  justify-self: center;
+}

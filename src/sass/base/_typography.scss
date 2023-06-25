@@ -2,12 +2,12 @@ body {
   font-family: "Playfair Display", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: $color-text-light-1;
+  color: var(--color-text-light-1);
 }
 
 .heading {
   font-weight: 700;
-  color: $color-text;
+  color: var(--color-text);
   line-height: 1.05;
   text-transform: capitalize;
 
@@ -28,7 +28,7 @@ body {
   }
 
   &--sub {
-    color: $color-primary;
+    color: var(--color-primary);
     text-transform: capitalize;
     font-size: 2.4rem;
     font-weight: 600;
@@ -37,7 +37,7 @@ body {
   }
 
   &--subtext {
-    color: $color-text-light-1;
+    color: var(--color-text-light-1);
     font-size: 3rem;
   }
 }
