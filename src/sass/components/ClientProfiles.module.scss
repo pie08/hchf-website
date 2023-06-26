@@ -1,0 +1,39 @@
+.sectionProfiles {
+  padding: 9.6rem 0;
+}
+
+.profile {
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.075);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-1.2rem);
+    box-shadow: 0 2rem 3.6rem rgba(0, 0, 0, 0.05);
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__textWrapper {
+    padding: 3.2rem 2.4rem;
+  }
+
+  &__name {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  &__age {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  &__history {
+    font-size: 1.8rem;
+  }
+}

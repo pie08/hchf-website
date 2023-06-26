@@ -45,7 +45,7 @@
   padding: 1.2rem 2.4rem;
   border: none;
   border-radius: 4px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .btn--main,
@@ -56,10 +56,9 @@
 }
 
 .btn--main:hover,
-.btn--main:hover,
 .btn--main:active {
   cursor: pointer;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-shade-1);
 }
 
 .btn--secondary:link,
@@ -74,25 +73,8 @@
   color: var(--color-white);
 }
 
-.to-page-link:link,
-.to-page-link:visited {
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: var(--color-white);
-  text-decoration: none;
-
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  margin-top: 4.8rem;
-  padding: 1.2rem 2.4rem;
-  background-color: var(--color-primary);
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-
-.to-page-link:hover,
-.to-page-link:active {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.link-to-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.6rem;
 }

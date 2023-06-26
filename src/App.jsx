@@ -1,19 +1,16 @@
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Homepage from "./pages/Homepage";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <>
-      <Navigation />
-      <Hero />
-      <Services />
-
-      <div>client profiles</div>
-      <div>testimonials</div>
-      <div>aging</div>
-      <div>CTA</div>
-      <div>footer</div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="home" element={<Homepage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -1,0 +1,34 @@
+.sectionTestimonials {
+  padding: 9.6rem 0;
+  background-color: #e6f0ff;
+}
+
+.testimonialWrapper {
+  position: relative;
+}
+
+.testimonial {
+  width: 70%;
+  height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -3rem;
+    left: 7rem;
+    line-height: 1;
+    font-size: 20rem;
+    font-family: inherit;
+    color: var(--color-primary-tint-1);
+  }
+}
+
+.testimonial__text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}

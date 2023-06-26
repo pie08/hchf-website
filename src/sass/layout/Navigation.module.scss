@@ -8,7 +8,7 @@
   padding: 0 4.8rem;
   font-size: 2rem;
 
-  &__logo-wrapper {
+  &__logoWrapper {
     height: 100%;
   }
 
@@ -46,45 +46,18 @@
       & a:active {
         color: #555;
       }
+
+      & a:global(.active) {
+        border-bottom: 1px solid #333;
+      }
     }
   }
 }
 
-.logo {
+.navLogo {
   height: 100%;
 }
 
-.logo:hover {
+.navLogo:hover {
   cursor: pointer;
 }
-
-// .services-content {
-//   display: flex;
-//   justify-content: center;
-//   gap: 4.8rem;
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   width: 100%;
-
-//   padding: 2.4rem 1.2rem;
-//   border-radius: 4px;
-//   font-size: 1.8rem;
-//   background-color: #fff;
-//   box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.075);
-
-//   opacity: 0;
-//   pointer-events: none;
-//   visibility: hidden;
-//   transition: opacity 0.3s;
-// }
-
-// .open .services-content {
-//   opacity: 1;
-//   pointer-events: all;
-//   visibility: visible;
-// }
-
-// .services-content:hover a {
-//   color: #555;
-// }

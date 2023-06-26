@@ -27,7 +27,7 @@ function Services() {
 
       <div className={`container ${styles.servicesGrid}`}>
         {/* <!-- STEP 1 --> */}
-        <Slider images={adultTrainingSliderImages} />
+        <Slider contentArr={adultTrainingSliderImages} sliderType="image" />
 
         <div>
           <h3 className="heading heading--tertiary">Adult training</h3>
@@ -58,10 +58,10 @@ function Services() {
           </p>
         </div>
 
-        <Slider images={postSurgicalSliderImages} />
+        <Slider contentArr={postSurgicalSliderImages} sliderType="image" />
 
         {/* <!-- STEP 3 --> */}
-        <Slider images={baseballSliderImages} />
+        <Slider contentArr={baseballSliderImages} sliderType="image" />
 
         <div>
           <h3 className="heading heading--tertiary">Baseball & Softball</h3>

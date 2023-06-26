@@ -2,28 +2,35 @@ import { useState } from "react";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import styles from "../sass/components/Slider.module.scss";
 
-export default function Slider({ images, height = "50rem" }) {
+export default function Slider({
+  contentArr,
+  sliderType = "image",
+  height = "50rem",
+}) {
   const [curSlide, setCurSlide] = useState(0);
 
   function handlePrevSlide() {
-    if (curSlide === 0) return setCurSlide(images.length - 1);
+    if (curSlide === 0) return setCurSlide(contentArr.length - 1);
     setCurSlide((curSlide) => curSlide - 1);
   }
 
   function handleNextSlide() {
-    if (curSlide === images.length - 1) return setCurSlide(0);
+    if (curSlide === contentArr.length - 1) return setCurSlide(0);
     setCurSlide((curSlide) => curSlide + 1);
   }
 
   return (
     <div className={styles.slider} style={{ height }}>
-      {images.map((image, i) => {
+      {contentArr.map((asset, i) => {
         const style = {
           transform: `translateX(${100 * (i - curSlide)}%)`,
-          height,
         };
 
-        return <SliderImage url={image} key={image} style={style} />;
+        if (sliderType === "image")
+          return <SliderImage url={asset} key={asset} style={style} />;
+
+        if (sliderType === "content")
+          return <SliderContent content={asset} style={style} />;
       })}
 
       <button className={styles.slider__btn} onClick={handlePrevSlide}>
@@ -44,6 +51,14 @@ function SliderImage({ url, style }) {
         alt="Person doing workout"
         className={styles.slider__image}
       />
+    </div>
+  );
+}
+
+function SliderContent({ content, style }) {
+  return (
+    <div className={styles.slider__slide} style={style}>
+      {content}
     </div>
   );
 }
