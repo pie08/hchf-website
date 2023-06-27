@@ -1,6 +1,5 @@
 .navigation {
   background-color: #99c2ff;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,17 +33,13 @@
     align-items: center;
 
     & li {
+      transition: all 0.2s;
+
       & a:link,
       & a:visited {
         text-decoration: none;
         color: #333;
         font-weight: 600;
-        transition: all 0.3s;
-      }
-
-      & a:hover,
-      & a:active {
-        color: #555;
       }
 
       & a:global(.active) {
@@ -56,6 +51,7 @@
 
 .navLogo {
   height: 100%;
+  transition: all 0.2s;
 }
 
 .navLogo:hover {
