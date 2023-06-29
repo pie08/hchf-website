@@ -34,10 +34,10 @@ export default function Slider({
       })}
 
       <button className={styles.slider__btn} onClick={handlePrevSlide}>
-        <CaretLeft color="#333" size="2.4rem" weight="bold" />
+        <CaretLeft color="#333" size="2.4rem" />
       </button>
       <button className={styles.slider__btn} onClick={handleNextSlide}>
-        <CaretRight color="#333" size="2.4rem" weight="bold" />
+        <CaretRight color="#333" size="2.4rem" />
       </button>
     </div>
   );

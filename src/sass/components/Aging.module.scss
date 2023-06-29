@@ -1,0 +1,39 @@
+.sectionAging {
+  padding: 9.6rem 0;
+}
+
+.agingWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.4rem;
+  margin-bottom: 8rem;
+}
+
+.aging__listWrapper {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  padding: 3.2rem;
+  border-radius: 4px;
+  width: 60%;
+  background-color: #f0f6ff;
+
+  &:nth-child(1) {
+    justify-self: end;
+  }
+}
+
+.aging__listHeading {
+  margin-bottom: 4.8rem;
+  color: #003380 !important;
+}
+
+.aging-list {
+  list-style: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}

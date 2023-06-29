@@ -3,14 +3,13 @@
 }
 
 .profile {
-  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.075);
-  border-radius: 4px;
+  background-color: var(--color-primary-tint-2);
+  // border: 1px solid var(--color-gray-light-2);
   overflow: hidden;
   transition: all 0.2s;
 
   &:hover {
-    transform: translateY(-1.2rem);
-    box-shadow: 0 2rem 3.6rem rgba(0, 0, 0, 0.05);
+    transform: translateY(-0.6rem);
   }
 
   &__image {
@@ -24,12 +23,12 @@
   &__name {
     font-size: 3rem;
     font-weight: 600;
+    color: var(--color-text);
     margin-bottom: 2rem;
   }
 
   &__age {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 2rem;
     margin-bottom: 0.8rem;
   }
 

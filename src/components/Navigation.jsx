@@ -33,7 +33,7 @@ export default function Navigation() {
   return (
     <header>
       <nav className={styles.navigation} ref={navRef}>
-        <NavLink to="/home" className={styles.navigation__logoWrapper}>
+        <NavLink to="/" className={styles.navigation__logoWrapper}>
           <img
             src="assets/images/logos/HCHF-logo-black.png"
             className={styles.navLogo}
@@ -43,7 +43,7 @@ export default function Navigation() {
 
         <ul className={styles.navigation__list}>
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
 
           <li>

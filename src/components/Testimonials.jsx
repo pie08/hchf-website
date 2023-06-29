@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
-import Slider from "./Slider";
 
 import styles from "../sass/components/Testimonials.module.scss";
 
@@ -71,30 +70,17 @@ function Tetsimonials() {
         <h2 className="heading heading--secondary"></h2>
       </div>
       <div className={`container ${styles.testimonialWrapper}`}>
-        <Slider
-          contentArr={testimonials.map((text, i) => {
-            return (
-              <figure className={styles.testimonial} key={i}>
-                <blockquote className={styles.testimonial__text}>
-                  {text}
-                </blockquote>
-              </figure>
-            );
-          })}
-          sliderType="content"
-          height="35rem"
-        />
-        {/*     <figure className={styles.testimonial}>
-          <blockquote className={styles.testimonial__text}>
-            After completing Physical Therapy for rotator cuff surgery, I was
-            still experiencing discomfort, weakness, and limited range of motion
-            in my shoulder. My wife trains with Abie and she recommended I see
-            him. Since working with Abie, I have full range of motion again in
-            my shoulder. Abie focuses on the entire body, not just the
-            surgically repaired areas. I have seen substantial strength
-            improvements in my entire body, particularly in my legs.
-          </blockquote>
-        </figure> */}
+        {testimonials.map((text, i) => {
+          if (i === 0) return;
+          return (
+            <figure className={styles.testimonial} key={i}>
+              <blockquote className={styles.testimonial__text}>
+                <span>{text.slice(0, 1)}</span>
+                {text.slice(1)}
+              </blockquote>
+            </figure>
+          );
+        })}
       </div>
       <div className="link-to-wrapper">
         <Link to="/testimonials" className="btn btn--main">
