@@ -1,60 +1,85 @@
 import Button from "./Button";
 import styles from "../sass/layout/Navigation.module.scss";
 import { NavLink } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-export default function Navigation() {
-  const navRef = useRef();
+export default function Navigation({ onOpenModal }) {
+  const [showServices, setShowServices] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const headerRef = useRef();
 
-  // Navigation fade on hover animation
-  function handleNavHover(e, opacity) {
-    if (e.target.nodeName !== "A" && e.target.nodeName !== "BUTTON") return;
+  // state for mobile nav
+  const [isOpen, setIsOpen] = useState(false);
 
-    const link = e.target.closest("li");
-    const siblings = e.target.closest("ul").querySelectorAll("li");
-    const logo = navRef.current.querySelector("img");
-
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = opacity;
-    });
-    logo.style.opacity = opacity;
-  }
-
-  useEffect(
-    function () {
-      navRef.current.addEventListener("mouseover", (e) =>
-        handleNavHover(e, 0.5)
-      );
-      navRef.current.addEventListener("mouseout", (e) => handleNavHover(e, 1));
-    },
-    [navRef]
-  );
+  useEffect(function () {
+    window.addEventListener("scroll", () =>
+      window.pageYOffset !== 0 ? setIsSticky(true) : setIsSticky(false)
+    );
+  }, []);
 
   return (
-    <header>
-      <nav className={styles.navigation} ref={navRef}>
-        <NavLink to="/" className={styles.navigation__logoWrapper}>
-          <img
-            src="assets/images/logos/HCHF-logo-black.png"
-            className={styles.navLogo}
-            alt="Half century health and fitness logo"
-          />
-        </NavLink>
+    <header
+      className={`${isSticky ? "sticky" : ""} ${isOpen ? "open" : ""}`}
+      ref={headerRef}
+    >
+      <div className={styles["sticky-bg"]}></div>
 
+      <NavLink to="/" className={styles.navigation__logoWrapper}>
+        <img
+          src="assets/images/logos/HCHF-logo-black.png"
+          className={styles.navLogo}
+          alt="Half century health and fitness logo"
+        />
+      </NavLink>
+
+      <nav className={`${styles.navigation}`}>
         <ul className={styles.navigation__list}>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
 
-          <li>
-            <div className={styles.navigation__services}>
+          <li
+            className={styles["dropdown-parent"]}
+            onMouseOver={() => setShowServices(true)}
+            onMouseOut={() => setShowServices(false)}
+          >
+            <a>
               <button>Services</button>
-              {/* <div className="services__content">
-          <a href="#">Adult Training</a>
-          <a href="#">Post-Surgical Training</a>
-          <a href="#">Baseball/Softball</a>
-          <a href="#">Online Consulting</a>
-        </div> */}
+              <span className={showServices ? "rotate-180" : ""}>
+                <ChevronDownIcon className={styles["navigation__icon"]} />
+              </span>
+            </a>
+
+            <div
+              className={`${styles["dropdown-wrapper"]} ${
+                showServices ? "" : styles["dropdown-hidden"]
+              }`}
+            >
+              <div className={styles["dropdown"]}>
+                <ul>
+                  <li>
+                    <NavLink to="services/adult-training">
+                      Adult Training
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="services/post-surgical">
+                      Post-Surgical Training
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="services/baseball-softball">
+                      Baseball/Softball
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="services/online-consulting">
+                      Online Consulting
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
 
@@ -69,10 +94,16 @@ export default function Navigation() {
           </li>
 
           <li>
-            <Button>Contact me</Button>
+            <Button onClick={onOpenModal}>Contact me</Button>
           </li>
         </ul>
       </nav>
+      <button
+        className={styles["navigation__mobile-btn"]}
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        <span>&nbsp;</span>
+      </button>
     </header>
   );
 }

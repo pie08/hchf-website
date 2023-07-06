@@ -29,6 +29,10 @@
   margin-bottom: 1.8rem !important;
 }
 
+.margin-bottom-sm-md {
+  margin-bottom: 2.4rem;
+}
+
 .margin-bottom-md {
   margin-bottom: 4.8rem !important;
 }
@@ -39,4 +43,16 @@
 
 .grid-row-gap-bg {
   row-gap: 9.6rem !important;
+}
+
+.rotate-180 {
+  rotate: 180deg;
+}
+
+.rotate-90-clock {
+  rotate: 90deg;
+}
+
+.rotate-90-couterclock {
+  rotate: -90deg;
 }

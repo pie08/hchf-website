@@ -1,24 +1,29 @@
+import { Link } from "react-router-dom";
 import styles from "../sass/components/Aging.module.scss";
 
 function Aging() {
   return (
-    <section className="section-aging">
+    <section className="section">
       <div className="container">
-        <p className="subheading">Aging & Hormones</p>
-        <h2 className="heading-secondary">
+        <p className="heading heading--sub margin-bottom-sm">
+          Aging & Hormones
+        </p>
+        <h2 className="heading heading--secondary margin-bottom-md">
           Aging results in the reduction of anabolic hormones
         </h2>
-        <h3 className="heading-tertiary center-text margin-bottom-md">
+        <h3 className="heading heading--tertiary margin-bottom-sm-md">
           Physiological changes from decreased hormone levels
         </h3>
       </div>
-      <div className="container aging-container">
-        <div className="aging-list-container">
-          <h3 className="aging-list-heading heading-tertiary center-text">
-            <ion-icon name="arrow-up-outline"></ion-icon>
-            <span>Increases in</span>
+      <div className={`container ${styles["aging-wrapper"]}`}>
+        <div className={styles["aging__list-wrapper"]}>
+          <h3
+            className={`${styles["aging__list-heading"]} heading heading--tertiary center-text`}
+          >
+            {/* <ion-icon name="arrow-up-outline"></ion-icon> */}
+            Increases in
           </h3>
-          <ul className="aging-list">
+          <ul className={styles["aging__list"]}>
             <li>tightness/rigidity</li>
             <li>body fat</li>
             <li>body weight</li>
@@ -31,12 +36,14 @@ function Aging() {
           </ul>
         </div>
 
-        <div className="aging-list-container">
-          <h3 className="aging-list-heading heading-tertiary center-text">
-            <ion-icon name="arrow-down-outline"></ion-icon>
-            <span>Decreases in</span>
+        <div className={styles["aging__list-wrapper"]}>
+          <h3
+            className={`${styles["aging__list-heading"]} heading heading--tertiary center-text`}
+          >
+            {/* <ion-icon name="arrow-down-outline"></ion-icon> */}
+            Decreases in
           </h3>
-          <ul className="aging-list">
+          <ul className={styles["aging__list"]}>
             <li>mobility/flexibility</li>
             <li>muscle mass/muscle tone</li>
             <li>strength</li>
@@ -47,10 +54,10 @@ function Aging() {
           </ul>
         </div>
       </div>
-      <div className="link-container">
-        <a href="aging.html" className="to-page-link">
-          See aging & hormones
-        </a>
+      <div className="link-to-wrapper">
+        <Link to="aging" className="btn btn--main">
+          See aging and hormones
+        </Link>
       </div>
     </section>
   );

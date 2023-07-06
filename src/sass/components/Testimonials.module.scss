@@ -1,5 +1,4 @@
 .sectionTestimonials {
-  padding: 9.6rem 0;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.85),
       rgba(255, 255, 255, 0.85)
@@ -7,6 +6,11 @@
     url("/assets/images/beach_bg.webp");
   background-size: 150%;
   background-position: 30% 50%;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    background-size: cover;
+  }
 }
 
 .testimonialWrapper {

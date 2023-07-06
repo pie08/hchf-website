@@ -3,12 +3,14 @@ import styles from "../sass/components/ClientProfiles.module.scss";
 
 function ClientProfiles() {
   return (
-    <section className={styles.sectionProfiles}>
+    <section className="section section--bg-gray">
       <div className="container">
-        <p className="heading heading--sub margin-bottom-md">Client profiles</p>
+        <p className="heading heading--sub margin-bottom-sm-md">
+          Client profiles
+        </p>
       </div>
 
-      <div className="container grid grid--3-cols">
+      <div className={`container ${styles["profiles"]}`}>
         <div className={styles.profile}>
           <img
             className={styles.profile__image}
@@ -18,7 +20,9 @@ function ClientProfiles() {
 
           <div className={styles.profile__textWrapper}>
             <p className={styles.profile__name}>Keith</p>
-            <p className={styles.profile__age}>Age 67</p>
+            <p className={styles.profile__age}>
+              Age <span>67</span>
+            </p>
             <p className={styles.profile__history}>Rotator cuff surgery</p>
           </div>
         </div>
@@ -32,7 +36,9 @@ function ClientProfiles() {
 
           <div className={styles.profile__textWrapper}>
             <p className={styles.profile__name}>Anna</p>
-            <p className={styles.profile__age}>Age 60</p>
+            <p className={styles.profile__age}>
+              Age <span>60</span>
+            </p>
             <p className={styles.profile__history}>Knee replacement surgery</p>
           </div>
         </div>
@@ -46,14 +52,16 @@ function ClientProfiles() {
 
           <div className={styles.profile__textWrapper}>
             <p className={styles.profile__name}>Ray</p>
-            <p className={styles.profile__age}>Age 62</p>
+            <p className={styles.profile__age}>
+              Age <span>62</span>
+            </p>
             <p className={styles.profile__history}>Knee replacement surgery</p>
           </div>
         </div>
       </div>
 
       <div className="link-to-wrapper">
-        <Link to="/profiles" className="btn btn--main">
+        <Link to="/profiles" className="btn btn--secondary">
           See all profiles
         </Link>
       </div>

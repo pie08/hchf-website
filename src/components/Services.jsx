@@ -6,9 +6,9 @@ import baseballSliderImages from "../data/baseballSliderImages.json";
 
 function Services() {
   return (
-    <section className={styles.sectionServices}>
+    <section className="section">
       <div className="container margin-bottom-bg">
-        <h4 className="heading heading--sub">Services</h4>
+        <h4 className="heading heading--sub margin-bottom-sm">Services</h4>
 
         <div className={styles.services__headingWrapper}>
           <h2 className="heading heading--secondary">Allow me to provide</h2>
@@ -30,7 +30,9 @@ function Services() {
         <Slider contentArr={adultTrainingSliderImages} sliderType="image" />
 
         <div>
-          <h3 className="heading heading--tertiary">Adult training</h3>
+          <h3 className="heading heading--tertiary margin-bottom-sm-md">
+            Adult training
+          </h3>
 
           <p className={styles.step__description}>
             Providing a Trustworthy, Knowledgeable, Structured Training Approach
@@ -45,7 +47,9 @@ function Services() {
 
         {/* <!-- STEP 2 --> */}
         <div>
-          <h3 className="heading heading--tertiary">Post-surgical training</h3>
+          <h3 className="heading heading--tertiary margin-bottom-sm-md">
+            Post-surgical training
+          </h3>
           <p className={styles.step__description}>
             After Completing Post-Surgical Physical Therapy, many people
             continue to experience; Discomfort, Limited Range of Motion, Lack of
@@ -64,7 +68,9 @@ function Services() {
         <Slider contentArr={baseballSliderImages} sliderType="image" />
 
         <div>
-          <h3 className="heading heading--tertiary">Baseball & Softball</h3>
+          <h3 className="heading heading--tertiary margin-bottom-sm-md">
+            Baseball & Softball
+          </h3>
           <p className={styles.step__description}>
             Improving Overall Strength & Stability for a High School Athlete
             will result in Significant Improvements In Performance and should
@@ -76,7 +82,9 @@ function Services() {
         {/* <!-- STEP 4 --> */}
 
         <div>
-          <h3 className="heading heading--tertiary">Online consulting</h3>
+          <h3 className="heading heading--tertiary margin-bottom-sm-md">
+            Online consulting
+          </h3>
           <p className={styles.step__description}>
             Developing Individual Relationships via technology with the same
             degree of care and dedication to the improvement of your health as

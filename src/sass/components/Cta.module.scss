@@ -1,0 +1,34 @@
+.section--cta {
+  padding: 9.6rem 0 12.8rem;
+}
+
+.cta {
+  padding: 4.8rem;
+  background-color: #e6f0ff;
+  display: flex;
+  // justify-content: center;
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 60rem;
+}
+
+.cta__heading {
+  margin-bottom: 1.8rem;
+  color: var(--color-primary-shade-3) !important;
+}
+
+.cta__description {
+  font-size: 2rem;
+  margin-bottom: 3.2rem;
+  line-height: 1.6;
+  color: var(--color-primary-shade-3);
+}
+
+.cta__img {
+  width: 25rem;
+  margin: 0 auto;
+}

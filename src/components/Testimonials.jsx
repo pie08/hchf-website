@@ -62,9 +62,9 @@ well as the rest of my body. My overall body composition has changed
 for the better and people have noticed!`,
 ];
 
-function Tetsimonials() {
+function Testimonials() {
   return (
-    <section className={styles.sectionTestimonials}>
+    <section className={`section ${styles.sectionTestimonials}`}>
       <div className="container">
         <p className="heading heading--sub margin-bottom-md">Testimonials</p>
         <h2 className="heading heading--secondary"></h2>
@@ -83,7 +83,7 @@ function Tetsimonials() {
         })}
       </div>
       <div className="link-to-wrapper">
-        <Link to="/testimonials" className="btn btn--main">
+        <Link to="/testimonials" className="btn btn--secondary">
           See all testimonials
         </Link>
       </div>
@@ -91,4 +91,4 @@ function Tetsimonials() {
   );
 }
 
-export default Tetsimonials;
+export default Testimonials;

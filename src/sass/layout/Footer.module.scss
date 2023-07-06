@@ -1,0 +1,42 @@
+.footer {
+  padding: 12.8rem 0 9.6rem;
+  background-color: var(--color-primary-tint-2);
+}
+
+.footer__logo {
+  width: 60%;
+}
+
+.footer__heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4rem;
+}
+
+.footer__list {
+  list-style: none;
+  font-size: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer__link:link,
+.footer__link:visited {
+  text-decoration: none;
+  color: #555;
+  transition: all 0.3s;
+}
+
+.footer__link:hover,
+.footer__link:active {
+  color: #333;
+}
+
+.grid--footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6.4rem;
+}

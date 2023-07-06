@@ -1,6 +1,29 @@
+html {
+  /* 1REM = 10PX */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  // 1200px
+  @media (max-width: 75em) {
+    font-size: 56.25%;
+  }
+}
+
 #root {
   // scroll bug fix
   overflow: hidden;
+}
+
+.section {
+  padding: 9.6rem 0;
+
+  &--bg-blue {
+    background-color: var(--color-primary-tint-2);
+  }
+
+  &--bg-gray {
+    background-color: var(--color-gray-lightest);
+  }
 }
 
 .container {
@@ -42,38 +65,55 @@
   font-size: 1.8rem;
   font-weight: 600;
   font-family: inherit;
-  padding: 1.2rem 2.4rem;
   border: none;
   transition: all 0.2s;
 }
 
-.btn--main,
-.btn--main:link,
-.btn--main:visited {
+.btn--cta,
+.btn--cta:link,
+.btn--cta:visited {
   background-color: var(--color-primary);
   color: var(--color-white);
+  padding: 1.2rem 2.4rem;
 }
 
-.btn--main:hover,
-.btn--main:active {
+.btn--cta:hover,
+.btn--cta:active {
   cursor: pointer;
   background-color: var(--color-primary-shade-1);
 }
 
 .btn--secondary:link,
 .btn--secondary:visited {
-  border: 2px solid var(--color-gray-light-1);
-  color: var(--color-text);
+  color: var(--color-primary);
+  padding: 0.4rem;
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .btn--secondary:hover,
 .btn--secondary:active {
-  background-color: var(--color-gray-light-1);
-  color: var(--color-white);
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-primary-tint-2);
+  translate: 0 -2px;
+}
+
+.btn--contact:link,
+.btn--contact:visited {
+  padding: 1.2rem 2.4rem;
+  background-color: #fff;
+  color: #001f4c;
+}
+
+.btn--contact:hover,
+.btn--contact:active {
+  background: transparent;
+  color: #e6f0ff;
+  box-shadow: inset 0 0 0 1px #e6f0ff;
 }
 
 .link-to-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 3.6rem;
+  margin-top: 4.8rem;
 }

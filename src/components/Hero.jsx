@@ -2,14 +2,14 @@ import Button from "./Button";
 import ClientVideo from "./ClientVideo";
 import styles from "../sass/components/Hero.module.scss";
 
-function Hero() {
+function Hero({ onOpenModal }) {
   return (
-    <section className={styles.sectionHero}>
+    <section className={styles.sectionHero} id="hero">
       <div
         className={`${styles.containerHero} grid grid--2-cols grid--align-v`}
       >
         <div className={styles.hero__text}>
-          <h1 className="heading heading--primary">
+          <h1 className="heading heading--primary margin-bottom-sm-md">
             individualized fitness for adults 50+ years old
           </h1>
 
@@ -21,7 +21,9 @@ function Hero() {
             exercise programs & post-surgical training programs.
           </p>
 
-          <Button className="btn--main margin-bottom-sm">Contact me</Button>
+          <Button className="btn--cta margin-bottom-sm" onClick={onOpenModal}>
+            Contact me
+          </Button>
         </div>
 
         <div className={`${styles.hero__videoWrapper} flex`}>

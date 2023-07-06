@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import styles from "../sass/components/Slider.module.scss";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function Slider({
   contentArr,
@@ -34,10 +34,13 @@ export default function Slider({
       })}
 
       <button className={styles.slider__btn} onClick={handlePrevSlide}>
-        <CaretLeft color="#333" size="2.4rem" />
+        {/* <svg className={`rotate-90-clock ${styles["slider__icon"]}`}>
+          <use href="/assets/icons/sprite.svg#icon-chevron-thin-down" />
+        </svg> */}
+        <ChevronLeftIcon className={styles["slider__icon"]} />
       </button>
       <button className={styles.slider__btn} onClick={handleNextSlide}>
-        <CaretRight color="#333" size="2.4rem" />
+        <ChevronRightIcon className={styles["slider__icon"]} />
       </button>
     </div>
   );
