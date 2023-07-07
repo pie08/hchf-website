@@ -22,13 +22,12 @@ body {
   }
 
   &--tertiary {
-    font-size: 3.6rem;
+    font-size: 3rem;
   }
 
   &--sub {
     color: var(--color-primary);
-    text-transform: capitalize;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 600;
     letter-spacing: 1px;
   }
@@ -38,38 +37,3 @@ body {
     font-size: 3rem;
   }
 }
-
-// .subheading {
-//   color: #005ce6;
-//   text-transform: capitalize;
-//   font-size: 2.4rem;
-//   font-weight: 600;
-//   letter-spacing: 1px;
-//   margin-bottom: 1.6rem;
-// }
-
-// .heading-primary,
-// .heading-secondary,
-// .heading-tertiary {
-//   font-weight: 700;
-//   color: #333;
-//   line-height: 1.05;
-//   text-transform: capitalize;
-// }
-
-// .heading-primary {
-//   font-size: 5.2rem;
-//   margin-bottom: 2.4rem;
-//   letter-spacing: -1px;
-// }
-
-// .heading-secondary {
-//   font-size: 4.4rem;
-//   letter-spacing: -0.5px;
-//   margin-bottom: 9.6rem;
-// }
-
-// .heading-tertiary {
-//   font-size: 3.6rem;
-//   margin-bottom: 2.4rem;
-// }

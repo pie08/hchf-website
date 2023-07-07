@@ -4,9 +4,9 @@ import styles from "../sass/components/Hero.module.scss";
 
 function Hero({ onOpenModal }) {
   return (
-    <section className={styles.sectionHero} id="hero">
+    <section className={styles["section--hero"]} id="hero">
       <div
-        className={`${styles.containerHero} grid grid--2-cols grid--align-v`}
+        className={`${styles["hero-wrapper"]} grid grid--2-cols grid--align-v`}
       >
         <div className={styles.hero__text}>
           <h1 className="heading heading--primary margin-bottom-sm-md">

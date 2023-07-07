@@ -7,7 +7,7 @@ import baseballSliderImages from "../data/baseballSliderImages.json";
 function Services() {
   return (
     <section className="section">
-      <div className="container margin-bottom-bg">
+      <div className="container margin-bottom-bg center-text">
         <h4 className="heading heading--sub margin-bottom-sm">Services</h4>
 
         <div className={styles.services__headingWrapper}>

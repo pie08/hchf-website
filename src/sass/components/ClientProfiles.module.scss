@@ -1,6 +1,13 @@
 .profiles {
   display: flex;
   justify-content: space-between;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
 }
 
 .profile {

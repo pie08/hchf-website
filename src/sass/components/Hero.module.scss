@@ -1,10 +1,10 @@
-.sectionHero {
+.section--hero {
   padding: 9.6rem 0;
   padding-top: calc(9.6rem + 8rem);
   background-color: var(--color-primary-tint-2);
 }
 
-.containerHero {
+.hero-wrapper {
   max-width: 130rem;
   margin: 0 auto;
   padding: 0 2.4rem;
@@ -12,6 +12,13 @@
 
 .hero__text {
   text-transform: capitalize;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    max-width: 70rem;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .hero__description {
@@ -39,7 +46,14 @@
 }
 
 .hero__video {
-  width: 60%;
-  height: 100%;
+  // width: 60%;
+  // height: 100%;
+  width: 20vw;
+  aspect-ratio: 9 / 15;
   overflow: hidden;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    width: 30vw;
+  }
 }

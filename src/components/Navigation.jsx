@@ -1,16 +1,15 @@
 import Button from "./Button";
 import styles from "../sass/layout/Navigation.module.scss";
 import { NavLink } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export default function Navigation({ onOpenModal }) {
-  const [showServices, setShowServices] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const headerRef = useRef();
 
   // state for mobile nav
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
 
   useEffect(function () {
     window.addEventListener("scroll", () =>
@@ -20,15 +19,14 @@ export default function Navigation({ onOpenModal }) {
 
   return (
     <header
-      className={`${isSticky ? "sticky" : ""} ${isOpen ? "open" : ""}`}
-      ref={headerRef}
+      className={`${isSticky ? "sticky" : ""} ${isMobileNavOpen ? "open" : ""}`}
     >
       <div className={styles["sticky-bg"]}></div>
 
       <NavLink to="/" className={styles.navigation__logoWrapper}>
         <img
           src="assets/images/logos/HCHF-logo-black.png"
-          className={styles.navLogo}
+          className={styles.navigation__logo}
           alt="Half century health and fitness logo"
         />
       </NavLink>
@@ -39,49 +37,7 @@ export default function Navigation({ onOpenModal }) {
             <NavLink to="/">Home</NavLink>
           </li>
 
-          <li
-            className={styles["dropdown-parent"]}
-            onMouseOver={() => setShowServices(true)}
-            onMouseOut={() => setShowServices(false)}
-          >
-            <a>
-              <button>Services</button>
-              <span className={showServices ? "rotate-180" : ""}>
-                <ChevronDownIcon className={styles["navigation__icon"]} />
-              </span>
-            </a>
-
-            <div
-              className={`${styles["dropdown-wrapper"]} ${
-                showServices ? "" : styles["dropdown-hidden"]
-              }`}
-            >
-              <div className={styles["dropdown"]}>
-                <ul>
-                  <li>
-                    <NavLink to="services/adult-training">
-                      Adult Training
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="services/post-surgical">
-                      Post-Surgical Training
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="services/baseball-softball">
-                      Baseball/Softball
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="services/online-consulting">
-                      Online Consulting
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
+          <DropdownMenu show={showServices} setShow={setShowServices} />
 
           <li>
             <NavLink to="/aging">Aging & Hormones</NavLink>
@@ -98,12 +54,49 @@ export default function Navigation({ onOpenModal }) {
           </li>
         </ul>
       </nav>
+
       <button
-        className={styles["navigation__mobile-btn"]}
-        onClick={() => setIsOpen((open) => !open)}
+        className={styles["mobile-btn"]}
+        onClick={() => setIsMobileNavOpen((open) => !open)}
       >
         <span>&nbsp;</span>
       </button>
     </header>
+  );
+}
+
+function DropdownMenu({ show, setShow }) {
+  return (
+    <li
+      className={styles["dropdown-parent"]}
+      onClick={() => setShow((show) => !show)}
+    >
+      <a>
+        Services
+        <span>
+          <ChevronDownIcon className={styles["navigation__icon"]} />
+        </span>
+      </a>
+
+      {/* ${showServices ? "" : styles["dropdown-hidden"]} */}
+      <div className={`${styles["dropdown-wrapper"]} `}>
+        <ul className={`${styles["dropdown"]} ${show ? styles["active"] : ""}`}>
+          <li>
+            <NavLink to="services/adult-training">Adult Training</NavLink>
+          </li>
+          <li>
+            <NavLink to="services/post-surgical">
+              Post-Surgical Training
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="services/baseball-softball">Baseball/Softball</NavLink>
+          </li>
+          <li>
+            <NavLink to="services/online-consulting">Online Consulting</NavLink>
+          </li>
+        </ul>
+      </div>
+    </li>
   );
 }

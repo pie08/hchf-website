@@ -65,9 +65,8 @@ for the better and people have noticed!`,
 function Testimonials() {
   return (
     <section className={`section ${styles.sectionTestimonials}`}>
-      <div className="container">
+      <div className="container center-text">
         <p className="heading heading--sub margin-bottom-md">Testimonials</p>
-        <h2 className="heading heading--secondary"></h2>
       </div>
       <div className={`container ${styles.testimonialWrapper}`}>
         {testimonials.map((text, i) => {

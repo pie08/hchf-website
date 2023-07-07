@@ -1,3 +1,5 @@
+@import "./Dropdown.module.scss";
+
 header {
   display: flex;
   justify-content: space-between;
@@ -8,13 +10,18 @@ header {
   position: fixed;
   z-index: 999;
 
-  // 1000px
+  // OVER 1000px - For normal desktop dropdown
   @media (min-width: 62.6em) {
     &:hover {
       .navigation__list li {
         opacity: 0.5;
       }
     }
+  }
+
+  // UNDER 1000px
+  @media (max-width: 62.6em) {
+    padding: 0 2.4rem;
   }
 }
 
@@ -26,6 +33,15 @@ header {
 
   &__logoWrapper {
     height: 100%;
+  }
+
+  &__logo {
+    height: 100%;
+    transition: all 0.2s;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__list {
@@ -51,11 +67,25 @@ header {
       & a:global(.active) {
         border-bottom: 1px solid var(--color-primary);
       }
+
+      // 1000px
+      @media (max-width: 62.5em) {
+        width: 100%;
+        padding: 3.6rem 2.4rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-gray-light-2);
+        }
+      }
     }
 
     // 1000px
     @media (max-width: 62.5em) {
       flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 0;
+      overflow-y: auto;
     }
   }
 
@@ -64,44 +94,11 @@ header {
     width: 1.4rem;
     height: 1.4rem;
     translate: 0 1px;
-  }
-
-  &__mobile-btn {
-    display: none;
-
-    & span {
-      display: block;
-      width: 4.8rem;
-      height: 2px;
-      background-color: var(--color-text);
-      position: relative;
-      transition: all 0.2s;
-    }
-
-    & span::after,
-    & span::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #333;
-      transition: all 0.2s;
-    }
-
-    & span::after {
-      top: -1rem;
-    }
-
-    & span::before {
-      top: 1rem;
-    }
 
     // 1000px
     @media (max-width: 62.5em) {
-      display: block;
-      background: none;
-      border: none;
+      width: 2.4rem;
+      height: 2.4rem;
     }
   }
 
@@ -113,29 +110,10 @@ header {
     background-color: rgba(255, 255, 255, 0.95);
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
     translate: 100% 0;
-  }
-}
-
-:global(.open) {
-  & .navigation {
-    translate: 0 0;
-
-    &__mobile-btn span {
-      background-color: transparent;
-
-      &::before {
-        rotate: -45deg;
-        top: 0;
-      }
-
-      &::after {
-        rotate: 45deg;
-        top: 0;
-      }
-    }
+    padding: 0 2.4rem;
+    padding-top: 9.6rem;
+    z-index: -1;
   }
 }
 
@@ -158,66 +136,64 @@ header {
   }
 }
 
-.dropdown-parent {
-  position: relative;
+// open states - for mobile nav
+:global(.open) {
+  & .navigation {
+    translate: 0 0;
+  }
 
-  & a {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+  .mobile-btn span {
+    background-color: transparent;
 
-    & button {
-      background: none;
-      border: none;
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-      color: inherit;
+    &::before {
+      rotate: -45deg;
+      top: 0;
     }
 
-    & span {
-      transition: all 0.2s;
+    &::after {
+      rotate: 45deg;
+      top: 0;
     }
   }
 }
 
-.dropdown-wrapper {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding-top: 1.2rem;
-  z-index: 10;
-  transition: all 0.3s;
-}
+.mobile-btn {
+  display: none;
 
-.dropdown {
-  background-color: #fff;
-  width: max-content;
-  padding: 1.8rem;
-  border-top: 2px solid var(--color-primary);
-
-  & ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    list-style: none;
+  & span {
+    display: block;
+    width: 4.8rem;
+    height: 2px;
+    background-color: var(--color-text);
+    position: relative;
+    transition: all 0.2s;
   }
-}
 
-.dropdown-hidden {
-  opacity: 0;
-  translate: 0 -1.2rem;
-  visibility: hidden;
-  pointer-events: none;
-}
+  & span::after,
+  & span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transition: all 0.2s;
+  }
 
-.navLogo {
-  height: 100%;
-  transition: all 0.2s;
-}
+  & span::after {
+    top: -1rem;
+  }
 
-.navLogo:hover {
-  cursor: pointer;
+  & span::before {
+    top: 1rem;
+  }
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    display: block;
+    background: none;
+    border: none;
+  }
 }
 
 @keyframes slideDown {
