@@ -5,7 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 export default function Slider({
   contentArr,
   sliderType = "image",
-  height = "50rem",
+  height = "55rem",
 }) {
   const [curSlide, setCurSlide] = useState(0);
 
@@ -52,7 +52,7 @@ function SliderImage({ url, style }) {
       <img
         src={url}
         alt="Person doing workout"
-        className={styles.slider__image}
+        className={styles["slider__image"]}
       />
     </div>
   );

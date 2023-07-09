@@ -29,7 +29,7 @@ function Services() {
         {/* <!-- STEP 1 --> */}
         <Slider contentArr={adultTrainingSliderImages} sliderType="image" />
 
-        <div>
+        <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">
             Adult training
           </h3>
@@ -46,7 +46,7 @@ function Services() {
         </div>
 
         {/* <!-- STEP 2 --> */}
-        <div>
+        <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">
             Post-surgical training
           </h3>
@@ -67,7 +67,7 @@ function Services() {
         {/* <!-- STEP 3 --> */}
         <Slider contentArr={baseballSliderImages} sliderType="image" />
 
-        <div>
+        <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">
             Baseball & Softball
           </h3>
@@ -81,7 +81,7 @@ function Services() {
 
         {/* <!-- STEP 4 --> */}
 
-        <div>
+        <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">
             Online consulting
           </h3>

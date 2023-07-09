@@ -12,11 +12,11 @@ function Modal({ isOpen, onClose }) {
         />
         <div className={styles["modal__content"]}>
           <h2
-            className={`${styles["modal__heading"]} heading heading--secondary`}
+            className={`${styles["modal__heading"]} margin-bottom-sm heading heading--tertiary`}
           >
             Contact Information
           </h2>
-          <p className={styles["modal__description"]}>
+          <p className={`${styles["modal__description"]} margin-bottom-sm-md`}>
             To contact me, please send an email or please call.
           </p>
           <div className={styles["modal__info-wrapper"]}>

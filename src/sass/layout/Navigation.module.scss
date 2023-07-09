@@ -159,6 +159,9 @@ header {
 
 .mobile-btn {
   display: none;
+  background: none;
+  border: none;
+  padding: 2.4rem 0;
 
   & span {
     display: block;
@@ -191,8 +194,6 @@ header {
   // 1000px
   @media (max-width: 62.5em) {
     display: block;
-    background: none;
-    border: none;
   }
 }
 

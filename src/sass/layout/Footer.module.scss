@@ -4,7 +4,12 @@
 }
 
 .footer__logo {
-  width: 60%;
+  max-width: 25rem;
+
+  // 800 px
+  @media (max-width: 50em) {
+    grid-column: span 2;
+  }
 }
 
 .footer__heading {
@@ -39,4 +44,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 6.4rem;
+
+  // 800 px
+  @media (max-width: 50em) {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
 }

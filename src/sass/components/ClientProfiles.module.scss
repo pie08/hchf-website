@@ -28,7 +28,8 @@
 
   &__name {
     font-size: 2.4rem;
-    color: var(--color-primary-shade-2);
+    // color: var(--color-primary-shade-2);
+    color: var(--color-text);
     margin-bottom: 1.6rem;
   }
 
@@ -37,11 +38,11 @@
     margin-bottom: 0.8rem;
 
     & span {
-      font-size: 2.4rem;
+      color: var(--color-text);
     }
   }
 
   &__history {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }

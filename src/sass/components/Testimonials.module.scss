@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .sectionTestimonials {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.85),
@@ -10,6 +12,7 @@
   // 1000px
   @media (max-width: 62.5em) {
     background-size: cover;
+    background-position: 50%;
   }
 }
 
@@ -22,7 +25,7 @@
 
 .testimonial {
   position: relative;
-  width: 80rem;
+  padding-left: 9rem;
 
   &::-webkit-scrollbar {
     display: none;
@@ -32,11 +35,21 @@
     content: "\201C";
     position: absolute;
     top: -5.5rem;
-    left: -9rem;
+    left: 0rem;
     line-height: 1;
     font-size: 20rem;
     font-family: inherit;
     color: var(--color-primary-tint-1);
+
+    // 800px
+    @media (max-width: 50em) {
+      display: none;
+    }
+  }
+
+  // 800px
+  @media (max-width: 50em) {
+    padding: 0;
   }
 }
 
@@ -44,6 +57,7 @@
   font-size: 1.8rem;
   line-height: 1.6;
   color: var(--color-text);
+  @include text-container-width;
 
   & span {
     font-size: 4.4rem;

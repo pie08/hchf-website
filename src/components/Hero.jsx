@@ -27,7 +27,7 @@ function Hero({ onOpenModal }) {
         </div>
 
         <div className={`${styles.hero__videoWrapper} flex`}>
-          <ClientVideo className={styles.hero__video} />
+          <ClientVideo className={styles["hero__video"]} />
         </div>
       </div>
     </section>
