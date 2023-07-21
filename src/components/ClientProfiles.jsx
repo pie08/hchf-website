@@ -4,10 +4,8 @@ import styles from "../sass/components/ClientProfiles.module.scss";
 function ClientProfiles() {
   return (
     <section className="section section--bg-gray">
-      <div className="container center-text">
-        <p className="heading heading--sub margin-bottom-sm-md">
-          Client profiles
-        </p>
+      <div className="container center-text margin-bottom-md">
+        <p className="heading heading--sub">Client profiles</p>
       </div>
 
       <div className={`container ${styles["profiles"]}`}>

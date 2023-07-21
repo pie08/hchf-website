@@ -1,15 +1,5 @@
 @use "../abstracts/mixins.scss" as *;
 
-.services__headingWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-
-  &:not(:last-child) {
-    margin-bottom: 2.4rem;
-  }
-}
-
 .servicesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;

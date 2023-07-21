@@ -5,7 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 export default function Slider({
   contentArr,
   sliderType = "image",
-  height = "55rem",
+  // height = "50rem",
 }) {
   const [curSlide, setCurSlide] = useState(0);
 
@@ -20,7 +20,7 @@ export default function Slider({
   }
 
   return (
-    <div className={styles.slider} style={{ height }}>
+    <div className={styles.slider}>
       {contentArr.map((asset, i) => {
         const style = {
           transform: `translateX(${100 * (i - curSlide)}%)`,

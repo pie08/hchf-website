@@ -3,6 +3,7 @@ import styles from "../sass/components/Services.module.scss";
 import adultTrainingSliderImages from "../data/adultTrainingSliderImages.json";
 import postSurgicalSliderImages from "../data/postSurgicalSliderImages.json";
 import baseballSliderImages from "../data/baseballSliderImages.json";
+import Logo from "./Logo";
 
 function Services() {
   return (
@@ -10,19 +11,9 @@ function Services() {
       <div className="container margin-bottom-bg center-text">
         <h4 className="heading heading--sub margin-bottom-sm">Services</h4>
 
-        <div className={styles.services__headingWrapper}>
-          <h2 className="heading heading--secondary">Allow me to provide</h2>
-          <p className="heading heading--subtext">
-            structure - organization - purpose - guidance
-          </p>
-        </div>
-
-        <div className={styles.services__headingWrapper}>
-          <h2 className="heading heading--secondary">Rely on me to provide</h2>
-          <p className="heading heading--subtext">
-            diversity - thoroughness - effectiveness
-          </p>
-        </div>
+        <h2 className="heading heading--secondary">
+          Custom-made training programs designed for each Individual
+        </h2>
       </div>
 
       <div className={`container ${styles.servicesGrid}`}>
@@ -97,11 +88,7 @@ function Services() {
           </p>
         </div>
 
-        <img
-          src="/assets/images/logos/HCHF-logo-black.png"
-          alt="Half century health and fitness logo black"
-          className={styles.consultingLogo}
-        />
+        <Logo className={styles.consultingLogo} />
       </div>
     </section>
   );

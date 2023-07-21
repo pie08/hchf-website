@@ -1,5 +1,6 @@
 import styles from "../sass/components/Cta.module.scss";
 import Button from "./Button";
+import Logo from "./Logo";
 
 function Cta({ onOpenModal }) {
   return (
@@ -8,21 +9,17 @@ function Cta({ onOpenModal }) {
         <div className={styles["cta"]}>
           <div className={styles["cta__content"]}>
             <h2
-              className={`${styles["cta__heading"]} heading heading--secondary`}
+              className={`${styles["cta__heading"]} heading heading--secondary margin-bottom-sm-md`}
             >
               free personal consultation
             </h2>
-            <p className={styles["cta__description"]}>
+            <p className={`${styles["cta__description"]} margin-bottom-md`}>
               Contact me for a free consultation and the opportunity to discuss
               your personal situation in detail.
             </p>
             <Button onClick={onOpenModal}>Contact me</Button>
           </div>
-          <img
-            className={styles["cta__img"]}
-            src="/assets/images/logos/HCHF-logo-black.png"
-            alt="Half century health and fitness logo"
-          />
+          <Logo className={styles["cta__img"]} />
         </div>
       </div>
     </section>

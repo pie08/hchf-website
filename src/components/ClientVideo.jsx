@@ -1,4 +1,4 @@
-function ClientVideo({ className }) {
+function ClientVideo({ className, videoId }) {
   return (
     <div className={className}>
       <div
@@ -16,7 +16,7 @@ function ClientVideo({ className }) {
           }}
         >
           <div
-            className="wistia_embed wistia_async_4g32ep11oz videoFoam=true"
+            className={`wistia_embed wistia_async_${videoId} videoFoam=true`}
             style={{
               height: "100%",
               position: "relative",

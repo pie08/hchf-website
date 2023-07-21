@@ -37,7 +37,20 @@ export default function Navigation({ onOpenModal }) {
             <NavLink to="/">Home</NavLink>
           </li>
 
-          <DropdownMenu show={showServices} setShow={setShowServices} />
+          <DropdownMenu
+            text="Services"
+            show={showServices}
+            setShow={setShowServices}
+          >
+            <NavLink to="services/adult-training">Adult Training</NavLink>
+            <NavLink to="services/post-surgical-training">
+              Post-Surgical Training
+            </NavLink>
+            <NavLink to="services/baseball-softball-training">
+              Baseball/Softball
+            </NavLink>
+            <NavLink to="services/online-consulting">Online Consulting</NavLink>
+          </DropdownMenu>
 
           <li>
             <NavLink to="/aging">Aging & Hormones</NavLink>
@@ -65,36 +78,24 @@ export default function Navigation({ onOpenModal }) {
   );
 }
 
-function DropdownMenu({ show, setShow }) {
+function DropdownMenu({ children, text, show, setShow }) {
   return (
     <li
       className={styles["dropdown-parent"]}
       onClick={() => setShow((show) => !show)}
     >
       <a>
-        Services
+        {text}
         <span>
           <ChevronDownIcon className={styles["navigation__icon"]} />
         </span>
       </a>
 
-      {/* ${showServices ? "" : styles["dropdown-hidden"]} */}
       <div className={`${styles["dropdown-wrapper"]} `}>
         <ul className={`${styles["dropdown"]} ${show ? styles["active"] : ""}`}>
-          <li>
-            <NavLink to="services/adult-training">Adult Training</NavLink>
-          </li>
-          <li>
-            <NavLink to="services/post-surgical">
-              Post-Surgical Training
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="services/baseball-softball">Baseball/Softball</NavLink>
-          </li>
-          <li>
-            <NavLink to="services/online-consulting">Online Consulting</NavLink>
-          </li>
+          {children.map((link, i) => (
+            <li key={i}>{link}</li>
+          ))}
         </ul>
       </div>
     </li>
