@@ -1,5 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { lazy } from "react";
+import { Suspense, lazy, useState } from "react";
+import Navigation from "./components/Navigation";
+import FullPageLoader from "./pages/FullPageLoader";
+import Modal from "./components/Modal";
+import Footer from "./components/Footer";
+import Testimonials from "./pages/Testimonials";
 
 // import Homepage from "./pages/Homepage";
 // import NotFound from "./pages/NotFound";
@@ -21,25 +26,45 @@ const OnlineConsulting = lazy(() =>
 );
 
 export default function App() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  function handleOpenModal() {
+    setIsOpenModal(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpenModal(false);
+  }
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="services">
-          <Route path="adult-training" element={<AdultTraining />} />
-          <Route path="post-surgical-training" element={<PostSurgical />} />
-          <Route
-            path="baseball-softball-training"
-            element={<BaseballSoftball />}
-          />
-          <Route path="online-consulting" element={<OnlineConsulting />} />
-        </Route>
-        <Route path="aging-hormones" element={null} />
-        <Route path="client-profiles" element={null} />
-        <Route path="testimonials" element={null} />
+      <Suspense fallback={<FullPageLoader />}>
+        {/* universal components */}
+        <Navigation onOpenModal={handleOpenModal} />
+        <Modal isOpen={isOpenModal} onClose={handleCloseModal} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={<Homepage onOpenModal={handleOpenModal} />}
+          />
+          <Route path="services" element={null}>
+            <Route path="adult-training" element={<AdultTraining />} />
+            <Route path="post-surgical-training" element={<PostSurgical />} />
+            <Route
+              path="baseball-softball-training"
+              element={<BaseballSoftball />}
+            />
+            <Route path="online-consulting" element={<OnlineConsulting />} />
+          </Route>
+          <Route path="aging-hormones" element={null} />
+          <Route path="client-profiles" element={null} />
+          <Route path="testimonials" element={<Testimonials />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Suspense>
     </BrowserRouter>
   );
 }

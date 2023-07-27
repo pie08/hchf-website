@@ -18,7 +18,11 @@ function Services() {
 
       <div className={`container ${styles.servicesGrid}`}>
         {/* <!-- STEP 1 --> */}
-        <Slider contentArr={adultTrainingSliderImages} sliderType="image" />
+        <Slider
+          contentArr={adultTrainingSliderImages}
+          sliderType="image"
+          sizes="(max-width: 75em) 21vw, (max-width: 31.25em) 45vw, 251px"
+        />
 
         <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">
@@ -53,10 +57,18 @@ function Services() {
           </p>
         </div>
 
-        <Slider contentArr={postSurgicalSliderImages} sliderType="image" />
+        <Slider
+          contentArr={postSurgicalSliderImages}
+          sliderType="image"
+          sizes="(max-width: 75em) 21vw, (max-width: 31.25em) 45vw, 251px"
+        />
 
         {/* <!-- STEP 3 --> */}
-        <Slider contentArr={baseballSliderImages} sliderType="image" />
+        <Slider
+          contentArr={baseballSliderImages}
+          sliderType="image"
+          sizes="(max-width: 75em) 21vw, (max-width: 31.25em) 45vw, 251px"
+        />
 
         <div className={styles["step__content-text"]}>
           <h3 className="heading heading--tertiary margin-bottom-sm-md">

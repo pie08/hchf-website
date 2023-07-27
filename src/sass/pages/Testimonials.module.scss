@@ -1,0 +1,15 @@
+.testimonial {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.4rem;
+  }
+
+  &__number {
+    margin-bottom: 4.8rem;
+    font-size: 9.8rem;
+    text-align: center;
+    color: var(--color-primary-tint-1);
+  }
+}

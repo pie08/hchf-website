@@ -1,15 +1,132 @@
 [
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-1.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-2.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-9.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-3.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-4.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/hailey-4.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-6.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-5.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-8.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/hailey-1.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/hailey-2.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/hailey-3.jpg",
-  "/assets/images/client-images/HCHF-baseball-imgs/alex-10.jpg"
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-1.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-1.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-2.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-2.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-9.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-9.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-3.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-3.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-4.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-4.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/hailey-4.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/hailey-4.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-6.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-6.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-5.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-5.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-8.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-8.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/hailey-1.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/hailey-1.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/hailey-2.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/hailey-2.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/hailey-3.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/hailey-3.webp",
+      "width": "562"
+    }
+  },
+  {
+    "low": {
+      "image": "/assets/images/client-images/baseball-softball/1x/alex-10.webp",
+      "width": "281"
+    },
+    "high": {
+      "image": "/assets/images/client-images/baseball-softball/2x/alex-10.webp",
+      "width": "562"
+    }
+  }
 ]

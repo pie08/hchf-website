@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 12.8rem;
+  padding-top: calc(12.8rem + var(--nav-height));
+
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("/assets/images/beach-bg-1x.webp");
+  background-size: 150%;
+  background-position: 40% 50%;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    background-size: cover;
+    background-position: 50%;
+  }
+}

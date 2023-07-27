@@ -5,7 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 export default function Slider({
   contentArr,
   sliderType = "image",
-  // height = "50rem",
+  sizes = null,
 }) {
   const [curSlide, setCurSlide] = useState(0);
 
@@ -26,8 +26,35 @@ export default function Slider({
           transform: `translateX(${100 * (i - curSlide)}%)`,
         };
 
+        // {
+        //   low: {
+        //     image: "image url";
+        //     width: "500";
+        //   }
+        //   high: {
+        //     same as above
+        //   }
+        // }
+        // if obj, we expect a configured object as above
+        if (sliderType === "image" && typeof asset === "object") {
+          if (sizes === null)
+            throw new Error(
+              "Failed to provide sizes array to Slider component"
+            );
+
+          return (
+            <SliderImageResSwitch
+              lowResImage={asset.low}
+              highResImage={asset.high}
+              sizes={sizes}
+              style={style}
+              key={i}
+            />
+          );
+        }
+
         if (sliderType === "image")
-          return <SliderImage url={asset} key={asset} style={style} />;
+          return <SliderImage asset={asset} key={i} style={style} />;
 
         if (sliderType === "content")
           return <SliderContent content={asset} style={style} />;
@@ -53,6 +80,20 @@ function SliderImage({ url, style }) {
         src={url}
         alt="Person doing workout"
         className={styles["slider__image"]}
+      />
+    </div>
+  );
+}
+
+function SliderImageResSwitch({ lowResImage, highResImage, sizes, style }) {
+  return (
+    <div className={styles.slider__slide} style={style}>
+      <img
+        srcSet={`${lowResImage.image} ${lowResImage.width}w, ${highResImage.image} ${highResImage.width}w`}
+        sizes={sizes}
+        alt="Person doing workout"
+        className={styles["slider__image"]}
+        src={lowResImage.image}
       />
     </div>
   );

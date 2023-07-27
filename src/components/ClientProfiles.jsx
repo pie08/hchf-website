@@ -9,53 +9,29 @@ function ClientProfiles() {
       </div>
 
       <div className={`container ${styles["profiles"]}`}>
-        <div className={styles.profile}>
-          <img
-            className={styles.profile__image}
-            src="/assets/images/client-images/keith-bridge.jpg"
-            alt="Client skiing"
-          />
+        <Profile
+          name="Keith"
+          age="67"
+          description="Rotator cuff surgery"
+          imageLowRes="assets/images/client-images/profiles/1x/keith-bridge.webp"
+          imageHighRes="assets/images/client-images/profiles/2x/keith-bridge.webp"
+        />
 
-          <div className={styles.profile__textWrapper}>
-            <p className={styles.profile__name}>Keith</p>
-            <p className={styles.profile__age}>
-              Age <span>67</span>
-            </p>
-            <p className={styles.profile__history}>Rotator cuff surgery</p>
-          </div>
-        </div>
+        <Profile
+          name="Anna"
+          age="60"
+          description="Knee replacement surgery"
+          imageLowRes="assets/images/client-images/profiles/1x/anna-boudreau.webp"
+          imageHighRes="assets/images/client-images/profiles/2x/anna-boudreau.webp"
+        />
 
-        <div className={styles.profile}>
-          <img
-            className={styles.profile__image}
-            src="/assets/images/client-images/anna-boudreau.jpg"
-            alt="Before and after of woman standing next to herself after 7 years looking much better now"
-          />
-
-          <div className={styles.profile__textWrapper}>
-            <p className={styles.profile__name}>Anna</p>
-            <p className={styles.profile__age}>
-              Age <span>60</span>
-            </p>
-            <p className={styles.profile__history}>Knee replacement surgery</p>
-          </div>
-        </div>
-
-        <div className={styles.profile}>
-          <img
-            className={styles.profile__image}
-            src="/assets/images/client-images/ray-profile.jpg"
-            alt=""
-          />
-
-          <div className={styles.profile__textWrapper}>
-            <p className={styles.profile__name}>Ray</p>
-            <p className={styles.profile__age}>
-              Age <span>62</span>
-            </p>
-            <p className={styles.profile__history}>Knee replacement surgery</p>
-          </div>
-        </div>
+        <Profile
+          name="Ray"
+          age="62"
+          description="Knee replacement surgery"
+          imageLowRes="assets/images/client-images/profiles/1x/ray.webp"
+          imageHighRes="assets/images/client-images/profiles/2x/ray.webp"
+        />
       </div>
 
       <div className="link-to-wrapper">
@@ -64,6 +40,28 @@ function ClientProfiles() {
         </Link>
       </div>
     </section>
+  );
+}
+
+function Profile({ name, age, description, imageLowRes, imageHighRes }) {
+  return (
+    <div className={styles.profile}>
+      <img
+        className={styles.profile__image}
+        srcSet={`${imageLowRes} 1x, ${imageHighRes} 2x`}
+        src={`${imageLowRes}`}
+      />
+
+      <div className={styles["profile__overlay"]}>&nbsp;</div>
+
+      <div className={styles.profile__textWrapper}>
+        <p className={styles.profile__name}>{name}</p>
+        <p className={styles.profile__age}>
+          Age <span>{age}</span>
+        </p>
+        <p className={styles.profile__history}>{description}</p>
+      </div>
+    </div>
   );
 }
 

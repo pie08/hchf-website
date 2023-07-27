@@ -1,6 +1,6 @@
 import Button from "./Button";
 import styles from "../sass/layout/Navigation.module.scss";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
@@ -25,7 +25,7 @@ export default function Navigation({ onOpenModal }) {
 
       <NavLink to="/" className={styles.navigation__logoWrapper}>
         <img
-          src="assets/images/logos/HCHF-logo-black.png"
+          src="/assets/images/logos/1x/HCHF-logo-black.webp"
           className={styles.navigation__logo}
           alt="Half century health and fitness logo"
         />
@@ -42,14 +42,14 @@ export default function Navigation({ onOpenModal }) {
             show={showServices}
             setShow={setShowServices}
           >
-            <NavLink to="services/adult-training">Adult Training</NavLink>
-            <NavLink to="services/post-surgical-training">
+            <Link to="services/adult-training">Adult Training</Link>
+            <Link to="services/post-surgical-training">
               Post-Surgical Training
-            </NavLink>
-            <NavLink to="services/baseball-softball-training">
+            </Link>
+            <Link to="services/baseball-softball-training">
               Baseball/Softball
-            </NavLink>
-            <NavLink to="services/online-consulting">Online Consulting</NavLink>
+            </Link>
+            <Link to="services/online-consulting">Online Consulting</Link>
           </DropdownMenu>
 
           <li>

@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "../sass/layout/Footer.module.scss";
+import Logo from "./Logo";
 
 function Footer() {
   return (
     <footer className={styles["footer"]}>
       <div className={`container ${styles["grid--footer"]}`}>
-        <img
-          src="/assets/images/logos/HCHF-logo-black.png"
-          alt="Half century health and fitness logo"
-          className={styles["footer__logo"]}
-        />
+        <Logo className={styles["footer__logo"]} />
 
         <nav>
           <p className={styles["footer__heading"]}>Contact</p>

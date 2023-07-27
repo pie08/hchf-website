@@ -1,11 +1,9 @@
-@use "../abstracts/mixins" as *;
-
 .sectionTestimonials {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.85),
       rgba(255, 255, 255, 0.85)
     ),
-    url("/assets/images/beach_bg.webp");
+    url("/assets/images/beach-bg-1x.webp");
   background-size: 150%;
   background-position: 30% 50%;
 
@@ -14,6 +12,14 @@
     background-size: cover;
     background-position: 50%;
   }
+
+  @media (min-resolution: 192dpi) and (min-width: 62.5em) {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0.85)
+      ),
+      url("/assets/images/beach-bg-2x.webp");
+  }
 }
 
 .testimonialWrapper {
@@ -21,47 +27,4 @@
   flex-direction: column;
   align-items: center;
   gap: 6.4rem;
-}
-
-.testimonial {
-  position: relative;
-  padding-left: 9rem;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  &::before {
-    content: "\201C";
-    position: absolute;
-    top: -5.5rem;
-    left: 0rem;
-    line-height: 1;
-    font-size: 20rem;
-    font-family: inherit;
-    color: var(--color-primary-tint-1);
-
-    // 800px
-    @media (max-width: 50em) {
-      display: none;
-    }
-  }
-
-  // 800px
-  @media (max-width: 50em) {
-    padding: 0;
-  }
-}
-
-.testimonial__text {
-  font-size: 1.8rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  @include text-container-width;
-
-  & span {
-    font-size: 4.4rem;
-    color: var(--color-primary-shade-2);
-    line-height: 1;
-  }
 }
