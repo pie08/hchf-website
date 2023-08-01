@@ -1,19 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
 import Navigation from "./components/Navigation";
-import FullPageLoader from "./pages/FullPageLoader";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
-import Testimonials from "./pages/Testimonials";
+import FullPageLoader from "./pages/FullPageLoader";
 
-// import Homepage from "./pages/Homepage";
-// import NotFound from "./pages/NotFound";
-
-// import AdultTraining from "./pages/services/AdultTraining";
-// import BaseballSoftball from "./pages/services/BaseballSoftball";
-// import PostSurgical from "./pages/services/PostSurgical";
-// import OnlineConsulting from "./pages/services/OnlineConsulting";
-
+// PAGES
 const Homepage = lazy(() => import("./pages/Homepage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdultTraining = lazy(() => import("./pages/services/AdultTraining"));
@@ -24,6 +16,7 @@ const PostSurgical = lazy(() => import("./pages/services/PostSurgical"));
 const OnlineConsulting = lazy(() =>
   import("./pages/services/OnlineConsulting")
 );
+const Testimonials = lazy(() => import("./pages/Testimonials"));
 
 export default function App() {
   const [isOpenModal, setIsOpenModal] = useState(false);

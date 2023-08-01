@@ -51,9 +51,7 @@ function Profile({ name, age, description, imageLowRes, imageHighRes }) {
         srcSet={`${imageLowRes} 1x, ${imageHighRes} 2x`}
         src={`${imageLowRes}`}
       />
-
-      <div className={styles["profile__overlay"]}>&nbsp;</div>
-
+      
       <div className={styles.profile__textWrapper}>
         <p className={styles.profile__name}>{name}</p>
         <p className={styles.profile__age}>

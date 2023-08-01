@@ -1,4 +1,4 @@
-import SubPageHeader from "../components/SubPageHeader";
+import PageHeader from "../components/PageHeader";
 import styles from "../sass/pages/Testimonials.module.scss";
 import testimonials from "../data/testimonials.json";
 import Testimonial from "../components/Testimonial";
@@ -11,7 +11,7 @@ function Testimonials() {
 
   return (
     <>
-      <SubPageHeader title="Testimonials" />
+      <PageHeader title="Testimonials" />
 
       <section className={`section ${styles["testimonial-wrapper"]}`}>
         {testimonials.map((text, i) => {
