@@ -12,7 +12,7 @@ function PostSurgical() {
       <PageHeader title="Post Surgical Training" />
 
       <section className="section">
-        <div className="container grid grid--3-cols grid--row-gap-bg">
+        <div className={`container ${styles["grid"]}`}>
           <div className={styles["text"]}>
             <h3 className="heading heading--tertiary margin-bottom-sm-md">
               Some great header

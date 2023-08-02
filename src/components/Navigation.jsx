@@ -80,11 +80,8 @@ export default function Navigation({ onOpenModal }) {
 
 function DropdownMenu({ children, text, show, setShow }) {
   return (
-    <li
-      className={styles["dropdown-parent"]}
-      onClick={() => setShow((show) => !show)}
-    >
-      <a>
+    <li className={styles["dropdown-parent"]}>
+      <a onClick={() => setShow((show) => !show)}>
         {text}
         <span>
           <ChevronDownIcon className={styles["navigation__icon"]} />

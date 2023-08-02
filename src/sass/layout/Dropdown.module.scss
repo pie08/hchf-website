@@ -45,10 +45,9 @@
 
   // 1000px
   @media (max-width: 62.5em) {
-    // transition: all 0.2s;
     position: static;
-    display: block;
     padding-top: 0;
+    pointer-events: all;
   }
 }
 
