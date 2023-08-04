@@ -7,7 +7,7 @@ import FullPageLoader from "./pages/FullPageLoader";
 
 // PAGES
 const Homepage = lazy(() => import("./pages/Homepage"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+
 const AdultTraining = lazy(() => import("./pages/services/AdultTraining"));
 const BaseballSoftball = lazy(() =>
   import("./pages/services/BaseballSoftball")
@@ -16,7 +16,11 @@ const PostSurgical = lazy(() => import("./pages/services/PostSurgical"));
 const OnlineConsulting = lazy(() =>
   import("./pages/services/OnlineConsulting")
 );
+
+const ClientProfiles = lazy(() => import("./pages/ClientProfiles"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
+
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -51,7 +55,7 @@ export default function App() {
             <Route path="online-consulting" element={<OnlineConsulting />} />
           </Route>
           <Route path="aging-hormones" element={null} />
-          <Route path="client-profiles" element={null} />
+          <Route path="profiles" element={<ClientProfiles />} />
           <Route path="testimonials" element={<Testimonials />} />
 
           <Route path="*" element={<NotFound />} />

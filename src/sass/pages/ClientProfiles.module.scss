@@ -1,0 +1,26 @@
+.profile {
+  &__video {
+    width: 65%;
+    pointer-events: none;
+    justify-self: end;
+  }
+
+  &__text-wrapper {
+    & h2 {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+
+      & span {
+        color: var(--color-text-light-2);
+        font-weight: 400;
+        font-size: 3.6rem;
+      }
+    }
+
+    & p {
+      font-size: 2rem;
+      line-height: 1.6;
+    }
+  }
+}
