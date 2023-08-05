@@ -18,11 +18,19 @@ function Testimonials() {
           .filter((client) => client.testimonial)
           .map((client, i) => {
             return (
-              <div key={i}>
+              <div key={i} className="container">
                 <div className={styles["testimonial__number"]}>
                   {`${i + 1}`.padStart(2, "0")}
                 </div>
-                <Testimonial text={client.testimonial} />
+                <Testimonial
+                  text={client.testimonial}
+                  author={`${
+                    client.firstName[0].toUpperCase() +
+                    client.firstName.slice(1)
+                  } ${
+                    client.lastName[0].toUpperCase() + client.lastName.slice(1)
+                  }`}
+                />
               </div>
             );
           })}
