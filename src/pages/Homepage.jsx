@@ -4,9 +4,11 @@ import ClientProfiles from "../components/ClientProfiles";
 import Testimonials from "../components/Testimonials";
 import Cta from "../components/Cta";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { useResetScroll } from "../hooks/useResetScroll";
 // import Aging from "../components/Aging";
 
 function Homepage({ onOpenModal }) {
+  useResetScroll();
   usePageTitle("Half Century Health-Fitness");
 
   return (

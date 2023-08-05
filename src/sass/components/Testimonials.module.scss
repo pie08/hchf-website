@@ -4,12 +4,10 @@
       rgba(255, 255, 255, 0.85)
     ),
     url("/assets/images/beach-bg-1x.webp");
-  background-size: 150%;
-  background-position: 30% 50%;
+  background-size: cover;
 
   // 1000px
   @media (max-width: 62.5em) {
-    background-size: cover;
     background-position: 50%;
   }
 

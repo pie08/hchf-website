@@ -30,11 +30,14 @@
     font-size: 2.4rem;
     color: var(--color-primary-shade-2);
     margin-bottom: 1.6rem;
+
+    & span {
+      color: var(--color-text);
+    }
   }
 
   &__age {
     font-size: 2rem;
-    margin-bottom: 0.8rem;
   }
 
   &__history {

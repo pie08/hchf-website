@@ -16,7 +16,7 @@ function Testimonials() {
       <section className={`section ${styles["testimonial-wrapper"]}`}>
         {testimonials.map((text, i) => {
           return (
-            <div className={styles["testimonial"]} key={i}>
+            <div key={i}>
               <div className={styles["testimonial__number"]}>
                 {`${i + 1}`.padStart(2, "0")}
               </div>

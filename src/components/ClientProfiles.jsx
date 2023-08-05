@@ -51,11 +51,11 @@ function Profile({ name, age, description, imageLowRes, imageHighRes }) {
         srcSet={`${imageLowRes} 1x, ${imageHighRes} 2x`}
         src={`${imageLowRes}`}
       />
-      
+
       <div className={styles.profile__textWrapper}>
-        <p className={styles.profile__name}>{name}</p>
-        <p className={styles.profile__age}>
-          Age <span>{age}</span>
+        <p className={styles.profile__name}>
+          {name} <span>&mdash;</span>{" "}
+          <span className={styles["profile__age"]}>67</span>
         </p>
         <p className={styles.profile__history}>{description}</p>
       </div>

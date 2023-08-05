@@ -1,0 +1,33 @@
+[
+  {
+    "firstName": "keith",
+    "lastName": "bridge",
+    "age": 67,
+    "testimonial": "I am a 70 year old male and had rotator cuff repair surgery November 2021. After the repair my surgeon advised me not to return to work for 3 months. I had 6 months of Physical Therapy and was diligent with my at home exercises. I returned to the gym 4 months after surgery. After 6 months in the gym I returned to a fitness level that seemed similar to that previous to my injury. Last summer I tried to surf a few times, an activity I have enjoyed for 20 years. My paddling was 'OK' but I was not able to pop up. I knew then that in spite of the physical therapy and my time in the gym my shoulder was not right. Fortunately last Ocober a friend of mine recommended Abie. She has been seeing him along with her sons for 10 years. I have been working with Abie for 6 months now 3 times a week. 2 days is primarily weight lifting with some stretching and the third day is cardio and conditioning. Abie is a terrific trainer. He is patient, upbeat and encouraging. He designs individual workouts that have evolved in concert with my changing fitness level. He is totally focused and an active participant in each workout. He has a wonderful sense for the number of repetitions and the amount of weight I can handle for each exercise. All sessions are 1:1 with correct technique and the prevention of injury the number one priority. Physical therapy and time in the gym are great after surgery but not always sufficient to return to a level of fitness required for some activities. Thanks to Abie I am hoping to get back in the water this summer and enjoy surfing again.",
+    "purpose": "Rotator cuff surgery",
+    "duration": "2 years",
+    "activities": ["skiing", "sailing", "hiking"],
+    "priorExperience": false,
+    "videoId": "clo967i9e6"
+  },
+  {
+    "firstName": "elaine",
+    "lastName": "...",
+    "age": 66,
+    "purpose": "General fitness / Osteoporosis",
+    "duration": "5 years",
+    "activities": ["gardening", "sailing"],
+    "priorExperience": false,
+    "videoId": "r71v8aboas"
+  },
+  {
+    "firstName": "ray",
+    "lastName": "martineau",
+    "age": 62,
+    "purpose": "Knee replacement surgery",
+    "duration": "6 years",
+    "activities": ["skiing", "hiking", "boating"],
+    "priorExperience": true,
+    "videoId": "s6mrj4jvzx"
+  }
+]

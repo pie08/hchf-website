@@ -1,6 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
 .profile {
   &__video {
-    width: 65%;
+    width: clamp(25rem, 100%, 36rem);
     pointer-events: none;
     justify-self: end;
   }
@@ -21,6 +28,14 @@
     & p {
       font-size: 2rem;
       line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
+  }
+
+  &__icon {
+    font-size: 2.4rem;
+    color: var(--color-primary-tint-1);
   }
 }
