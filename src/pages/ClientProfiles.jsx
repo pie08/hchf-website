@@ -49,9 +49,12 @@ function Profile({
   priorExperience,
   hasTestimonial = null,
 }) {
+  if (!videoId) return null;
+
   return (
     <>
       <ClientVideo className={styles["profile__video"]} videoId={videoId} />
+
       <div className={styles["profile__text-wrapper"]}>
         <h2 className="heading heading--secondary margin-bottom-sm-md">
           {name} <span>&mdash;</span>
@@ -66,10 +69,12 @@ function Profile({
           <i className={`lar la-clock ${styles["profile__icon"]}`}></i> Client
           for {duration}
         </p>
-        <p>
-          <i className={`las la-biking ${styles["profile__icon"]}`}></i>{" "}
-          {activities}
-        </p>
+        {activities && (
+          <p>
+            <i className={`las la-biking ${styles["profile__icon"]}`}></i>{" "}
+            {activities}
+          </p>
+        )}
         <p className="margin-bottom-sm">
           {priorExperience ? (
             <i className={`las la-check ${styles["profile__icon"]}`}></i>
