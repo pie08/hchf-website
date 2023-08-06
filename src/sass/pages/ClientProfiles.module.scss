@@ -3,13 +3,25 @@
   grid-template-columns: 1fr 1fr;
   gap: 6.4rem;
   row-gap: 9.6rem;
+
+  // 800px
+  @media (max-width: 50em) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 2.4rem;
+  }
 }
 
 .profile {
   &__video {
-    width: clamp(25rem, 100%, 36rem);
+    width: clamp(25rem, 60vw, 30rem);
     pointer-events: none;
     justify-self: end;
+
+    // 800px
+    @media (max-width: 50em) {
+      justify-self: center;
+    }
   }
 
   &__text-wrapper {
@@ -31,6 +43,11 @@
       display: flex;
       align-items: center;
       gap: 0.8rem;
+    }
+
+    // 800px
+    @media (max-width: 50em) {
+      margin-bottom: calc(9.6rem - 2.4rem);
     }
   }
 
