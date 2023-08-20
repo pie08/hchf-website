@@ -1,26 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
-import Navigation from "./components/Navigation";
-import Modal from "./components/Modal";
-import Footer from "./components/Footer";
-import FullPageLoader from "./pages/FullPageLoader";
+import Navigation from "./components/section/Navigation";
+import Modal from "./components/ui/Modal";
+
+import Footer from "./components/section/Footer";
+import FullPageLoader from "./components/ui/FullPageLoader";
 
 // PAGES
-const Homepage = lazy(() => import("./pages/Homepage"));
-
-const AdultTraining = lazy(() => import("./pages/services/AdultTraining"));
-const BaseballSoftball = lazy(() =>
-  import("./pages/services/BaseballSoftball")
-);
-const PostSurgical = lazy(() => import("./pages/services/PostSurgical"));
+const Homepage = lazy(() => import("./pages/home/index"));
+const AdultTraining = lazy(() => import("./pages/services/adult/index"));
+const BaseballSoftball = lazy(() => import("./pages/services/baseball/index"));
+const PostSurgical = lazy(() => import("./pages/services/post-surgical/index"));
 const OnlineConsulting = lazy(() =>
-  import("./pages/services/OnlineConsulting")
+  import("./pages/services/consulting/index")
 );
-
-const ClientProfiles = lazy(() => import("./pages/ClientProfiles"));
-const Testimonials = lazy(() => import("./pages/Testimonials"));
-
-const NotFound = lazy(() => import("./pages/NotFound"));
+const ClientProfiles = lazy(() => import("./pages/client-profiles/index"));
+const Testimonials = lazy(() => import("./pages/testimonials/index"));
+const NotFound = lazy(() => import("./pages/error/NotFound"));
 
 export default function App() {
   const [isOpenModal, setIsOpenModal] = useState(false);

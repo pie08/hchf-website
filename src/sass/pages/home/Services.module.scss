@@ -1,0 +1,48 @@
+@use "../../abstracts/mixins.scss" as *;
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 3.2rem;
+  row-gap: 9.6rem;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+  }
+}
+
+.step__content-text {
+  @include text-container-width;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    margin: 0 auto;
+
+    &:nth-child(3) {
+      grid-row: 4;
+    }
+
+    &:nth-child(7) {
+      grid-row: 8;
+    }
+  }
+}
+
+.step__description {
+  font-size: 2rem;
+  line-height: 1.6;
+
+  // 1000px
+  @media (max-width: 62.5em) {
+    padding-bottom: 4.8rem;
+  }
+}
+
+.consultingLogo {
+  max-width: 25rem;
+  align-self: center;
+  justify-self: center;
+}
