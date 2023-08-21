@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: #001f4c;
+  background-color: var(--color-primary-900);
   padding: 9.6rem 4.8rem;
   width: clamp(30rem, 80vw, 50rem);
   display: flex;
@@ -46,13 +46,13 @@
 }
 
 .modal__content {
-  color: #e6f0ff;
+  color: var(--color-primary-50);
   text-align: center;
   // width: max-content;
 }
 
 .modal__heading {
-  color: #e6f0ff !important;
+  color: var(--color-primary-50) !important;
 }
 
 .modal__description {

@@ -65,7 +65,7 @@ header {
       }
 
       & a:global(.active) {
-        border-bottom: 1px solid var(--color-primary);
+        border-bottom: 1px solid var(--color-primary-600);
       }
 
       // 1000px
@@ -74,7 +74,7 @@ header {
         padding: 3.6rem 2.4rem;
 
         &:not(:last-child) {
-          border-bottom: 1px solid var(--color-gray-light-2);
+          border-bottom: 1px solid var(--color-slate-100);
         }
       }
     }
@@ -168,7 +168,7 @@ header {
     display: block;
     width: 4.8rem;
     height: 2px;
-    background-color: var(--color-text);
+    background-color: var(--color-slate-800);
     position: relative;
     transition: all 0.2s;
   }

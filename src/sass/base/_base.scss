@@ -23,11 +23,11 @@ html {
   padding: 9.6rem 0;
 
   &--bg-blue {
-    background-color: var(--color-primary-tint-2);
+    background-color: var(--color-primary-50);
   }
 
   &--bg-gray {
-    background-color: var(--color-gray-lightest);
+    background-color: var(--color-slate-50);
   }
 }
 
@@ -92,7 +92,7 @@ html {
 .btn--cta,
 .btn--cta:link,
 .btn--cta:visited {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-600);
   color: var(--color-white);
   padding: 1.2rem 2.4rem;
 
@@ -105,35 +105,35 @@ html {
 .btn--cta:hover,
 .btn--cta:active {
   cursor: pointer;
-  background-color: var(--color-primary-shade-1);
+  background-color: var(--color-primary-700);
 }
 
 .btn--secondary:link,
 .btn--secondary:visited {
-  color: var(--color-primary);
+  color: var(--color-primary-600);
   padding: 0.4rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary-600);
 }
 
 .btn--secondary:hover,
 .btn--secondary:active {
   cursor: pointer;
-  background-color: var(--color-primary);
-  color: var(--color-primary-tint-2);
+  background-color: var(--color-primary-600);
+  color: var(--color-primary-50);
 }
 
 .btn--contact:link,
 .btn--contact:visited {
   padding: 1.2rem 2.4rem;
-  background-color: #fff;
-  color: #001f4c;
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-900);
 }
 
 .btn--contact:hover,
 .btn--contact:active {
   background: transparent;
-  color: #e6f0ff;
-  box-shadow: inset 0 0 0 1px #e6f0ff;
+  color: var(--color-primary-50);
+  box-shadow: inset 0 0 0 1px var(--color-primary-50);
 }
 
 .link-to-wrapper {

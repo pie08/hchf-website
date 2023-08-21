@@ -16,7 +16,7 @@
     line-height: 1;
     font-size: 20rem;
     font-family: inherit;
-    color: var(--color-primary-tint-1);
+    color: var(--color-primary-300);
 
     // 800px
     @media (max-width: 50em) {
@@ -33,18 +33,18 @@
 .testimonial__text {
   font-size: 2rem;
   line-height: 1.6;
-  color: var(--color-text);
+  color: var(--color-slate-800);
   @include text-container-width;
 
   & span {
     font-size: 4.4rem;
-    color: var(--color-primary-shade-2);
+    color: var(--color-primary-800);
     line-height: 1;
   }
 }
 
 .testimonial__author {
   font-size: 3.2rem;
-  color: var(--color-text-light-2);
+  color: var(--color-slate-400);
   margin-top: 1.2rem;
 }
