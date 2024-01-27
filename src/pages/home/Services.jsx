@@ -9,7 +9,7 @@ function Services() {
   return (
     <section className="section">
       <div className="container margin-bottom-bg center-text">
-        <h4 className="heading heading--sub margin-bottom-sm">Services</h4>
+        <h4 className="heading heading--sub margin-bottom-sm-md">Services</h4>
 
         <h2 className="heading heading--secondary">
           Custom-made training programs designed for each Individual

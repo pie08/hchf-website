@@ -9,8 +9,10 @@ function Footer() {
         <Logo className={styles["footer__logo"]} />
 
         <nav>
-          <p className={styles["footer__heading"]}>Contact</p>
           <ul className={styles["footer__list"]}>
+            <li>
+              <p className={styles["footer__heading"]}>Contact</p>
+            </li>
             <li>
               <a className={styles["footer__link"]} href="tel:603-953-3807">
                 (603) 953-3807
@@ -28,8 +30,10 @@ function Footer() {
         </nav>
 
         <nav>
-          <p className={styles["footer__heading"]}>Resources</p>
           <ul className={styles["footer__list"]}>
+            <li>
+              <p className={styles["footer__heading"]}>Resources</p>
+            </li>
             <li>
               <Link to="/privacy" className={styles["footer__link"]}>
                 Privacy Policy

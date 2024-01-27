@@ -4,7 +4,7 @@ import styles from "../../sass/pages/home/ClientProfiles.module.scss";
 function ClientProfiles() {
   return (
     <section className="section section--bg-gray">
-      <div className="container center-text margin-bottom-md">
+      <div className="container center-text margin-bottom-bg">
         <p className="heading heading--sub">Client profiles</p>
       </div>
 
