@@ -1,13 +1,14 @@
 import { styled } from "@linaria/react";
 import { FC } from "react";
 import { Container } from "./Container";
+import Logo from "./Logo";
 
 const Header = styled.header``;
 
-const StyledNavigation = styled(Container)`
+const StyledNavigation = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.6rem 0;
+  padding: 1.6rem 4.8rem;
   background-color: red;
 `;
 
@@ -16,7 +17,9 @@ interface NavigationProps {}
 const Navigation: FC<NavigationProps> = ({}) => {
   return (
     <Header>
-      <StyledNavigation>Nav</StyledNavigation>
+      <StyledNavigation>
+        <Logo width={9.6} />
+      </StyledNavigation>
     </Header>
   );
 };
