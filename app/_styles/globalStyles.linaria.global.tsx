@@ -47,6 +47,7 @@ export const globalStyles = css`
       font-size: 1.6rem;
       line-height: 1.5;
       font-weight: 400;
+      color: var(--color-neutral-800);
       min-height: 100vh;
     }
   }

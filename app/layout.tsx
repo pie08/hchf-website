@@ -6,7 +6,7 @@ import "./_styles/globalStyles.linaria.global";
 export const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  weight: ["600"],
+  weight: ["400", "500", "600"],
   variable: "--font-poppins",
 });
 
