@@ -1,3 +1,5 @@
+import withLinaria from "next-with-linaria";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compiler: {
@@ -5,4 +7,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withLinaria(nextConfig);

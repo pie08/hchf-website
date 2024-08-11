@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@linaria/babel-preset": "^5.0.4",
+    "@linaria/core": "^6.2.0",
+    "@linaria/react": "^6.2.1",
     "@stitches/react": "^1.2.8",
     "modern-normalize": "^2.0.0",
     "next": "14.2.5",
+    "next-with-linaria": "^0.7.0",
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.1.12"

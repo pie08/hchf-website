@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
+import "./_styles/globalStyles.linaria.global";
 
 // loading fonts
 export const poppins = Poppins({
