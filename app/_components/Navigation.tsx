@@ -3,7 +3,7 @@
 import { styled } from "@linaria/react";
 import React, { FC, ReactNode, useState } from "react";
 import { Container } from "./Container";
-import Logo from "./Logo";
+import Logo, { LogoWrapper } from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PiCaretDown } from "react-icons/pi";
@@ -67,7 +67,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
   return (
     <Header>
       <StyledNavigation>
-        <Logo width={9.6} />
+        <Logo wrap />
 
         <nav>
           <NavList>

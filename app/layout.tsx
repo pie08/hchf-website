@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
 import "./_styles/globalStyles.linaria.global";
+import { ModalContextProvider } from "./_context/ModalContext";
+import Modal from "./_components/Modal";
 
 // loading fonts
 export const poppins = Poppins({
@@ -32,7 +34,12 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${playfairDisplay.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ModalContextProvider>
+          {/* <Modal /> */}
+          {children}
+        </ModalContextProvider>
+      </body>
     </html>
   );
 }
