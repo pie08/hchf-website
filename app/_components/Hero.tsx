@@ -61,6 +61,20 @@ const BackgroundVideo = styled.div`
     object-fit: cover;
     object-position: 100% 35%;
   }
+
+  & div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 85%) 55%,
+      rgba(0, 0, 0, 0%)
+    );
+  }
 `;
 
 interface HeroProps {}
@@ -70,6 +84,13 @@ const Hero: FC<HeroProps> = ({}) => {
     <Section>
       <HeroContainer>
         <HeroTextContainer>
+          <BackgroundVideo>
+            <video loop muted autoPlay disablePictureInPicture>
+              <source src="/assets/images/client-comp-1.mp4" />
+            </video>
+            <div></div>
+          </BackgroundVideo>
+
           <h1>Personalized fitness for adults over 50+ years old</h1>
 
           <p>
@@ -82,12 +103,6 @@ const Hero: FC<HeroProps> = ({}) => {
           </p>
 
           <Button>Contact me</Button>
-
-          <BackgroundVideo>
-            <video loop muted autoPlay>
-              <source src="/assets/images/client-comp-1.mp4" />
-            </video>
-          </BackgroundVideo>
         </HeroTextContainer>
       </HeroContainer>
     </Section>

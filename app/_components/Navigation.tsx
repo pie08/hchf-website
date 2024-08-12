@@ -153,7 +153,7 @@ const DropdownList = styled.ul`
 
   list-style: none;
   padding: 1.2rem;
-  background-color: var(--color-gray-50);
+  background-color: var(--color-gray-white);
   border-top: 2px solid var(--color-primary-600);
 
   display: flex;
@@ -192,7 +192,7 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
     >
       <NavLink>
         {text}
-        <Icon size={1.6}>
+        <Icon size={2}>
           <PiCaretDown
             className={open ? rotate : ""}
             style={{ transition: "all 0.2s" }}
