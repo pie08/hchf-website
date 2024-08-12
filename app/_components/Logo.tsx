@@ -13,14 +13,31 @@ interface LogoProps {
 }
 
 const Logo: FC<LogoProps> = ({ wrap = false }) => {
-  return wrap ? (
-    <LogoWrapper>
-      <StyledLogo src={logo} alt="Half century health and fitness logo" fill />
-    </LogoWrapper>
-  ) : (
-    <StyledLogo src={logo} alt="Half century health and fitness logo" fill />
+  return (
+    <StyledLogo
+      src={logo.src}
+      alt="Half century health and fitness logo"
+      fill
+    />
   );
 };
+// const Logo: FC<LogoProps> = ({ wrap = false }) => {
+//   return wrap ? (
+//     <LogoWrapper>
+//       <StyledLogo
+//         src={logo.src}
+//         alt="Half century health and fitness logo"
+//         fill
+//       />
+//     </LogoWrapper>
+//   ) : (
+//     <StyledLogo
+//       src={logo.src}
+//       alt="Half century health and fitness logo"
+//       fill
+//     />
+//   );
+// };
 
 export const LogoWrapper = styled.div`
   position: relative;

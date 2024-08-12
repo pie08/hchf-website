@@ -36,7 +36,7 @@ export default function RootLayout({
     >
       <body>
         <ModalContextProvider>
-          {/* <Modal /> */}
+          <Modal />
           {children}
         </ModalContextProvider>
       </body>

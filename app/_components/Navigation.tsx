@@ -45,7 +45,7 @@ const NavList = styled.ul`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.25;
@@ -190,7 +190,7 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <NavLink>
+      <NavLink href="">
         {text}
         <Icon size={2}>
           <PiCaretDown
