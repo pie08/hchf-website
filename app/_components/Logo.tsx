@@ -1,8 +1,17 @@
 import { styled } from "@linaria/react";
 import { FC } from "react";
+import Image from "next/image";
+import logo from "../../public/assets/images/logos/hchf-logo-black.png";
 
-const Img = styled.img`
+const Img = styled.div<{ width: number }>`
+  position: relative;
   width: ${(props: any) => props.width}rem;
+  aspect-ratio: 1/1;
+`;
+
+const StyledLogo = styled(Image)`
+  object-fit: contain;
+  object-position: center;
 `;
 
 interface LogoProps {
@@ -11,11 +20,9 @@ interface LogoProps {
 
 const Logo: FC<LogoProps> = ({ width }) => {
   return (
-    <Img
-      src="assets/images/logos/hchf-logo-black.svg"
-      alt="Hald century health and fitness logo"
-      width={width}
-    />
+    <Img width={width / 10}>
+      <StyledLogo src={logo} alt="Half century health and fitness logo" fill />
+    </Img>
   );
 };
 

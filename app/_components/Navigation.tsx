@@ -10,6 +10,7 @@ import { PiCaretDown } from "react-icons/pi";
 
 const Header = styled.header`
   padding: 0 3.2rem;
+  background-color: rgba(255, 255, 255, 60%);
 `;
 
 const StyledNavigation = styled(Container)`
@@ -26,7 +27,6 @@ const StyledNavigation = styled(Container)`
 const NavList = styled.ul`
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 2.4rem;
 
   & li {
@@ -60,7 +60,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
   return (
     <Header>
       <StyledNavigation>
-        <Logo width={9.6} />
+        <Logo width={96} />
 
         <nav>
           <NavList>
