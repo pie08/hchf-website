@@ -47,6 +47,7 @@ export const globalStyles = css`
 
     html {
       font-size: 62.5%;
+      height: 100%;
     }
 
     body {
@@ -55,22 +56,47 @@ export const globalStyles = css`
       line-height: 1.5;
       font-weight: 400;
       line-height: 1.6;
-      color: var(--color-neutral-800);
+      color: var(--color-gray-800);
+      height: 100%;
       min-height: 100vh;
     }
 
     h1,
     h2,
     h3,
-    h4,
-    h5 {
+    h4 {
+      font-family: var(--font-playfair-display);
       font-weight: 600;
       line-height: 1.25;
+      text-transform: capitalize;
+    }
+
+    h1 {
+      font-size: 6rem;
+    }
+
+    h2 {
+      font-size: 4.8rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    h4 {
+      font-size: 2.4rem;
+      letter-spacing: 10%;
+      text-transform: uppercase;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
     }
   }
 `;

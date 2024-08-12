@@ -20,7 +20,7 @@ interface LogoProps {
 
 const Logo: FC<LogoProps> = ({ width }) => {
   return (
-    <Img width={width / 10}>
+    <Img width={width}>
       <StyledLogo src={logo} alt="Half century health and fitness logo" fill />
     </Img>
   );

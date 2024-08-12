@@ -7,26 +7,33 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PiCaretDown } from "react-icons/pi";
+import { css } from "@linaria/core";
+import Button from "./Button";
+import Icon from "./Icon";
 
 const Header = styled.header`
+  width: 100%;
   padding: 0 3.2rem;
   background-color: rgba(255, 255, 255, 60%);
+  position: fixed;
+  z-index: 999;
+
+  &:hover li {
+    opacity: 50%;
+  }
 `;
 
 const StyledNavigation = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.6rem 0;
-
-  &:hover nav ul li {
-    opacity: 50%;
-  }
+  padding: 0.8rem 0;
 `;
 
 const NavList = styled.ul`
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2.4rem;
 
   & li {
@@ -60,7 +67,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
   return (
     <Header>
       <StyledNavigation>
-        <Logo width={96} />
+        <Logo width={9.6} />
 
         <nav>
           <NavList>
@@ -111,6 +118,9 @@ const Navigation: FC<NavigationProps> = ({}) => {
                 Testimonials
               </NavLink>
             </li>
+            <li>
+              <Button size="large">Contact me</Button>
+            </li>
           </NavList>
         </nav>
       </StyledNavigation>
@@ -123,7 +133,7 @@ const DropdownParent = styled.li`
   position: relative;
 
   & a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.6rem;
 
@@ -163,6 +173,10 @@ const DropdownList = styled.ul`
   }
 `;
 
+const rotate = css`
+  rotate: 180deg;
+`;
+
 interface DropdownProps {
   children: React.ReactNode;
   text: string;
@@ -178,7 +192,12 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
     >
       <NavLink>
         {text}
-        <PiCaretDown />
+        <Icon size={1.6}>
+          <PiCaretDown
+            className={open ? rotate : ""}
+            style={{ transition: "all 0.2s" }}
+          />
+        </Icon>
       </NavLink>
 
       <DropdownWrapper>
