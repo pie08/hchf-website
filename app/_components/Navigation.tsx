@@ -75,10 +75,16 @@ const Navigation: FC<NavigationProps> = ({}) => {
               open={dropdownOpen}
               setOpen={setDropdownOpen}
             >
-              <NavLink href="/adult-training">Adult Training</NavLink>
-              <NavLink href="/adult-training">Post Surgical Training</NavLink>
-              <NavLink href="/adult-training">Baseball & Softball</NavLink>
-              <NavLink href="/adult-training">Online Consulting</NavLink>
+              <NavLink href="/training/adult-training">Adult Training</NavLink>
+              <NavLink href="/training/post-surgical-training">
+                Post Surgical Training
+              </NavLink>
+              <NavLink href="/training/baseball-softball">
+                Baseball & Softball
+              </NavLink>
+              <NavLink href="/training/online-consulting">
+                Online Consulting
+              </NavLink>
             </Dropdown>
 
             <li>
@@ -116,14 +122,6 @@ const Navigation: FC<NavigationProps> = ({}) => {
 const DropdownParent = styled.li`
   position: relative;
 
-  &:hover {
-    .dropdownList {
-      opacity: 1;
-      visibility: visible;
-      translate: 0 0;
-    }
-  }
-
   & a {
     display: flex;
     align-items: center;
@@ -158,7 +156,6 @@ const DropdownList = styled.ul`
   translate: 0 -1.6rem;
   transition: all 0.2s;
 
-  /* for mobile navigation */
   &[data-open="open"] {
     opacity: 1;
     visibility: visible;
@@ -175,7 +172,10 @@ interface DropdownProps {
 
 const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
   return (
-    <DropdownParent>
+    <DropdownParent
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <NavLink>
         {text}
         <PiCaretDown />
