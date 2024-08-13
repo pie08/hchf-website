@@ -7,7 +7,6 @@ interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   return (
     <>
-      <Navigation />
       <Hero />
     </>
   );

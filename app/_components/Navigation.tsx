@@ -3,13 +3,12 @@
 import { styled } from "@linaria/react";
 import React, { FC, ReactNode, useState } from "react";
 import { Container } from "./Container";
-import Logo, { LogoWrapper } from "./Logo";
+import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PiCaretDown } from "react-icons/pi";
 import { css } from "@linaria/core";
 import Button from "./Button";
-import Icon from "./Icon";
 import { useModalContext } from "../_context/ModalContext";
 
 const Header = styled.header`
@@ -179,6 +178,11 @@ const DropdownList = styled.ul`
   }
 `;
 
+const Icon = styled(PiCaretDown)`
+  width: 2rem;
+  height: 2rem;
+`;
+
 const rotate = css`
   rotate: 180deg;
 `;
@@ -198,12 +202,10 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
     >
       <NavLink href="">
         {text}
-        <Icon size={2}>
-          <PiCaretDown
-            className={open ? rotate : ""}
-            style={{ transition: "all 0.2s" }}
-          />
-        </Icon>
+        <Icon
+          className={open ? rotate : ""}
+          style={{ transition: "all 0.2s" }}
+        />
       </NavLink>
 
       <DropdownWrapper>

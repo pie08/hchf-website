@@ -1,10 +1,8 @@
 import { FC } from "react";
 import { styled } from "@linaria/react";
 import { PiArrowRight } from "react-icons/pi";
-import Icon from "./Icon";
 
 export const StyledButton = styled.button`
-  display: inline-block;
   font-weight: 600;
   color: inherit;
   background-color: transparent;
@@ -55,7 +53,7 @@ export const StyledButton = styled.button`
 interface ButtonProps {
   children: React.ReactNode;
   size?: "large" | "small";
-  variation?: "cta" | "gray" | "link";
+  variation?: "cta" | "gray";
   [x: string]: any;
 }
 
@@ -65,14 +63,10 @@ const Button: FC<ButtonProps> = ({
   variation = "cta",
   ...props
 }) => {
+  // todo: fix icon button having too much height
   return (
     <StyledButton data-size={size} data-variation={variation} {...props}>
       {children}
-      {variation === "link" && (
-        <Icon size={2.4}>
-          <PiArrowRight />
-        </Icon>
-      )}
     </StyledButton>
   );
 };

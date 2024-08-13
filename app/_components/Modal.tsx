@@ -5,7 +5,6 @@ import { FC, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import TextInput from "./TextInput";
-import Icon from "./Icon";
 import { PiX } from "react-icons/pi";
 import { css } from "@linaria/core";
 import { useModalContext } from "../_context/ModalContext";
@@ -101,11 +100,17 @@ const Overlay = styled.div`
   }
 `;
 
+const Icon = styled(PiX)`
+  width: 2.4rem;
+  height: 2.4rem;
+`;
+
 interface ModalProps {}
 
 const Modal: FC<ModalProps> = ({}) => {
   const { modalOpen, setModalOpen } = useModalContext();
 
+  // todo: add action
   return (
     <>
       <Overlay
@@ -141,9 +146,7 @@ const Modal: FC<ModalProps> = ({}) => {
           className={ExitButtonPosition}
           onClick={() => setModalOpen(false)}
         >
-          <Icon size={2.4}>
-            <PiX />
-          </Icon>
+          <Icon />
         </Button>
       </StyledModal>
     </>

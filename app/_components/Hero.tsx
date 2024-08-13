@@ -6,6 +6,7 @@ import { Container } from "./Container";
 import Button from "./Button";
 import { useModalContext } from "../_context/ModalContext";
 
+// todo: add more padding to top
 const Section = styled.section`
   /* to grow child */
   height: 100%;
