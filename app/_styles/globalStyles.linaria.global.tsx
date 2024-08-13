@@ -98,5 +98,10 @@ export const globalStyles = css`
       border: none;
       cursor: pointer;
     }
+
+    input,
+    textarea {
+      border: none;
+    }
   }
 `;

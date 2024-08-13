@@ -3,7 +3,10 @@
 import { createContext, useContext, useState } from "react";
 import { FC } from "react";
 
-const ModalContext = createContext({});
+const ModalContext = createContext({
+  modalOpen: false,
+  setModalOpen: (state: boolean) => {},
+});
 
 interface ModalContextProps {
   children: React.ReactNode;
@@ -19,7 +22,7 @@ export const ModalContextProvider: FC<ModalContextProps> = ({ children }) => {
   );
 };
 
-export const useModalContext = ({}) => {
+export const useModalContext = () => {
   const context = useContext(ModalContext);
   if (context === undefined)
     throw new Error("Cannot access Modal Context outside of provider");

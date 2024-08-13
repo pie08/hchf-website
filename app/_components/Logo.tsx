@@ -2,8 +2,9 @@ import { styled } from "@linaria/react";
 import { FC } from "react";
 import Image from "next/image";
 import logo from "../../public/assets/images/logos/hchf-logo-black.png";
+import { css } from "@linaria/core";
 
-const StyledLogo = styled(Image)`
+const StyledLogo = css`
   object-fit: contain;
   object-position: center;
 `;
@@ -13,31 +14,24 @@ interface LogoProps {
 }
 
 const Logo: FC<LogoProps> = ({ wrap = false }) => {
-  return (
-    <StyledLogo
-      src={logo.src}
+  return wrap ? (
+    <LogoWrapper>
+      <Image
+        className={StyledLogo}
+        src={logo}
+        alt="Half century health and fitness logo"
+        fill
+      />
+    </LogoWrapper>
+  ) : (
+    <Image
+      className={StyledLogo}
+      src={logo}
       alt="Half century health and fitness logo"
       fill
     />
   );
 };
-// const Logo: FC<LogoProps> = ({ wrap = false }) => {
-//   return wrap ? (
-//     <LogoWrapper>
-//       <StyledLogo
-//         src={logo.src}
-//         alt="Half century health and fitness logo"
-//         fill
-//       />
-//     </LogoWrapper>
-//   ) : (
-//     <StyledLogo
-//       src={logo.src}
-//       alt="Half century health and fitness logo"
-//       fill
-//     />
-//   );
-// };
 
 export const LogoWrapper = styled.div`
   position: relative;

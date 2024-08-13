@@ -29,10 +29,10 @@ export const StyledButton = styled.button<{ "data-size": "large" | "small" }>`
   }
 
   &[data-variation="gray"] {
-    background-color: var(--color-gray-200);
+    background-color: var(--color-gray-100);
 
     &:hover {
-      background-color: var(--color-gray-300);
+      background-color: var(--color-gray-200);
     }
   }
 
@@ -55,15 +55,17 @@ interface ButtonProps {
   children: React.ReactNode;
   size?: "large" | "small";
   variation?: "cta" | "gray" | "link";
+  [x: string]: any;
 }
 
 const Button: FC<ButtonProps> = ({
   children,
   size = "large",
   variation = "cta",
+  ...props
 }) => {
   return (
-    <StyledButton data-size={size} data-variation={variation}>
+    <StyledButton data-size={size} data-variation={variation} {...props}>
       {children}
       {variation === "link" && (
         <Icon size={2.4}>

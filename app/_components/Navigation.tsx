@@ -10,6 +10,7 @@ import { PiCaretDown } from "react-icons/pi";
 import { css } from "@linaria/core";
 import Button from "./Button";
 import Icon from "./Icon";
+import { useModalContext } from "../_context/ModalContext";
 
 const Header = styled.header`
   width: 100%;
@@ -63,11 +64,14 @@ interface NavigationProps {}
 const Navigation: FC<NavigationProps> = ({}) => {
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { setModalOpen } = useModalContext();
 
   return (
     <Header>
       <StyledNavigation>
-        <Logo wrap />
+        <Link href="/">
+          <Logo wrap />
+        </Link>
 
         <nav>
           <NavList>
@@ -119,7 +123,9 @@ const Navigation: FC<NavigationProps> = ({}) => {
               </NavLink>
             </li>
             <li>
-              <Button size="large">Contact me</Button>
+              <Button size="large" onClick={() => setModalOpen(true)}>
+                Contact me
+              </Button>
             </li>
           </NavList>
         </nav>
