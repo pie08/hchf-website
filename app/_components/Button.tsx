@@ -3,9 +3,10 @@ import { styled } from "@linaria/react";
 import { PiArrowRight } from "react-icons/pi";
 import Icon from "./Icon";
 
-export const StyledButton = styled.button<{ "data-size": "large" | "small" }>`
+export const StyledButton = styled.button`
   display: inline-block;
   font-weight: 600;
+  color: inherit;
   background-color: transparent;
   transition: all 0.2s;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@linaria/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import TextInput from "./TextInput";
@@ -12,6 +12,9 @@ import { useModalContext } from "../_context/ModalContext";
 
 const StyledModal = styled.div`
   width: clamp(30rem, 100vw, 50rem);
+  max-height: 100vh;
+  overflow-y: scroll;
+
   position: fixed;
   top: 50%;
   left: 100%;
@@ -61,7 +64,13 @@ const Form = styled.form`
   }
 
   & button {
-    grid-column: 1 / -1;
+    &:nth-of-type(1) {
+      grid-column: 1 / 6;
+    }
+
+    &:nth-of-type(2) {
+      grid-column: 6 / -1;
+    }
   }
 `;
 
@@ -96,7 +105,6 @@ interface ModalProps {}
 
 const Modal: FC<ModalProps> = ({}) => {
   const { modalOpen, setModalOpen } = useModalContext();
-  console.log(modalOpen);
 
   return (
     <>
@@ -121,7 +129,10 @@ const Modal: FC<ModalProps> = ({}) => {
             required
           />
           <TextInput fieldName="Message" inputType="textarea" required />
-          <Button>Send you message!</Button>
+          <Button>Send your message!</Button>
+          <Button type="reset" variation="gray">
+            Clear
+          </Button>
         </Form>
 
         <Button

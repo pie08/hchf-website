@@ -1,7 +1,10 @@
+"use client";
+
 import { styled } from "@linaria/react";
 import { FC } from "react";
 import { Container } from "./Container";
 import Button from "./Button";
+import { useModalContext } from "../_context/ModalContext";
 
 const Section = styled.section`
   /* to grow child */
@@ -80,6 +83,8 @@ const BackgroundVideo = styled.div`
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
+  const { setModalOpen } = useModalContext();
+
   return (
     <Section>
       <HeroContainer>
@@ -102,7 +107,7 @@ const Hero: FC<HeroProps> = ({}) => {
             Exercise Programs & Post-Surgical Training Programs
           </p>
 
-          <Button>Contact me</Button>
+          <Button onClick={() => setModalOpen(true)}>Contact me</Button>
         </HeroTextContainer>
       </HeroContainer>
     </Section>
