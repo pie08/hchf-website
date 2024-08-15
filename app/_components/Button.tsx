@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { styled } from "@linaria/react";
-import { PiArrowRight } from "react-icons/pi";
 
 export const StyledButton = styled.button`
   font-weight: 600;
@@ -63,7 +62,6 @@ const Button: FC<ButtonProps> = ({
   variation = "cta",
   ...props
 }) => {
-  // todo: fix icon button having too much height
   return (
     <StyledButton data-size={size} data-variation={variation} {...props}>
       {children}

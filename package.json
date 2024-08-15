@@ -13,6 +13,7 @@
     "@linaria/core": "^6.2.0",
     "@linaria/react": "^6.2.1",
     "@stitches/react": "^1.2.8",
+    "ldrs": "^1.0.2",
     "modern-normalize": "^2.0.0",
     "next": "14.2.5",
     "next-with-linaria": "^0.7.0",

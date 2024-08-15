@@ -2,21 +2,15 @@
 
 import { styled } from "@linaria/react";
 import { FC } from "react";
-import { Container } from "./Container";
-import Button from "./Button";
-import { useModalContext } from "../_context/ModalContext";
+import { Container } from "../../_components/Container";
+import Button from "../../_components/Button";
+import { useModalContext } from "../../_context/ModalContext";
 
-// todo: add more padding to top
 const Section = styled.section`
   /* to grow child */
-  height: 100%;
+  height: 95vh;
 
-  width: 100%;
-  min-height: 100vh;
   padding: 9.6rem 3.2rem;
-  /* for header offset */
-  /* padding-top: calc(9.6rem + 12.8rem); */
-  /* background-color: var(--color-gray-100); */
   position: relative;
 `;
 

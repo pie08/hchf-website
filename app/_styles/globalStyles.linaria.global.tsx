@@ -67,7 +67,7 @@ export const globalStyles = css`
     h4 {
       font-family: var(--font-playfair-display);
       font-weight: 600;
-      line-height: 1.25;
+      line-height: 1.15;
       text-transform: capitalize;
     }
 
@@ -83,10 +83,13 @@ export const globalStyles = css`
       font-size: 3rem;
     }
 
+    /* subheading */
     h4 {
       font-size: 2.4rem;
-      letter-spacing: 10%;
+      font-family: var(--font-poppins);
+      letter-spacing: 0.2rem;
       text-transform: uppercase;
+      color: var(--color-primary-800);
     }
 
     a {

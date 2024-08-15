@@ -8,6 +8,7 @@ import TextInput from "./TextInput";
 import { PiX } from "react-icons/pi";
 import { css } from "@linaria/core";
 import { useModalContext } from "../_context/ModalContext";
+import { ButtonIcon } from "./ButtonIcon";
 
 const StyledModal = styled.div`
   width: clamp(30rem, 100vw, 50rem);
@@ -110,13 +111,14 @@ interface ModalProps {}
 const Modal: FC<ModalProps> = ({}) => {
   const { modalOpen, setModalOpen } = useModalContext();
 
+  function handleCloseModal() {
+    setModalOpen(false);
+  }
+
   // todo: add action
   return (
     <>
-      <Overlay
-        onClick={() => setModalOpen(false)}
-        data-open={modalOpen && "open"}
-      />
+      <Overlay onClick={handleCloseModal} data-open={modalOpen && "open"} />
 
       <StyledModal data-open={modalOpen && "open"}>
         <LogoWrapper>
@@ -140,14 +142,9 @@ const Modal: FC<ModalProps> = ({}) => {
           </Button>
         </Form>
 
-        <Button
-          size="small"
-          variation="gray"
-          className={ExitButtonPosition}
-          onClick={() => setModalOpen(false)}
-        >
+        <ButtonIcon className={ExitButtonPosition} onClick={handleCloseModal}>
           <Icon />
-        </Button>
+        </ButtonIcon>
       </StyledModal>
     </>
   );
