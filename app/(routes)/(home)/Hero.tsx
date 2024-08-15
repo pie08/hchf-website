@@ -86,7 +86,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <HeroTextContainer>
           <BackgroundVideo>
             <video loop muted autoPlay disablePictureInPicture>
-              <source src="/assets/images/client-comp-1.mp4" />
+              <source src="/assets/video/client-comp-1.mp4" />
             </video>
             <div></div>
           </BackgroundVideo>

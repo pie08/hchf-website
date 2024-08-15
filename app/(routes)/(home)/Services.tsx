@@ -4,7 +4,7 @@ import { Section } from "@/app/_components/Section";
 import SectionHeading from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";
 import { FC } from "react";
-import image from "../../../public/assets/images/client-images/adult-training/2x/anna-1.webp";
+import image from "../../../public/assets/images/client-images/adult-training/anna-1.webp";
 
 const ServicesContainer = styled(Container)`
   display: flex;
