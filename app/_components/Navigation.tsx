@@ -23,6 +23,12 @@ const Header = styled.header`
   }
 `;
 
+const StyledLogo = styled(Logo)`
+  display: block;
+  max-width: 9.6rem;
+  height: auto;
+`;
+
 const StyledNavigation = styled(Container)`
   display: flex;
   justify-content: space-between;
@@ -69,7 +75,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
     <Header>
       <StyledNavigation>
         <Link href="/">
-          <Logo wrap />
+          <StyledLogo />
         </Link>
 
         <nav>
@@ -151,6 +157,11 @@ const DropdownWrapper = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
+  pointer-events: none;
+
+  &[data-open="open"] {
+    pointer-events: all;
+  }
 `;
 
 const DropdownList = styled.ul`
@@ -208,7 +219,7 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
         />
       </NavLink>
 
-      <DropdownWrapper>
+      <DropdownWrapper data-open={open && "open"}>
         <DropdownList data-open={open && "open"} className="dropdownList">
           {React.Children.map(children, (child, i) => (
             <li key={i}>{child}</li>

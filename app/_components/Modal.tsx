@@ -39,10 +39,10 @@ const StyledModal = styled.div`
   }
 `;
 
-const LogoWrapper = styled.div`
-  position: relative;
-  width: 20rem;
-  aspect-ratio: 1 / 1;
+const StyledLogo = styled(Logo)`
+  display: block;
+  max-width: 20rem;
+  height: auto;
 `;
 
 const Form = styled.form`
@@ -128,9 +128,7 @@ const Modal: FC<ModalProps> = ({}) => {
       <Overlay onClick={handleCloseModal} data-open={modalOpen && "open"} />
 
       <StyledModal data-open={modalOpen && "open"} key={key}>
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
+        <StyledLogo />
         <h3>Send me a message</h3>
 
         <Form action="">

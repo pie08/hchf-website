@@ -59,6 +59,8 @@ const Label = styled.label`
 interface TextInputProps {
   fieldName: string;
   inputType?: "input" | "textarea";
+  className?: string;
+  style?: {};
   [x: string]: any;
 }
 

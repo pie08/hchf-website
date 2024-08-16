@@ -33,26 +33,14 @@ export const StyledButton = styled.button`
       background-color: var(--color-gray-200);
     }
   }
-
-  &[data-variation="link"] {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: var(--color-primary-600);
-    border-bottom: 2px solid var(--color-primary-600);
-    padding: 0.4rem 0;
-
-    &:hover {
-      border-bottom: 2px solid transparent;
-      gap: 1.2rem;
-    }
-  }
 `;
 
 interface ButtonProps {
   children: React.ReactNode;
   size?: "large" | "small";
   variation?: "cta" | "gray";
+  className?: string;
+  style?: {};
   [x: string]: any;
 }
 

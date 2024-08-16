@@ -35,14 +35,15 @@ const TextContainer = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  position: relative;
-  max-width: 30rem;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 53rem;
-  justify-self: center;
 
   & img {
-    object-fit: contain;
+    display: block;
+    max-width: 30rem;
+    height: auto;
   }
 `;
 

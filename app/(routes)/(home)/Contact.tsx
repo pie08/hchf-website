@@ -37,14 +37,21 @@ const FullColWrapper = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   gap: 1.2rem;
 
   & button {
     &:nth-of-type(1) {
-      grid-column: 1 / 3;
+      flex: 1;
     }
+  }
+`;
+
+const GrayButton = styled(Button)`
+  background-color: var(--color-gray-white) !important;
+
+  &:hover {
+    background-color: var(--color-gray-50) !important;
   }
 `;
 
@@ -76,9 +83,9 @@ const Contact: FC<ContactProps> = ({}) => {
 
           <ButtonContainer>
             <Button>Send your message!</Button>
-            <Button type="reset" variation="gray">
+            <GrayButton type="reset" variation="gray">
               Clear
-            </Button>
+            </GrayButton>
           </ButtonContainer>
         </Form>
       </ContactContainer>

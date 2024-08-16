@@ -9,14 +9,36 @@ import { styled } from "@linaria/react";
 import { FC, useState } from "react";
 import TestimonialSlider from "./TestimonialSlider";
 import ButtonLink from "@/app/_components/ButtonLink";
+import Image from "next/image";
+import bg from "@/public/assets/images/beach-bg.webp";
 
 const TestimonialsSection = styled(Section)`
-  background-image: linear-gradient(
+  position: relative;
+`;
+
+const Background = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  & img {
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
       rgba(255, 255, 255, 85%),
       rgba(255, 255, 255, 85%)
-    ),
-    url("/assets/images/beach-bg.webp");
-  background-size: cover;
+    );
+  }
 `;
 
 interface TestimonialsProps {}
@@ -24,6 +46,10 @@ interface TestimonialsProps {}
 const Testimonials: FC<TestimonialsProps> = ({}) => {
   return (
     <TestimonialsSection>
+      <Background>
+        <Image src={bg} alt="Background of a beach" fill />
+      </Background>
+
       <SectionHeading>
         <h4>Testimonials</h4>
         <h2>I help my client feel, move, and look better</h2>

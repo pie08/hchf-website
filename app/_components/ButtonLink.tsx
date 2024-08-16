@@ -35,11 +35,19 @@ interface ButtonLinkProps {
   children: React.ReactNode;
   href: string;
   center?: boolean;
+  className?: string;
+  style?: {};
+  [x: string]: any;
 }
 
-const ButtonLink: FC<ButtonLinkProps> = ({ children, href, center = true }) => {
+const ButtonLink: FC<ButtonLinkProps> = ({
+  children,
+  href,
+  center = true,
+  ...props
+}) => {
   return (
-    <Button href={href} className={center ? "center" : ""}>
+    <Button href={href} className={center ? "center" : ""} {...props}>
       <span>{children}</span>
       <PiArrowRight />
     </Button>
