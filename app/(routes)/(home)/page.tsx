@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Services from "./Services";
 import ClientProfiles from "./ClientProfiles";
 import Testimonials from "./Testimonials";
+import Contact from "./Contact";
 
 interface pageProps {}
 
@@ -14,6 +15,7 @@ const page: FC<pageProps> = ({}) => {
       <Services />
       <ClientProfiles />
       <Testimonials />
+      <Contact />
     </>
   );
 };

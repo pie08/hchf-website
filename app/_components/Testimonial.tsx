@@ -71,7 +71,9 @@ interface TestimonialProps {
   author: string;
   number?: string;
   quote?: boolean;
-  fill?: boolean;
+  textFill?: boolean;
+  limitText?: boolean;
+
   [x: string]: any;
 }
 
@@ -80,16 +82,17 @@ const Testimonial: FC<TestimonialProps> = ({
   author,
   number = "",
   quote = true,
-  fill = false,
+  textFill = false,
+  limitText = false,
   ...props
 }) => {
-  const isLong = text.length > 800;
+  const isLong = text.length > 800 && limitText;
 
   return (
     <StyledTestimonial {...props}>
       {number.length > 0 && <Number>{number}</Number>}
 
-      <blockquote style={fill ? { maxWidth: "100%" } : {}}>
+      <blockquote style={textFill ? { maxWidth: "100%" } : {}}>
         {quote && <Quotes>&ldquo;</Quotes>}
         <p>
           <span>{text.slice(0, 1)}</span>
