@@ -9,15 +9,18 @@ const Slider = styled.div`
   position: relative;
   height: 53rem;
   overflow: hidden;
+  max-width: 45rem;
+  /* keep max-width from collapsing */
+  width: 100%;
+
+  justify-self: center;
 `;
 
 const Slide = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   pointer-events: none;
+  transition: all 0.2s;
 
   position: absolute;
 
@@ -51,10 +54,12 @@ const SliderButton = styled.button`
 
   &:nth-of-type(1) {
     right: 6.4rem;
+    right: 0;
   }
 
   &:nth-of-type(2) {
     left: 6.4rem;
+    left: 0;
   }
 `;
 
@@ -64,19 +69,37 @@ interface ImageSliderProps {
 
 const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
   const [curSlide, setCurSlide] = useState(0);
-  // add logic to move through slider
+  const maxSlide = srcArr.length - 1;
+
+  function handleNextSlide() {
+    if (curSlide >= maxSlide) {
+      setCurSlide(0);
+      return;
+    }
+
+    setCurSlide((n) => n + 1);
+  }
+
+  function handlePrevSlide() {
+    if (curSlide <= 0) {
+      setCurSlide(maxSlide);
+      return;
+    }
+
+    setCurSlide((n) => n - 1);
+  }
 
   return (
     <Slider>
-      <SliderButton>
+      <SliderButton onClick={handleNextSlide}>
         <PiCaretRight />
       </SliderButton>
-      <SliderButton>
+      <SliderButton onClick={handlePrevSlide}>
         <PiCaretLeft />
       </SliderButton>
 
       {srcArr.map((src, i) => (
-        <Slide key={src} style={{ translate: `${100 * (i - curSlide)}%` }}>
+        <Slide key={i} style={{ translate: `${100 * (i - curSlide)}%` }}>
           <Image src={src} alt="alt" fill />
         </Slide>
       ))}

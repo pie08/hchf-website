@@ -37,6 +37,10 @@ export const LogoWrapper = styled.div`
   position: relative;
   width: 9.6rem;
   aspect-ratio: 1/1;
+
+  & img {
+    object-fit: contain;
+  }
 `;
 
 export default Logo;

@@ -110,9 +110,16 @@ interface ModalProps {}
 
 const Modal: FC<ModalProps> = ({}) => {
   const { modalOpen, setModalOpen } = useModalContext();
+  const [key, setKey] = useState(0);
 
   function handleCloseModal() {
     setModalOpen(false);
+
+    // to re-render modal after close
+    // to reset the elements
+    setTimeout(() => {
+      setKey((n) => n + 1);
+    }, 200);
   }
 
   // todo: add action
@@ -120,7 +127,7 @@ const Modal: FC<ModalProps> = ({}) => {
     <>
       <Overlay onClick={handleCloseModal} data-open={modalOpen && "open"} />
 
-      <StyledModal data-open={modalOpen && "open"}>
+      <StyledModal data-open={modalOpen && "open"} key={key}>
         <LogoWrapper>
           <Logo />
         </LogoWrapper>
