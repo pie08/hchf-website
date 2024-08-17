@@ -55,7 +55,7 @@ export const globalStyles = css`
       font-size: 1.6rem;
       line-height: 1.5;
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.5;
       color: var(--color-gray-800);
       height: 100%;
       min-height: 100vh;
@@ -73,6 +73,7 @@ export const globalStyles = css`
 
     h1 {
       font-size: 6.4rem;
+      letter-spacing: -0.5px;
     }
 
     h2 {

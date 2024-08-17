@@ -25,7 +25,7 @@ const FooterItem = styled.nav`
   & h5 {
     font-size: 1.6rem;
     text-transform: uppercase;
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
   }
 `;
 
@@ -42,7 +42,7 @@ const NavList = styled.ul`
     transition: all 0.2s;
 
     &:hover {
-      box-shadow: inset 0 -2px 0 var(--color-gray-800);
+      box-shadow: inset 0 -2px 0 var(--color-gray-400);
     }
 
     & a {
@@ -77,11 +77,11 @@ const Footer: FC<FooterProps> = ({}) => {
           </FooterItem>
 
           <FooterItem>
-            <h5>Contact</h5>
+            <h5>Legal stuff</h5>
             <nav>
               <NavList>
                 <li>
-                  <a href="tel:6039533807">(603) 953-3807</a>
+                  <a href="/privacy">Privacy Policy</a>
                 </li>
               </NavList>
             </nav>

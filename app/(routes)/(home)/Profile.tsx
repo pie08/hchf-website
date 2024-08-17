@@ -17,7 +17,7 @@ const StyledProfile = styled.div`
 
   &:hover {
     cursor: pointer;
-    translate: 0 -4px;
+    border: 2px solid var(--color-gray-300);
   }
 `;
 

@@ -7,7 +7,6 @@ const Button = styled(Link)`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  border-bottom: 2px solid var(--color-primary-600);
   color: var(--color-primary-600);
   transition: all 0.2s;
 
@@ -17,8 +16,9 @@ const Button = styled(Link)`
 
   &:hover,
   &:active {
-    border-bottom: 2px solid transparent;
-    gap: 1.2rem;
+    & svg {
+      translate: 0.4rem 0;
+    }
   }
 
   & span {
@@ -29,6 +29,7 @@ const Button = styled(Link)`
   & svg {
     width: 2.4rem;
     height: 2.4rem;
+    transition: all 0.2s;
   }
 `;
 

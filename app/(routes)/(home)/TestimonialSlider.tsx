@@ -48,7 +48,7 @@ interface TestimonialSliderProps {
 const TestimonialSlider: FC<TestimonialSliderProps> = ({ children }) => {
   const [curSlide, setCurSlide] = useState(0);
   const maxSlide = children.length - 1;
-  const seconds = 30;
+  const seconds = 20;
 
   const handleNextSlide = useCallback(() => {
     if (curSlide >= maxSlide) {
