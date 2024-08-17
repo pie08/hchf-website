@@ -18,11 +18,17 @@ export const StyledButton = styled.button`
   }
 
   &[data-variation="cta"] {
-    background-color: var(--color-primary-600);
     color: var(--color-gray-50);
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-700) 50%,
+      var(--color-primary-600) 50%
+    );
+    background-size: 200%;
+    background-position-x: 100%;
 
     &:hover {
-      background-color: var(--color-primary-700);
+      background-position-x: 0;
     }
   }
 

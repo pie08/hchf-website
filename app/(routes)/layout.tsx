@@ -4,6 +4,7 @@ import "../_styles/globalStyles.linaria.global";
 import { ModalContextProvider } from "../_context/ModalContext";
 import Modal from "../_components/Modal";
 import Navigation from "../_components/Navigation";
+import Footer from "../_components/Footer";
 
 // loading fonts
 export const poppins = Poppins({
@@ -39,7 +40,8 @@ export default function RootLayout({
         <ModalContextProvider>
           <Modal />
           <Navigation />
-          {children}
+          <main>{children}</main>
+          <Footer />
         </ModalContextProvider>
       </body>
     </html>

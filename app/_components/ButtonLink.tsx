@@ -15,7 +15,8 @@ const Button = styled(Link)`
     align-self: center;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     border-bottom: 2px solid transparent;
     gap: 1.2rem;
   }
