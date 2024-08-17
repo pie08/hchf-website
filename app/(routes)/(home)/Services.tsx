@@ -8,6 +8,7 @@ import ImageSlider from "@/app/_components/ImageSlider";
 import getDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
 import getRelativeDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
 import Logo from "@/app/_components/Logo";
+import Service from "@/app/_components/Service";
 
 const ServicesContainer = styled(Container)`
   display: flex;
@@ -58,87 +59,57 @@ const Services: FC<ServicesProps> = async ({}) => {
       </SectionHeading>
 
       <ServicesContainer>
-        <ServiceContainer>
-          <ImageSlider
-            srcArr={await getRelativeDirFilePaths(
-              "/public/assets/images/client-images/adult-training"
-            )}
-          />
-
-          <TextContainer>
-            <h3>Adult training</h3>
-            <p>
-              Providing a Trustworthy, Knowledgeable, Structured Training
+        <Service
+          srcArr={await getRelativeDirFilePaths(
+            "/public/assets/images/client-images/adult-training"
+          )}
+          heading="Adult Training"
+          text="Providing a Trustworthy, Knowledgeable, Structured Training
               Approach for Adults over 50. From the Functional Aspects of
               Improving Stability, Increasing Strength, & Improving Mobility, to
               the more Cosmetic Aspects of Increasing Muscle Mass or Losing
               Weight, I will Design & Implement an Effective Program
               (continuously reinforcing proper set-up and execution of each
               exercise with explanation of purpose for each exercise) to help
-              you reach your desired results.
-            </p>
-          </TextContainer>
-        </ServiceContainer>
-
-        <ServiceContainer>
-          <TextContainer>
-            <h3>Post-Surgical Training</h3>
-            <p>
-              After Completing Post-Surgical Physical Therapy, many people
+              you reach your desired results."
+        />
+        <Service
+          right
+          srcArr={await getRelativeDirFilePaths(
+            "/public/assets/images/client-images/post-surgical"
+          )}
+          heading="Post-Surgical Training"
+          text="After Completing Post-Surgical Physical Therapy, many people
               continue to experience; Discomfort, Limited Range of Motion, Lack
               of Strength, and Lack of Stability in the surgically repaired
               area. They are also uncertain how to effectively continue the
               recovery process. I will Effectively Guide You by addressing the
               limitations in the surgically repaired area while implementing
               timely progressions to Strengthen, Stabilize, and Mobilize not
-              only the repaired area but your entire body as well.
-            </p>
-          </TextContainer>
-
-          <ImageSlider
-            srcArr={await getRelativeDirFilePaths(
-              "/public/assets/images/client-images/post-surgical"
-            )}
-          />
-        </ServiceContainer>
-
-        <ServiceContainer>
-          <ImageSlider
-            srcArr={await getRelativeDirFilePaths(
-              "/public/assets/images/client-images/baseball-softball"
-            )}
-          />
-
-          <TextContainer>
-            <h3>Baseball and Softball Training</h3>
-            <p>
-              Improving Overall Strength & Stability for a High School Athlete
+              only the repaired area but your entire body as well."
+        />
+        <Service
+          srcArr={await getRelativeDirFilePaths(
+            "/public/assets/images/client-images/baseball-softball"
+          )}
+          heading="Baseball and Softball Training"
+          text="Improving Overall Strength & Stability for a High School Athlete
               will result in Significant Improvements In Performance and should
               not be overlooked or undervalued. I Design & Implement Training
-              Programs that produce a More Explosive/Dynamic Ballplayer.
-            </p>
-          </TextContainer>
-        </ServiceContainer>
-
-        <ServiceContainer>
-          <TextContainer>
-            <h3>Online Consulting</h3>
-            <p>
-              Developing Individual Relationships via technology with the same
+              Programs that produce a More Explosive/Dynamic Ballplayer."
+        />
+        <Service
+          right
+          heading="Online Consulting"
+          text="Developing Individual Relationships via technology with the same
               degree of care and dedication to the improvement of your health as
               the clients I meet with personally. Taking the multiple components
               of training (Strength, Mobility, Preventative Maintenance,
               Flexibility, Conditioning, Stability), speaking to you
               individually, and helping to determine and design an exercise
               program you understand (the purpose behind what you are doing) and
-              can implement to address your needs.
-            </p>
-          </TextContainer>
-
-          <LogoWrapper>
-            <Logo />
-          </LogoWrapper>
-        </ServiceContainer>
+              can implement to address your needs."
+        />
       </ServicesContainer>
     </Section>
   );

@@ -3,9 +3,9 @@ import "ldrs/hatch";
 
 interface loadingProps {}
 
-const loading: FC<loadingProps> = ({}) => {
+const Loading: FC<loadingProps> = ({}) => {
   // todo: add loader
   return <l-hatch></l-hatch>;
 };
 
-export default loading;
+export default Loading;

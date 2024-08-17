@@ -91,16 +91,12 @@ const Navigation: FC<NavigationProps> = ({}) => {
               open={dropdownOpen}
               setOpen={setDropdownOpen}
             >
-              <NavLink href="/training/adult-training">Adult Training</NavLink>
-              <NavLink href="/training/post-surgical-training">
+              <NavLink href="/services/adult">Adult Training</NavLink>
+              <NavLink href="/services/post-surgical">
                 Post Surgical Training
               </NavLink>
-              <NavLink href="/training/baseball-softball">
-                Baseball & Softball
-              </NavLink>
-              <NavLink href="/training/online-consulting">
-                Online Consulting
-              </NavLink>
+              <NavLink href="/services/baseball">Baseball & Softball</NavLink>
+              <NavLink href="/services/online">Online Consulting</NavLink>
             </Dropdown>
 
             <li>
