@@ -22,7 +22,10 @@ export const playfairDisplay = Playfair_Display({
 
 // metadata
 export const metadata: Metadata = {
-  title: "Half Century Health and Fitness",
+  title: {
+    template: "%s | HCHF",
+    default: "Half Century Health and Fitness",
+  },
   description: "Personal training for adults over 50",
 };
 

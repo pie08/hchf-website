@@ -11,7 +11,6 @@ const StyledTestimonial = styled.figure`
   & blockquote {
     position: relative;
     max-width: 70rem;
-    margin-left: auto;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
@@ -50,7 +49,7 @@ const StyledTestimonial = styled.figure`
 
 const Number = styled.span`
   font-size: 9.6rem;
-  color: var(--color-primary-200);
+  color: var(--color-primary-100);
   line-height: 1;
 `;
 
@@ -58,7 +57,7 @@ const Quotes = styled.span`
   font-family: var(--font-playfair-display);
   font-size: 12.8rem;
   line-height: 1;
-  color: var(--color-primary-200);
+  color: var(--color-primary-100);
 
   position: absolute;
   top: -4rem;

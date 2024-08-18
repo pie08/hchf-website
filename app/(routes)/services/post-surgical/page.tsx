@@ -1,15 +1,19 @@
 import { FC } from "react";
-import ServicePageHeader from "../ServicePageHeader";
+import PageHeader from "../../../_components/PageHeader";
 import Service from "@/app/_components/Service";
 import getRelativeDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
 import { Section } from "@/app/_components/Section";
+
+export const metadata = {
+  title: "Post-Surgical Training",
+};
 
 interface pageProps {}
 
 const page: FC<pageProps> = async ({}) => {
   return (
     <>
-      <ServicePageHeader title="Post-Surgical Training" />
+      <PageHeader title="Post-Surgical Training" />
       <Section>
         <Service
           srcArr={await getRelativeDirFilePaths(

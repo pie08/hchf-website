@@ -26,25 +26,25 @@ const ClientProfiles: FC<ClientProfilesProps> = ({}) => {
       <GridContainer>
         <ProfileCardsContainer>
           <Profile
-            imgSrc="/assets/images/profile-images/keith.webp"
+            imgSrc="/assets/images/profiles/preview/keith.webp"
             name="Keith"
             age={67}
             reason="Rotator cuff surgery"
           />
           <Profile
-            imgSrc="/assets/images/profile-images/ray.webp"
+            imgSrc="/assets/images/profiles/preview/ray.webp"
             name="Ray"
             age={62}
             reason="Knee replacement surgery"
           />
           <Profile
-            imgSrc="/assets/images/profile-images/anna.webp"
+            imgSrc="/assets/images/profiles/preview/anna.webp"
             name="Anna"
             age={60}
             reason="Knee replacement surgery"
           />
           <Profile
-            imgSrc="/assets/images/profile-images/elaine.webp"
+            imgSrc="/assets/images/profiles/preview/elaine.webp"
             name="Elaine"
             age={67}
             reason="Osteoporosis / General Fitness"

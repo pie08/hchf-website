@@ -117,7 +117,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
             </li>
             <li>
               <NavLink
-                href="testimonials"
+                href="/testimonials"
                 data-active={pathname === "/testimonials" ? "active" : ""}
               >
                 Testimonials
