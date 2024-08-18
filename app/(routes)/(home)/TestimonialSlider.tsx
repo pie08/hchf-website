@@ -43,13 +43,19 @@ const SliderButton = styled.button`
 
 interface TestimonialSliderProps {
   children: React.ReactElement[];
+  autoSlide?: boolean;
 }
 
-const TestimonialSlider: FC<TestimonialSliderProps> = ({ children }) => {
+const TestimonialSlider: FC<TestimonialSliderProps> = ({
+  children,
+  autoSlide = true,
+}) => {
   const [curSlide, setCurSlide] = useState(0);
   const maxSlide = children.length - 1;
+  // num of seconds before each slide change
   const seconds = 20;
 
+  // change to next slide if not the last slide
   const handleNextSlide = useCallback(() => {
     if (curSlide >= maxSlide) {
       setCurSlide(0);
@@ -59,20 +65,25 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ children }) => {
     setCurSlide((n) => n + 1);
   }, [curSlide, maxSlide]);
 
+  // register interval timer if autoSlide in true
   useEffect(
     function () {
+      if (!autoSlide) return;
+
       const i = setInterval(handleNextSlide, seconds * 1000);
 
       return function () {
         clearInterval(i);
       };
     },
-    [handleNextSlide]
+    [handleNextSlide, autoSlide]
   );
 
   return (
     <StyledTestimonialSlider>
       <Slider>
+        {/* render children in a testimonial slide */}
+        {/* translate each slide relaive to index */}
         {React.Children.map(children, (child, i) => {
           return (
             <TestimonialSlide
@@ -86,6 +97,7 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ children }) => {
       </Slider>
 
       <SliderButtons>
+        {/* render buttons for each slide */}
         {React.Children.map(children, (_, i) => (
           <SliderButton
             className={curSlide === i ? "active" : ""}

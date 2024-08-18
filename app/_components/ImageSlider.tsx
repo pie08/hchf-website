@@ -71,6 +71,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
   const [curSlide, setCurSlide] = useState(0);
   const maxSlide = srcArr.length - 1;
 
+  // change to next slide if not the last slide
   function handleNextSlide() {
     if (curSlide >= maxSlide) {
       setCurSlide(0);
@@ -80,6 +81,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
     setCurSlide((n) => n + 1);
   }
 
+  // change to prev slide if not the first slide
   function handlePrevSlide() {
     if (curSlide <= 0) {
       setCurSlide(maxSlide);
@@ -98,6 +100,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
         <PiCaretLeft />
       </SliderButton>
 
+      {/* render images in slides */}
+      {/* translate each slide relaive to index */}
       {srcArr.map((src, i) => (
         <Slide key={i} style={{ translate: `${100 * (i - curSlide)}%` }}>
           <Image src={src} alt="alt" fill />

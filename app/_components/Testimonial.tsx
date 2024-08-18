@@ -85,6 +85,7 @@ const Testimonial: FC<TestimonialProps> = ({
   limitText = false,
   ...props
 }) => {
+  // if limitText is true and the text length is > 800
   const isLong = text.length > 800 && limitText;
 
   return (

@@ -71,6 +71,7 @@ const TextInput: FC<TextInputProps> = ({
 }) => {
   return (
     <FormRow>
+      {/* conditionally render inputType */}
       {inputType === "input" ? (
         <StyledTextInput id={fieldName} placeholder="" {...props} />
       ) : (

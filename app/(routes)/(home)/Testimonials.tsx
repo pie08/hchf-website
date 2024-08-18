@@ -1,12 +1,11 @@
 "use client";
 
-import { Container } from "@/app/_components/Container";
 import { GridContainer } from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import Testimonial from "@/app/_components/Testimonial";
 import { styled } from "@linaria/react";
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import TestimonialSlider from "./TestimonialSlider";
 import ButtonLink from "@/app/_components/ButtonLink";
 import Image from "next/image";
@@ -45,8 +44,31 @@ const Background = styled.div`
 interface TestimonialsProps {}
 
 const Testimonials: FC<TestimonialsProps> = ({}) => {
+  // state for setting autoSlide on TestimonialSlider
+  const [autoSlide, setAutoSlide] = useState(false);
+  const section = useRef<HTMLElement>(null);
+
+  // set autoSlide to true if it is visible in the viewport
+  function handleObservation(entries: IntersectionObserverEntry[]) {
+    const { isIntersecting } = entries[0];
+
+    if (isIntersecting) {
+      setAutoSlide(true);
+    }
+  }
+
+  // registering intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObservation);
+
+    if (!section.current) return;
+    observer.observe(section.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <TestimonialsSection>
+    <TestimonialsSection ref={section}>
       <Background>
         <Image src={bg} alt="Background of a beach" fill />
       </Background>
@@ -57,7 +79,8 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
       </SectionHeading>
 
       <GridContainer>
-        <TestimonialSlider>
+        <TestimonialSlider autoSlide={autoSlide}>
+          {/* render testimonialData as Testimonial components */}
           {testimonialData.map(({ text, author }, i) => (
             <Testimonial
               key={i}
