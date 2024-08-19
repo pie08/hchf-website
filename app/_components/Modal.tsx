@@ -1,18 +1,20 @@
 "use client";
 
 import { styled } from "@linaria/react";
-import { FC, useState } from "react";
-import Logo from "./Logo";
-import Button from "./Button";
-import TextInput from "./TextInput";
-import { PiX } from "react-icons/pi";
-import { css } from "@linaria/core";
-import { useModalContext } from "../_context/ModalContext";
+import React, {
+  cloneElement,
+  createContext,
+  FC,
+  memo,
+  useContext,
+  useState,
+} from "react";
 import { ButtonIcon } from "./ButtonIcon";
+import { PiX } from "react-icons/pi";
+import { createPortal } from "react-dom";
 
 const StyledModal = styled.div`
-  width: clamp(30rem, 100vw, 50rem);
-  max-height: 100vh;
+  max-height: 90vh;
   overflow-y: scroll;
 
   position: fixed;
@@ -23,61 +25,10 @@ const StyledModal = styled.div`
   background-color: var(--color-gray-white);
   transition: all 0.2s;
 
-  padding: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3.2rem;
-
-  & h3 {
-    color: var(--color-primary-800);
-  }
-
   &[data-open="open"] {
     left: 50%;
     translate: -50% -50%;
   }
-`;
-
-const StyledLogo = styled(Logo)`
-  display: block;
-  max-width: 20rem;
-  height: auto;
-`;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1.2rem;
-  width: 100%;
-
-  & div {
-    grid-column: 1 / -1;
-
-    &:nth-child(1) {
-      grid-column: 1 / 5;
-    }
-
-    &:nth-child(2) {
-      grid-column: 5 / -1;
-    }
-  }
-
-  & button {
-    &:nth-of-type(1) {
-      grid-column: 1 / 6;
-    }
-
-    &:nth-of-type(2) {
-      grid-column: 6 / -1;
-    }
-  }
-`;
-
-const ExitButtonPosition = css`
-  position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
 `;
 
 const Overlay = styled.div`
@@ -101,58 +52,81 @@ const Overlay = styled.div`
   }
 `;
 
+const ModalContext = createContext({
+  openId: "",
+  open: (id: string) => {},
+  close: () => {},
+});
+
+interface ModalProps {
+  children: React.ReactNode;
+}
+
+const Modal: FC<ModalProps> = ({ children }) => {
+  const [openId, setOpenId] = useState("");
+
+  function open(id: string) {
+    setOpenId(id);
+  }
+
+  function close() {
+    setOpenId("");
+  }
+
+  return (
+    <ModalContext.Provider value={{ openId, open, close }}>
+      {children}
+    </ModalContext.Provider>
+  );
+};
+
 const Icon = styled(PiX)`
   width: 2.4rem;
   height: 2.4rem;
 `;
 
-interface ModalProps {}
+interface WindowProps {
+  children: React.ReactNode;
+  windowId: string;
+}
 
-const Modal: FC<ModalProps> = ({}) => {
-  const { modalOpen, setModalOpen } = useModalContext();
-  const [key, setKey] = useState(0);
+const Window: FC<WindowProps> = ({ children, windowId }) => {
+  const { close, openId } = useContext(ModalContext);
+  const open = openId === windowId;
 
-  function handleCloseModal() {
-    setModalOpen(false);
-
-    // to re-render modal after close
-    // to reset the elements
-    setTimeout(() => {
-      setKey((n) => n + 1);
-    }, 200);
-  }
-
-  // todo: add action
-  return (
+  return createPortal(
     <>
-      <Overlay onClick={handleCloseModal} data-open={modalOpen && "open"} />
-
-      <StyledModal data-open={modalOpen && "open"} key={key}>
-        <StyledLogo />
-        <h3>Send me a message</h3>
-
-        <Form action="">
-          <TextInput fieldName="First Name" required />
-          <TextInput fieldName="Last Name" required />
-          <TextInput
-            fieldName="Email"
-            inputType="input"
-            type="email"
-            required
-          />
-          <TextInput fieldName="Message" inputType="textarea" required />
-          <Button>Send your message!</Button>
-          <Button type="reset" variation="gray">
-            Clear
-          </Button>
-        </Form>
-
-        <ButtonIcon className={ExitButtonPosition} onClick={handleCloseModal}>
+      <Overlay onClick={close} data-open={open && "open"} key={openId} />
+      <StyledModal data-open={open && "open"}>
+        <ButtonIcon onClick={close}>
           <Icon />
         </ButtonIcon>
+        {children}
       </StyledModal>
-    </>
+    </>,
+    document.body
   );
 };
 
-export default Modal;
+interface OpenProps {
+  children: React.ReactElement;
+  opens: string;
+}
+
+const Open: FC<OpenProps> = ({ children, opens }) => {
+  const { open } = useContext(ModalContext);
+
+  return cloneElement(children, {
+    onClick: () => {
+      open(opens);
+    },
+  });
+};
+
+const exportObj = {
+  Root: memo(Modal),
+  Open: memo(Open),
+  Window: memo(Window),
+};
+
+export default exportObj;

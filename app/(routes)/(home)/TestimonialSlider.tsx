@@ -8,6 +8,7 @@ const StyledTestimonialSlider = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
+  overflow: visible;
 `;
 
 const Slider = styled.div`

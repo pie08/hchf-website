@@ -59,6 +59,7 @@ export const globalStyles = css`
       color: var(--color-gray-800);
       height: 100%;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     h1,

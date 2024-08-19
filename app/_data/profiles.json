@@ -1,0 +1,98 @@
+[
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/elaine-profile-g4U1qsIJcq35KEKmUPZVimtRkJu2kW.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/elaine-profile.mp4",
+    "name": "elaine",
+    "age": "68",
+    "info": {
+      "reason": "Osteoporosis / General fitness",
+      "timePeriod": "6 years",
+      "activities": ["Gardening", "Sailing"],
+      "priorExperience": false
+    }
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/keith-profile-AZXlR2o5sVXvaFZRvt7UDbYAGYTI0r.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/keith-profile.mp4",
+    "name": "keith",
+    "age": "69",
+    "info": {
+      "reason": "Rotator cuff surgery",
+      "timePeriod": "3 years",
+      "activities": ["Skiing", "Sailing", "Hiking"],
+      "priorExperience": false
+    },
+    "testimonialLink": "/testimonials#keith"
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/ray-profile-UGhLl1QjtJ0J6AtRNXGfIzR86FBEvD.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/ray-profile.mp4",
+    "name": "ray",
+    "age": "63",
+    "info": {
+      "reason": "Knee replacement surgery",
+      "timePeriod": "7 years",
+      "activities": ["Skiing", "Hiking", "Boating"],
+      "priorExperience": false
+    }
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/anna-profile-ziPFIy3OGMqSMOJwLzUK2f5PcJ58zK.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/anna-profile.mp4",
+    "name": "anna",
+    "age": "63",
+    "info": {
+      "reason": "Knee replacement surgery / General fitness",
+      "timePeriod": "4 years",
+      "priorExperience": true
+    },
+    "testimonialLink": "/testimonials#anna"
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/tom-profile-JsqJxfMUKJCNg0h3HcFZAWMnLTE6AV.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/tom-profile.mp4",
+    "name": "tom",
+    "age": "71",
+    "info": {
+      "reason": "Rotator cuff surgery",
+      "timePeriod": "2 years",
+      "activities": ["Tennis", "Surfing", "Skiing"],
+      "priorExperience": false
+    },
+    "testimonialLink": "/testimonials#tom"
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/alex-profile-Dg9b66LfiOMUe6t8t4HsOF9kRjK9cY.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/alex-profile.mp4",
+    "name": "alex",
+    "age": "19",
+    "info": {
+      "reason": "Baseball / Pitcher",
+      "timePeriod": "4 years 6 months",
+      "priorExperience": false
+    },
+    "college": "Penn State"
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/lizzie-profile-C0Y6W4gVZoF7EHhS0WbPqcao2jLUJL.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/lizzie-profile.mp4",
+    "name": "lizzie",
+    "age": "17",
+    "info": {
+      "reason": "Softball / Catcher",
+      "timePeriod": "2 years",
+      "priorExperience": false
+    }
+  },
+  {
+    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/hailey-profile-H9nt4mQgrOQRNSWEAUe0aOJgzwdLZp.mp4",
+    "fallbackVideoSrc": "/assets/video/profiles/hailey-profile.mp4",
+    "name": "hailey",
+    "age": "18",
+    "info": {
+      "reason": "Softball / Pitcher",
+      "timePeriod": "4 years",
+      "priorExperience": false
+    }
+  }
+]

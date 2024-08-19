@@ -22,7 +22,13 @@ const page: FC<pageProps> = ({}) => {
       <Section>
         <TestimonialsContainer>
           {testimonialData.map(({ text, author }, i) => (
-            <Testimonial key={i} text={text} author={author} number={`0${i}`} />
+            <Testimonial
+              key={i}
+              id={author}
+              text={text}
+              author={author}
+              number={`0${i}`}
+            />
           ))}
         </TestimonialsContainer>
       </Section>

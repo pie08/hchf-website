@@ -89,7 +89,7 @@ const Testimonial: FC<TestimonialProps> = ({
   const isLong = text.length > 800 && limitText;
 
   return (
-    <StyledTestimonial {...props}>
+    <StyledTestimonial id={author} {...props}>
       {number.length > 0 && <Number>{number}</Number>}
 
       <blockquote style={textFill ? { maxWidth: "100%" } : {}}>
