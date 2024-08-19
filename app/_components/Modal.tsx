@@ -7,11 +7,13 @@ import React, {
   FC,
   memo,
   useContext,
+  useEffect,
+  useRef,
   useState,
 } from "react";
 import { ButtonIcon } from "./ButtonIcon";
 import { PiX } from "react-icons/pi";
-import { createPortal } from "react-dom";
+import { css } from "@linaria/core";
 
 const StyledModal = styled.div`
   max-height: 90vh;
@@ -56,14 +58,31 @@ const ModalContext = createContext({
   openId: "",
   open: (id: string) => {},
   close: () => {},
+  key: 0,
 });
 
 interface ModalProps {
   children: React.ReactNode;
 }
 
-const Modal: FC<ModalProps> = ({ children }) => {
+interface WindowProps {
+  children: React.ReactNode;
+  windowId: string;
+}
+
+interface OpenProps {
+  children: React.ReactElement;
+  opens: string;
+}
+
+interface ModalComponent extends FC<ModalProps> {
+  Window: FC<WindowProps>;
+  Open: FC<OpenProps>;
+}
+
+const Modal: ModalComponent = ({ children }) => {
   const [openId, setOpenId] = useState("");
+  const [key, setKey] = useState(0);
 
   function open(id: string) {
     setOpenId(id);
@@ -71,10 +90,14 @@ const Modal: FC<ModalProps> = ({ children }) => {
 
   function close() {
     setOpenId("");
+
+    setTimeout(() => {
+      setKey((n) => n + 1);
+    }, 200);
   }
 
   return (
-    <ModalContext.Provider value={{ openId, open, close }}>
+    <ModalContext.Provider value={{ openId, open, close, key }}>
       {children}
     </ModalContext.Provider>
   );
@@ -85,33 +108,40 @@ const Icon = styled(PiX)`
   height: 2.4rem;
 `;
 
-interface WindowProps {
-  children: React.ReactNode;
-  windowId: string;
-}
+const ExitButtonPosition = css`
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+`;
 
 const Window: FC<WindowProps> = ({ children, windowId }) => {
-  const { close, openId } = useContext(ModalContext);
+  const { close, openId, key } = useContext(ModalContext);
   const open = openId === windowId;
 
-  return createPortal(
+  return (
     <>
-      <Overlay onClick={close} data-open={open && "open"} key={openId} />
-      <StyledModal data-open={open && "open"}>
-        <ButtonIcon onClick={close}>
+      <Overlay onClick={close} data-open={open && "open"} />
+      <StyledModal data-open={open && "open"} key={key}>
+        {children}
+        <ButtonIcon onClick={close} className={ExitButtonPosition}>
           <Icon />
         </ButtonIcon>
-        {children}
       </StyledModal>
-    </>,
-    document.body
+    </>
   );
+  // return createPortal(
+  //   <>
+  //     <Overlay onClick={close} data-open={open && "open"} key={openId} />
+  //     <StyledModal data-open={open && "open"} key={openId}>
+  //       <ButtonIcon onClick={close}>
+  //         <Icon />
+  //       </ButtonIcon>
+  //       {children}
+  //     </StyledModal>
+  //   </>,
+  //   document.body
+  // );
 };
-
-interface OpenProps {
-  children: React.ReactElement;
-  opens: string;
-}
 
 const Open: FC<OpenProps> = ({ children, opens }) => {
   const { open } = useContext(ModalContext);
@@ -123,10 +153,14 @@ const Open: FC<OpenProps> = ({ children, opens }) => {
   });
 };
 
-const exportObj = {
-  Root: memo(Modal),
-  Open: memo(Open),
-  Window: memo(Window),
-};
+// const exportObj = {
+//   Root: memo(Modal),
+//   Open: memo(Open),
+//   Window: memo(Window),
+// };
 
-export default exportObj;
+// export default exportObj;
+
+Modal.Window = Window;
+Modal.Open = Open;
+export default Modal;

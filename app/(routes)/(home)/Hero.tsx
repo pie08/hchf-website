@@ -4,7 +4,7 @@ import { styled } from "@linaria/react";
 import { FC } from "react";
 import { Container } from "../../_components/Container";
 import Button from "../../_components/Button";
-import { useModalContext } from "../../_context/ModalContext";
+import Modal from "@/app/_components/Modal";
 
 const Section = styled.section`
   /* to grow child */
@@ -78,8 +78,6 @@ const BackgroundVideo = styled.div`
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
-  const { setModalOpen } = useModalContext();
-
   return (
     <Section>
       <HeroContainer>
@@ -102,7 +100,9 @@ const Hero: FC<HeroProps> = ({}) => {
             Exercise Programs & Post-Surgical Training Programs
           </p>
 
-          <Button onClick={() => setModalOpen(true)}>Contact me</Button>
+          <Modal.Open opens="contact">
+            <Button>Contact me</Button>
+          </Modal.Open>
         </HeroTextContainer>
       </HeroContainer>
     </Section>

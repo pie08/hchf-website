@@ -1,27 +1,16 @@
 "use client";
 
 import { styled } from "@linaria/react";
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import TextInput from "./TextInput";
 import { PiX } from "react-icons/pi";
 import { css } from "@linaria/core";
-import { useModalContext } from "../_context/ModalContext";
-import { ButtonIcon } from "./ButtonIcon";
+import Modal from "@/app/_components/Modal";
 
-const StyledModal = styled.div`
+const ModalContainer = styled.div`
   width: clamp(30rem, 100vw, 50rem);
-  max-height: 100vh;
-  overflow-y: scroll;
-
-  position: fixed;
-  top: 50%;
-  left: 100%;
-  translate: 0 -50%;
-  z-index: 9999;
-  background-color: var(--color-gray-white);
-  transition: all 0.2s;
 
   padding: 4.8rem;
   display: flex;
@@ -31,11 +20,6 @@ const StyledModal = styled.div`
 
   & h3 {
     color: var(--color-primary-800);
-  }
-
-  &[data-open="open"] {
-    left: 50%;
-    translate: -50% -50%;
   }
 `;
 
@@ -109,25 +93,16 @@ const Icon = styled(PiX)`
 interface ModalProps {}
 
 const ContactModal: FC<ModalProps> = ({}) => {
-  const { modalOpen, setModalOpen } = useModalContext();
-  const [key, setKey] = useState(0);
+  const root = useRef<HTMLElement>();
 
-  function handleCloseModal() {
-    setModalOpen(false);
-
-    // to re-render modal after close
-    // to reset the elements
-    setTimeout(() => {
-      setKey((n) => n + 1);
-    }, 200);
-  }
+  useEffect(() => {
+    root.current = document.body;
+  }, []);
 
   // todo: add action
   return (
-    <>
-      <Overlay onClick={handleCloseModal} data-open={modalOpen && "open"} />
-
-      <StyledModal data-open={modalOpen && "open"} key={key}>
+    <Modal.Window windowId="contact">
+      <ModalContainer>
         <StyledLogo />
         <h3>Send me a message</h3>
 
@@ -146,12 +121,8 @@ const ContactModal: FC<ModalProps> = ({}) => {
             Clear
           </Button>
         </Form>
-
-        <ButtonIcon className={ExitButtonPosition} onClick={handleCloseModal}>
-          <Icon />
-        </ButtonIcon>
-      </StyledModal>
-    </>
+      </ModalContainer>
+    </Modal.Window>
   );
 };
 

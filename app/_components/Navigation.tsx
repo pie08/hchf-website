@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { PiCaretDown } from "react-icons/pi";
 import { css } from "@linaria/core";
 import Button from "./Button";
-import { useModalContext } from "../_context/ModalContext";
+import Modal from "@/app/_components/Modal";
 
 const Header = styled.header`
   width: 100%;
@@ -69,7 +69,6 @@ interface NavigationProps {}
 const Navigation: FC<NavigationProps> = ({}) => {
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const { setModalOpen } = useModalContext();
 
   return (
     <Header>
@@ -124,9 +123,9 @@ const Navigation: FC<NavigationProps> = ({}) => {
               </NavLink>
             </li>
             <li>
-              <Button size="large" onClick={() => setModalOpen(true)}>
-                Contact me
-              </Button>
+              <Modal.Open opens="contact">
+                <Button size="large">Contact me</Button>
+              </Modal.Open>
             </li>
           </NavList>
         </nav>
