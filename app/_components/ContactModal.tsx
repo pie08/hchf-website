@@ -1,12 +1,12 @@
 "use client";
+// required to render compound components
 
 import { styled } from "@linaria/react";
 import { FC, useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import TextInput from "./TextInput";
-import { PiX } from "react-icons/pi";
-import { css } from "@linaria/core";
+
 import Modal from "@/app/_components/Modal";
 
 const ModalContainer = styled.div`
@@ -58,47 +58,9 @@ const Form = styled.form`
   }
 `;
 
-const ExitButtonPosition = css`
-  position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
-`;
-
-const Overlay = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  transition: all 0.2s;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-
-  visibility: hidden;
-  pointer-events: none;
-
-  &[data-open="open"] {
-    background-color: rgba(0, 0, 0, 75%);
-    pointer-events: all;
-    visibility: visible;
-  }
-`;
-
-const Icon = styled(PiX)`
-  width: 2.4rem;
-  height: 2.4rem;
-`;
-
 interface ModalProps {}
 
 const ContactModal: FC<ModalProps> = ({}) => {
-  const root = useRef<HTMLElement>();
-
-  useEffect(() => {
-    root.current = document.body;
-  }, []);
-
   // todo: add action
   return (
     <Modal.Window windowId="contact">

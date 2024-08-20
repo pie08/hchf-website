@@ -3,8 +3,8 @@ import { Poppins, Playfair_Display } from "next/font/google";
 import "../_styles/globalStyles.linaria.global";
 import Navigation from "../_components/Navigation";
 import Footer from "../_components/Footer";
-import ContactModal from "../_components/ContactModal";
 import Modal from "@/app/_components/Modal";
+import ContactModal from "../_components/ContactModal";
 
 // loading fonts
 export const poppins = Poppins({

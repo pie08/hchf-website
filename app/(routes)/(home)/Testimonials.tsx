@@ -11,6 +11,7 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import Image from "next/image";
 import bg from "@/public/assets/images/beach-bg.webp";
 import testimonialData from "../../_data/testimonials.json";
+import { useIsVisible } from "@/app/_hooks/useIsVisible";
 
 const TestimonialsSection = styled(Section)`
   position: relative;
@@ -46,29 +47,17 @@ interface TestimonialsProps {}
 const Testimonials: FC<TestimonialsProps> = ({}) => {
   // state for setting autoSlide on TestimonialSlider
   const [autoSlide, setAutoSlide] = useState(false);
-  const section = useRef<HTMLElement>(null);
 
-  // set autoSlide to true if it is visible in the viewport
-  function handleObservation(entries: IntersectionObserverEntry[]) {
-    const { isIntersecting } = entries[0];
+  const { isVisible, targetRef } = useIsVisible();
 
-    if (isIntersecting) {
+  useEffect(() => {
+    if (isVisible) {
       setAutoSlide(true);
     }
-  }
-
-  // registering intersection observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObservation);
-
-    if (!section.current) return;
-    observer.observe(section.current);
-
-    return () => observer.disconnect();
-  }, []);
+  }, [isVisible]);
 
   return (
-    <TestimonialsSection ref={section}>
+    <TestimonialsSection ref={targetRef}>
       <Background>
         <Image src={bg} alt="Background of a beach" fill />
       </Background>
