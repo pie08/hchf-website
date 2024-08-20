@@ -21,13 +21,11 @@ const StyledProfile = styled.div`
   }
 `;
 
-const ProfileImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-
+const ProfileImage = styled(Image)`
   & img {
-    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -66,9 +64,7 @@ export const Profile: FC<ProfileProps> = ({ imgSrc, name, age, reason }) => {
     <StyledProfile
       onClick={() => router.push(`/profiles#${name.toLowerCase()}`)}
     >
-      <ProfileImageWrapper>
-        <Image src={imgSrc} alt={name} fill />
-      </ProfileImageWrapper>
+      <ProfileImage src={imgSrc} alt={name} width={300} height={300} />
 
       <ProfileTextContainer>
         <h3>

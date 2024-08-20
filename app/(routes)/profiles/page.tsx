@@ -6,6 +6,10 @@ import { FC } from "react";
 import profilesData from "@/app/_data/profiles.json";
 import Profile from "./Profile";
 
+export const metadata = {
+  title: "Client Profiles",
+};
+
 const ProfileContainer = styled(Container)`
   display: flex;
   flex-direction: column;

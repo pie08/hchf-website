@@ -6,6 +6,10 @@ import Testimonial from "@/app/_components/Testimonial";
 import { styled } from "@linaria/react";
 import { Container } from "@/app/_components/Container";
 
+export const metadata = {
+  title: "Testimonials",
+};
+
 const TestimonialsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
