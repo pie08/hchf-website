@@ -1,9 +1,10 @@
 import { Section } from "@/app/_components/Section";
 import TextContainer from "@/app/_components/TextContainer";
+import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
 import Image from "next/image";
 import { FC } from "react";
-import img from "@/public/assets/images/profiles/preview/keith.webp";
+import img from "@/public/assets/images/profiles/preview/elaine.webp";
 import { Container } from "@/app/_components/Container";
 
 const GridContainer = styled(Container)`
@@ -13,6 +14,8 @@ const GridContainer = styled(Container)`
   width: 100%;
   align-items: center;
 `;
+
+const gridStyles = css``;
 
 const ImageWrapper = styled.div`
   display: flex;
@@ -26,27 +29,29 @@ const ImageWrapper = styled.div`
   }
 `;
 
-interface WhatProps {}
+interface TrainingProps {}
 
-const What: FC<WhatProps> = ({}) => {
+const Training: FC<TrainingProps> = ({}) => {
   return (
-    <Section>
+    <Section data-gray>
       <GridContainer>
         <TextContainer>
-          <h2>What is aging?</h2>
+          <h2>How will this impact your training with me?</h2>
           <p>
-            In laymans terms, aging refers to the gradual physiological changes
-            that occur in the body leading to old age and the decline of our
-            body’s ability to perform and adapt to various stresses.
+            I will explain, simplify, organize, and structure all of this
+            information into terms that are easy to understand and follow. I
+            will also speak with you regularly to discuss any aspects of your
+            program to ensure you become detail oriented and continuously
+            progress.
           </p>
         </TextContainer>
 
         <ImageWrapper>
-          <Image src={img} alt="Keith" />
+          <Image src={img} alt="Elaine" />
         </ImageWrapper>
       </GridContainer>
     </Section>
   );
 };
 
-export default What;
+export default Training;

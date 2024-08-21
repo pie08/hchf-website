@@ -1,4 +1,3 @@
-import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";
@@ -11,22 +10,26 @@ import {
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
 import { css } from "@linaria/core";
+import { Container } from "@/app/_components/Container";
 
-const gridStyles = css`
+const GridContainer = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
   width: 100%;
-  align-items: center;
 `;
 
 interface CombatEffectsProps {}
 
 const CombatEffects: FC<CombatEffectsProps> = ({}) => {
+  // todo: change list of eat healthy card
   return (
     <Section>
       <SectionHeading>
         <h2>How to best combat the effects of aging</h2>
       </SectionHeading>
 
-      <GridContainer className={gridStyles} cols={2}>
+      <GridContainer>
         <Card
           heading="Move"
           headingIcon={<PiPersonSimpleRun />}

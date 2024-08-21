@@ -1,6 +1,5 @@
 "use client";
 
-import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import Testimonial from "@/app/_components/Testimonial";
@@ -12,6 +11,13 @@ import Image from "next/image";
 import bg from "@/public/assets/images/beach-bg.webp";
 import testimonialData from "../../_data/testimonials.json";
 import { useIsVisible } from "@/app/_hooks/useIsVisible";
+import { Container } from "@/app/_components/Container";
+
+const GridContainer = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.2rem;
+`;
 
 const TestimonialsSection = styled(Section)`
   position: relative;

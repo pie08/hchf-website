@@ -1,10 +1,16 @@
 import ButtonLink from "@/app/_components/ButtonLink";
-import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";
 import { FC } from "react";
 import { Profile } from "./Profile";
+import { Container } from "@/app/_components/Container";
+
+const GridContainer = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.2rem;
+`;
 
 const ProfileCardsContainer = styled.div`
   grid-column: 3 / 11;

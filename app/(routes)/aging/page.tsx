@@ -4,6 +4,7 @@ import { FC } from "react";
 import What from "./What";
 import Effects from "./Effects";
 import CombatEffects from "./CombatEffects";
+import Training from "./Training";
 
 interface pageProps {}
 
@@ -15,6 +16,7 @@ const page: FC<pageProps> = ({}) => {
       <What />
       <Effects />
       <CombatEffects />
+      <Training />
     </>
   );
 };

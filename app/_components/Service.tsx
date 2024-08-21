@@ -1,13 +1,16 @@
 import { styled } from "@linaria/react";
 import { FC } from "react";
-import GridContainer from "./GridContainer";
 import ImageSlider from "./ImageSlider";
 import getRelativeDirFilePaths from "../_lib/getRelativeDirFilePaths";
 import Logo from "./Logo";
 import TextContainer from "./TextContainer";
 import { css } from "@linaria/core";
+import { Container } from "./Container";
 
-const gridStyles = css`
+const GridContainer = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
   width: 100%;
   align-items: center;
 `;
@@ -41,7 +44,7 @@ const Service: FC<ServiceProps> = ({
   headingLarge = false,
 }) => {
   return (
-    <GridContainer cols={2} className={gridStyles}>
+    <GridContainer>
       {!right && srcArr && <ImageSlider srcArr={srcArr} />}
       {!right && !srcArr && (
         <LogoWrapper>

@@ -1,4 +1,3 @@
-import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";
@@ -6,8 +5,12 @@ import { FC } from "react";
 import { PiArrowDown, PiArrowUp } from "react-icons/pi";
 import Card from "./Card";
 import { css } from "@linaria/core";
+import { Container } from "@/app/_components/Container";
 
-const gridStyles = css`
+const GridContainer = styled(Container)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
   width: 100%;
 `;
 
@@ -98,7 +101,7 @@ const Effects: FC<EffectsProps> = ({}) => {
         <h2>How does aging affect you?</h2>
       </SectionHeading>
 
-      <GridContainer cols={2} className={gridStyles}>
+      <GridContainer>
         <Card
           heading="Aging leads to decreases in..."
           type="decreasing"
