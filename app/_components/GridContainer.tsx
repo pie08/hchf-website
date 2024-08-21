@@ -1,8 +1,27 @@
 import { styled } from "@linaria/react";
 import { Container } from "./Container";
+import { FC } from "react";
 
-export const GridContainer = styled(Container)`
+const StyledGridContainer = styled(Container)`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   column-gap: 3.2rem;
 `;
+
+interface Props {
+  children: React.ReactNode;
+  cols?: number;
+  className?: string;
+}
+
+const GridContainer: FC<Props> = ({ children, cols = 12, className }) => {
+  return (
+    <StyledGridContainer
+      style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+      className={className}
+    >
+      {children}
+    </StyledGridContainer>
+  );
+};
+
+export default GridContainer;

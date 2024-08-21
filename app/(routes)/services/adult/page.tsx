@@ -20,6 +20,7 @@ const page: FC<pageProps> = async ({}) => {
             "/public/assets/images/client-images/adult-training"
           )}
           heading="Adult Training"
+          headingLarge
           text="Providing a Trustworthy, Knowledgeable, Structured Training
         Approach for Adults over 50. From the Functional Aspects of
         Improving Stability, Increasing Strength, & Improving Mobility, to

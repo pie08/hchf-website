@@ -10,4 +10,8 @@ export const Section = styled.section`
   &[data-gray] {
     background-color: var(--color-gray-50);
   }
+
+  &[data-dark-gray] {
+    background-color: var(--color-gray-100);
+  }
 `;

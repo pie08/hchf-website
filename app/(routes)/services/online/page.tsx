@@ -16,6 +16,7 @@ const page: FC<pageProps> = async ({}) => {
       <Section>
         <Service
           heading="Online Consulting"
+          headingLarge
           text="Developing Individual Relationships via technology with the same
               degree of care and dedication to the improvement of your health as
               the clients I meet with personally. Taking the multiple components

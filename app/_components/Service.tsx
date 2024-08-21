@@ -1,27 +1,15 @@
 import { styled } from "@linaria/react";
 import { FC } from "react";
-import { GridContainer } from "./GridContainer";
+import GridContainer from "./GridContainer";
 import ImageSlider from "./ImageSlider";
 import getRelativeDirFilePaths from "../_lib/getRelativeDirFilePaths";
 import Logo from "./Logo";
+import TextContainer from "./TextContainer";
+import { css } from "@linaria/core";
 
-const ServiceContainer = styled(GridContainer)`
+const gridStyles = css`
   width: 100%;
   align-items: center;
-
-  & *:nth-child(1) {
-    grid-column: 1 / 7;
-  }
-
-  & *:nth-child(2) {
-    grid-column: 7 / 12;
-  }
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
 `;
 
 const LogoWrapper = styled.div`
@@ -42,6 +30,7 @@ interface ServiceProps {
   text: string;
   srcArr?: string[];
   right?: boolean;
+  headingLarge?: boolean;
 }
 
 const Service: FC<ServiceProps> = ({
@@ -49,9 +38,10 @@ const Service: FC<ServiceProps> = ({
   heading,
   text,
   right = false,
+  headingLarge = false,
 }) => {
   return (
-    <ServiceContainer>
+    <GridContainer cols={2} className={gridStyles}>
       {!right && srcArr && <ImageSlider srcArr={srcArr} />}
       {!right && !srcArr && (
         <LogoWrapper>
@@ -60,7 +50,7 @@ const Service: FC<ServiceProps> = ({
       )}
 
       <TextContainer>
-        <h3>{heading}</h3>
+        {headingLarge ? <h2>{heading}</h2> : <h3>{heading}</h3>}
         <p>{text}</p>
       </TextContainer>
 
@@ -70,7 +60,7 @@ const Service: FC<ServiceProps> = ({
           <Logo />
         </LogoWrapper>
       )}
-    </ServiceContainer>
+    </GridContainer>
   );
 };
 

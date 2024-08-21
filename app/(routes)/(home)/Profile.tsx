@@ -22,11 +22,9 @@ const StyledProfile = styled.div`
 `;
 
 const ProfileImage = styled(Image)`
-  & img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+  display: block;
+  width: 100%;
+  height: 100%;
 `;
 
 const ProfileTextContainer = styled.div`
@@ -64,7 +62,7 @@ export const Profile: FC<ProfileProps> = ({ imgSrc, name, age, reason }) => {
     <StyledProfile
       onClick={() => router.push(`/profiles#${name.toLowerCase()}`)}
     >
-      <ProfileImage src={imgSrc} alt={name} width={300} height={300} />
+      <ProfileImage src={imgSrc} alt={name} width={600} height={600} />
 
       <ProfileTextContainer>
         <h3>

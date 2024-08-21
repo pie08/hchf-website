@@ -78,13 +78,16 @@ const BackgroundVideo = styled.div`
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
+  // todo: optimze video srcs
   return (
     <Section>
       <HeroContainer>
         <HeroTextContainer>
           <BackgroundVideo>
             <video loop muted autoPlay disablePictureInPicture>
-              <source src="/assets/video/client-comp-1.mp4" />
+              <source src="https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/client-comp-1-1fIxMKEXOfbD0T0suxK7kWKjF84kZI.mp4" />
+              Your browser does not support the video tag. Please view in a
+              modern browser
             </video>
             <div></div>
           </BackgroundVideo>

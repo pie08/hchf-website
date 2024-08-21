@@ -1,5 +1,5 @@
 import ButtonLink from "@/app/_components/ButtonLink";
-import { GridContainer } from "@/app/_components/GridContainer";
+import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";

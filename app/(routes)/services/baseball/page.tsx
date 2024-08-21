@@ -20,6 +20,7 @@ const page: FC<pageProps> = async ({}) => {
             "/public/assets/images/client-images/baseball-softball"
           )}
           heading="Baseball and Softball Training"
+          headingLarge
           text="Improving Overall Strength & Stability for a High School Athlete
               will result in Significant Improvements In Performance and should
               not be overlooked or undervalued. I Design & Implement Training

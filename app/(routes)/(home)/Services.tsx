@@ -1,5 +1,4 @@
 import { Container } from "@/app/_components/Container";
-import { GridContainer } from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import { styled } from "@linaria/react";
@@ -14,38 +13,6 @@ const ServicesContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
-`;
-
-const ServiceContainer = styled(GridContainer)`
-  width: 100%;
-  align-items: center;
-
-  & *:nth-child(1) {
-    grid-column: 1 / 7;
-  }
-
-  & *:nth-child(2) {
-    grid-column: 7 / 12;
-  }
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-`;
-
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 53rem;
-
-  & img {
-    display: block;
-    max-width: 30rem;
-    height: auto;
-  }
 `;
 
 interface ServicesProps {}

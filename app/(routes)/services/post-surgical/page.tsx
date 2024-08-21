@@ -20,6 +20,7 @@ const page: FC<pageProps> = async ({}) => {
             "/public/assets/images/client-images/post-surgical"
           )}
           heading="Post-Surgical Training"
+          headingLarge
           text="After Completing Post-Surgical Physical Therapy, many people
               continue to experience; Discomfort, Limited Range of Motion, Lack
               of Strength, and Lack of Stability in the surgically repaired

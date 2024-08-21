@@ -14,6 +14,8 @@ import React, {
 import { ButtonIcon } from "./ButtonIcon";
 import { PiX } from "react-icons/pi";
 import { css } from "@linaria/core";
+import { createPortal } from "react-dom";
+import { useMounted } from "../_hooks/useMounted";
 
 const StyledModal = styled.div`
   max-height: 90vh;
@@ -118,29 +120,33 @@ const Window: FC<WindowProps> = ({ children, windowId }) => {
   const { close, openId, key } = useContext(ModalContext);
   const open = openId === windowId;
 
-  return (
+  // ensure document is defined, aka component mounted
+  const mounted = useMounted();
+  if (!mounted) return null;
+
+  // return (
+  //   <>
+  //     <Overlay onClick={close} data-open={open && "open"} />
+  //     <StyledModal data-open={open && "open"} key={key}>
+  //       {children}
+  //       <ButtonIcon onClick={close} className={ExitButtonPosition}>
+  //         <Icon />
+  //       </ButtonIcon>
+  //     </StyledModal>
+  //   </>
+  // );
+  return createPortal(
     <>
       <Overlay onClick={close} data-open={open && "open"} />
       <StyledModal data-open={open && "open"} key={key}>
-        {children}
         <ButtonIcon onClick={close} className={ExitButtonPosition}>
           <Icon />
         </ButtonIcon>
+        {children}
       </StyledModal>
-    </>
+    </>,
+    document.body
   );
-  // return createPortal(
-  //   <>
-  //     <Overlay onClick={close} data-open={open && "open"} key={openId} />
-  //     <StyledModal data-open={open && "open"} key={openId}>
-  //       <ButtonIcon onClick={close}>
-  //         <Icon />
-  //       </ButtonIcon>
-  //       {children}
-  //     </StyledModal>
-  //   </>,
-  //   document.body
-  // );
 };
 
 const Open: FC<OpenProps> = ({ children, opens }) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { GridContainer } from "@/app/_components/GridContainer";
+import GridContainer from "@/app/_components/GridContainer";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import Testimonial from "@/app/_components/Testimonial";
@@ -59,7 +59,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
   return (
     <TestimonialsSection ref={targetRef}>
       <Background>
-        <Image src={bg} alt="Background of a beach" fill />
+        <Image src={bg} alt="Background of a beach" fill sizes="100vw" />
       </Background>
 
       <SectionHeading>
