@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
-import "../_styles/globalStyles.linaria.global";
-import Navigation from "../_components/Navigation";
-import Footer from "../_components/Footer";
+import "./_styles/globalStyles.linaria.global";
+import Navigation from "./_components/Navigation";
+import Footer from "./_components/Footer";
 import Modal from "@/app/_components/Modal";
-import ContactModal from "../_components/ContactModal";
+import ContactModal from "./_components/ContactModal";
+import ProgressBar from "./_components/ProgressBar";
 
 // loading fonts
 export const poppins = Poppins({
@@ -40,6 +41,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${playfairDisplay.variable}`}
     >
       <body>
+        <ProgressBar />
         <Modal>
           <ContactModal />
           <Navigation />

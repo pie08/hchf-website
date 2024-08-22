@@ -5,10 +5,7 @@ import React, {
   cloneElement,
   createContext,
   FC,
-  memo,
   useContext,
-  useEffect,
-  useRef,
   useState,
 } from "react";
 import { ButtonIcon } from "./ButtonIcon";
@@ -124,17 +121,6 @@ const Window: FC<WindowProps> = ({ children, windowId }) => {
   const mounted = useMounted();
   if (!mounted) return null;
 
-  // return (
-  //   <>
-  //     <Overlay onClick={close} data-open={open && "open"} />
-  //     <StyledModal data-open={open && "open"} key={key}>
-  //       {children}
-  //       <ButtonIcon onClick={close} className={ExitButtonPosition}>
-  //         <Icon />
-  //       </ButtonIcon>
-  //     </StyledModal>
-  //   </>
-  // );
   return createPortal(
     <>
       <Overlay onClick={close} data-open={open && "open"} />
@@ -158,14 +144,6 @@ const Open: FC<OpenProps> = ({ children, opens }) => {
     },
   });
 };
-
-// const exportObj = {
-//   Root: memo(Modal),
-//   Open: memo(Open),
-//   Window: memo(Window),
-// };
-
-// export default exportObj;
 
 Modal.Window = Window;
 Modal.Open = Open;

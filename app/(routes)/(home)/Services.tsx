@@ -27,6 +27,7 @@ const Services: FC<ServicesProps> = async ({}) => {
 
       <ServicesContainer>
         <Service
+          right
           srcArr={await getRelativeDirFilePaths(
             "/public/assets/images/client-images/adult-training"
           )}
@@ -41,7 +42,6 @@ const Services: FC<ServicesProps> = async ({}) => {
               you reach your desired results."
         />
         <Service
-          right
           srcArr={await getRelativeDirFilePaths(
             "/public/assets/images/client-images/post-surgical"
           )}
@@ -56,6 +56,7 @@ const Services: FC<ServicesProps> = async ({}) => {
               only the repaired area but your entire body as well."
         />
         <Service
+          right
           srcArr={await getRelativeDirFilePaths(
             "/public/assets/images/client-images/baseball-softball"
           )}
@@ -66,7 +67,6 @@ const Services: FC<ServicesProps> = async ({}) => {
               Programs that produce a More Explosive/Dynamic Ballplayer."
         />
         <Service
-          right
           heading="Online Consulting"
           text="Developing Individual Relationships via technology with the same
               degree of care and dedication to the improvement of your health as

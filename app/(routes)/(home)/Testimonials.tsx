@@ -56,6 +56,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
 
   const { isVisible, targetRef } = useIsVisible();
 
+  // set isVisible ot truw when section is in view
   useEffect(() => {
     if (isVisible) {
       setAutoSlide(true);
@@ -74,6 +75,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
       </SectionHeading>
 
       <GridContainer>
+        {/* begin sliding only after being viewed */}
         <TestimonialSlider autoSlide={autoSlide}>
           {/* render testimonialData as Testimonial components */}
           {testimonialData.map(({ text, author }, i) => (

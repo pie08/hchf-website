@@ -14,7 +14,7 @@ const TestimonialsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6.4rem;
+  gap: 9.6rem;
 `;
 
 interface pageProps {}
@@ -31,7 +31,7 @@ const page: FC<pageProps> = ({}) => {
               id={author}
               text={text}
               author={author}
-              number={`0${i}`}
+              number={`0${i + 1}`}
             />
           ))}
         </TestimonialsContainer>

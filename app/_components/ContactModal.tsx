@@ -2,7 +2,7 @@
 // required to render compound components
 
 import { styled } from "@linaria/react";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import TextInput from "./TextInput";

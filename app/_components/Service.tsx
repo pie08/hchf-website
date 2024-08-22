@@ -11,7 +11,6 @@ const GridContainer = styled(Container)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
-  width: 100%;
   align-items: center;
 `;
 

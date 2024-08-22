@@ -99,7 +99,7 @@ const Testimonial: FC<TestimonialProps> = ({
           {isLong ? text.slice(1, 855) + "..." : text.slice(1)}
         </p>
         {isLong && (
-          <ButtonLink href="/testimonials" center={false}>
+          <ButtonLink href={`/testimonials#${author}`} center={false}>
             Read more
           </ButtonLink>
         )}

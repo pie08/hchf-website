@@ -20,12 +20,20 @@ const StyledTextInput = styled.input`
   padding: 2rem 1.2rem 0.4rem 1.2rem;
   background-color: var(--color-gray-100);
   color: var(--color-gray-800);
+  outline: none;
   box-shadow: inset 0 -2px 0 0 transparent;
   transition: all 0.2s;
 
   &:focus {
-    outline: none;
     box-shadow: inset 0 -2px 0 0 var(--color-primary-600);
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    box-shadow: inset 0 -2px 0 0 var(--color-red-400);
+  }
+
+  &:valid {
+    box-shadow: inset 0 -2px 0 0 var(--color-green-400);
   }
 `;
 
@@ -42,6 +50,14 @@ const StyledTextArea = styled.textarea`
   &:focus {
     outline: none;
     box-shadow: inset 0 -2px 0 0 var(--color-primary-600);
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    box-shadow: inset 0 -2px 0 0 var(--color-red-400);
+  }
+
+  &:valid {
+    box-shadow: inset 0 -2px 0 0 var(--color-green-400);
   }
 `;
 

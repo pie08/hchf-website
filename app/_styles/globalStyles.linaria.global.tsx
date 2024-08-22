@@ -55,7 +55,7 @@ export const globalStyles = css`
       font-size: 1.6rem;
       line-height: 1.5;
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.6;
       color: var(--color-gray-800);
       height: 100%;
       min-height: 100vh;
@@ -68,7 +68,7 @@ export const globalStyles = css`
     h4 {
       font-family: var(--font-playfair-display);
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.1;
       text-transform: capitalize;
     }
 
@@ -82,7 +82,7 @@ export const globalStyles = css`
     }
 
     h3 {
-      font-size: 3rem;
+      font-size: 3.2rem;
     }
 
     /* subheading */

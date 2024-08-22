@@ -14,11 +14,11 @@ import Modal from "@/app/_components/Modal";
 const Header = styled.header`
   width: 100%;
   padding: 0 3.2rem;
-  background-color: rgba(255, 255, 255, 60%);
+  background-color: rgba(255, 255, 255, 80%);
   position: fixed;
   z-index: 999;
 
-  &:hover li {
+  &:hover li:not(:has(button)) {
     opacity: 50%;
   }
 `;

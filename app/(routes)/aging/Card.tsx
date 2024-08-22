@@ -38,7 +38,7 @@ const HeadingContainer = styled.div`
   & svg {
     width: 4rem;
     height: 4rem;
-    color: var(--color-gray-400);
+    color: var(--color-primary-200);
   }
 `;
 

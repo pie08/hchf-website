@@ -38,7 +38,8 @@ const SliderButton = styled.button`
   transition: all 0.2s;
 
   &.active {
-    background-color: var(--color-primary-200);
+    background-color: transparent;
+    box-shadow: 0 0 0 2px var(--color-primary-200);
   }
 `;
 
