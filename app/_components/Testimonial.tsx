@@ -16,7 +16,7 @@ const StyledTestimonial = styled.figure`
     gap: 3.2rem;
 
     & p {
-      font-size: 1.8rem;
+      font-size: 2rem;
 
       & span {
         font-size: 6.4rem;

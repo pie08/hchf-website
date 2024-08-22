@@ -63,7 +63,7 @@ const StyledTextArea = styled.textarea`
 
 const Label = styled.label`
   position: absolute;
-  top: 1.6rem;
+  top: 1.4rem;
   left: 1.2rem;
   translate: 0 0;
   color: var(--color-gray-600);

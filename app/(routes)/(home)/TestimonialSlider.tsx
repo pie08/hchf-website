@@ -12,7 +12,7 @@ const StyledTestimonialSlider = styled.div`
 `;
 
 const Slider = styled.div`
-  height: 46rem;
+  height: 55rem;
   position: relative;
   overflow: visible;
 `;
