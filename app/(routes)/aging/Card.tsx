@@ -25,7 +25,7 @@ const AgingCard = styled.div`
     padding-left: 1.53rem;
 
     & li p {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 `;

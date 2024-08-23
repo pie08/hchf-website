@@ -36,6 +36,8 @@ export const globalStyles = css`
 
       --color-green-100: #dcfce7;
       --color-green-400: #4ade80;
+
+      --total-nav-height: calc(9.6rem + 0.8rem + 0.8rem);
     }
 
     *,
@@ -48,6 +50,14 @@ export const globalStyles = css`
     html {
       font-size: 62.5%;
       height: 100%;
+
+      @media screen and (max-width: 72em) {
+        font-size: 56.25%;
+      }
+
+      @media screen and (max-width: 60em) {
+        font-size: 50%;
+      }
     }
 
     body {

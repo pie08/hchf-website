@@ -16,7 +16,7 @@ import { useMounted } from "../_hooks/useMounted";
 
 const StyledModal = styled.div`
   max-height: 90vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   position: fixed;
   top: 50%;
@@ -33,8 +33,8 @@ const StyledModal = styled.div`
 `;
 
 const Overlay = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: transparent;
   transition: all 0.2s;
 

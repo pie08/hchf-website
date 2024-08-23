@@ -21,6 +21,7 @@ const GridContainer = styled(Container)`
 
 const TestimonialsSection = styled(Section)`
   position: relative;
+  overflow-x: hidden;
 `;
 
 const Background = styled.div`

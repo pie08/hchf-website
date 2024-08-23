@@ -14,26 +14,52 @@ import Modal from "@/app/_components/Modal";
 const Header = styled.header`
   width: 100vw;
   padding: 0 3.2rem;
-  background-color: rgba(255, 255, 255, 80%);
+  background-color: rgba(255, 255, 255, 95%);
   position: fixed;
   z-index: 999;
 
-  &:hover li:not(:has(button)) {
-    opacity: 50%;
+  @media screen and (min-width: 52em) {
+    &:hover li:not(:has(button)) {
+      opacity: 50%;
+    }
+  }
+
+  @media screen and (max-width: 52em) {
+    padding: 0 2.4rem;
   }
 `;
 
 const StyledLogo = styled(Logo)`
   display: block;
-  max-width: 9.6rem;
-  height: auto;
+  /* max-width: 9.6rem; */
+  max-height: calc(9.6rem - 3.2rem);
+  width: auto;
 `;
 
 const StyledNavigation = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0;
+  height: 9.6rem;
+  padding: 1.6rem 0;
+`;
+
+const Nav = styled.nav`
+  @media screen and (max-width: 52em) {
+    position: fixed;
+    top: 9.6rem;
+    left: 100%;
+    z-index: -1;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(255, 255, 255, 95%);
+    padding: 0 2.4rem;
+    transition: all 0.2s;
+
+    &.open {
+      translate: -100% 0;
+    }
+  }
 `;
 
 const NavList = styled.ul`
@@ -49,6 +75,20 @@ const NavList = styled.ul`
       opacity: 1 !important;
     }
   }
+
+  @media screen and (max-width: 52em) {
+    gap: 0;
+    align-items: stretch;
+    flex-direction: column;
+
+    & li {
+      padding: 1.6rem 2.4rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+    }
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -59,16 +99,58 @@ const NavLink = styled(Link)`
   box-shadow: inset 0 -2px 0 0 transparent;
   transition: all 0.2s;
 
-  &[data-active="active"] {
+  &.active {
     box-shadow: inset 0 -2px 0 0 var(--color-primary-600);
+  }
+`;
+
+const MenuButton = styled.button`
+  @media screen and (max-width: 52em) {
+    display: block;
+  }
+
+  display: none;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: none;
+
+  & span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-gray-800);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-gray-800);
+      position: absolute;
+      top: -1.3rem;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 65%;
+      height: 2px;
+      translate: calc((5.6rem / (100 / (100 - 65))));
+      background-color: var(--color-gray-800);
+      position: absolute;
+      top: 1.2rem;
+      left: 0;
+    }
   }
 `;
 
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = ({}) => {
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <Header>
@@ -77,19 +159,15 @@ const Navigation: FC<NavigationProps> = ({}) => {
           <StyledLogo />
         </Link>
 
-        <nav>
+        <Nav className={open ? "open" : ""}>
           <NavList>
             <li>
-              <NavLink href="/" data-active={pathname === "/" ? "active" : ""}>
+              <NavLink href="/" className={pathname === "/" ? "active" : ""}>
                 Home
               </NavLink>
             </li>
 
-            <Dropdown
-              text="Services"
-              open={dropdownOpen}
-              setOpen={setDropdownOpen}
-            >
+            <Dropdown text="Services">
               <NavLink href="/services/adult">Adult Training</NavLink>
               <NavLink href="/services/post-surgical">
                 Post Surgical Training
@@ -101,7 +179,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
             <li>
               <NavLink
                 href="/aging"
-                data-active={pathname === "/aging" ? "active" : ""}
+                className={pathname === "/aging" ? "active" : ""}
               >
                 Aging & Hormones
               </NavLink>
@@ -109,7 +187,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
             <li>
               <NavLink
                 href="/profiles"
-                data-active={pathname === "/profiles" ? "active" : ""}
+                className={pathname === "/profiles" ? "active" : ""}
               >
                 Client Profiles
               </NavLink>
@@ -117,7 +195,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
             <li>
               <NavLink
                 href="/testimonials"
-                data-active={pathname === "/testimonials" ? "active" : ""}
+                className={pathname === "/testimonials" ? "active" : ""}
               >
                 Testimonials
               </NavLink>
@@ -128,7 +206,11 @@ const Navigation: FC<NavigationProps> = ({}) => {
               </Modal.Open>
             </li>
           </NavList>
-        </nav>
+        </Nav>
+
+        <MenuButton onClick={() => setOpen((curState) => !curState)}>
+          <span>&nbsp;</span>
+        </MenuButton>
       </StyledNavigation>
     </Header>
   );
@@ -145,6 +227,32 @@ const DropdownParent = styled.li`
 
     cursor: pointer;
   }
+
+  /* 830 and up */
+  @media screen and (min-width: 52em) {
+    &:hover {
+      & .wrapper {
+        pointer-events: all;
+      }
+
+      & .list {
+        opacity: 1;
+        visibility: visible;
+        translate: 0 0;
+      }
+
+      & svg {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  @media screen and (max-width: 52em) {
+    & a {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 `;
 
 const DropdownWrapper = styled.div`
@@ -154,7 +262,9 @@ const DropdownWrapper = styled.div`
   left: 0;
   pointer-events: none;
 
-  &[data-open="open"] {
+  @media screen and (max-width: 52em) {
+    position: static;
+    padding-top: 0;
     pointer-events: all;
   }
 `;
@@ -177,10 +287,29 @@ const DropdownList = styled.ul`
   translate: 0 -1.6rem;
   transition: all 0.2s;
 
-  &[data-open="open"] {
-    opacity: 1;
-    visibility: visible;
+  @media screen and (max-width: 52em) {
+    border-top: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+    max-height: 0;
     translate: 0 0;
+    pointer-events: none;
+
+    & li {
+      padding: 1.2rem 0;
+      border: none !important;
+      color: var(--color-gray-600);
+    }
+
+    &.open {
+      max-height: 25rem;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      padding-top: 1.2rem;
+    }
   }
 `;
 
@@ -196,16 +325,13 @@ const rotate = css`
 interface DropdownProps {
   children: React.ReactNode;
   text: string;
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
+const Dropdown: FC<DropdownProps> = ({ children, text }) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <DropdownParent
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <DropdownParent onClick={() => setOpen((curState) => !curState)}>
       <NavLink href="">
         {text}
         <Icon
@@ -214,8 +340,8 @@ const Dropdown: FC<DropdownProps> = ({ children, text, open, setOpen }) => {
         />
       </NavLink>
 
-      <DropdownWrapper data-open={open && "open"}>
-        <DropdownList data-open={open && "open"} className="dropdownList">
+      <DropdownWrapper className="wrapper">
+        <DropdownList className={`${open ? "open" : ""} list`}>
           {React.Children.map(children, (child, i) => (
             <li key={i}>{child}</li>
           ))}

@@ -10,7 +10,9 @@ const Section = styled.section`
   /* to grow child */
   height: 95vh;
 
-  padding: 9.6rem 3.2rem;
+  padding: 0 3.2rem;
+  /* account for nav */
+  padding-top: 9.6rem;
   position: relative;
 `;
 
@@ -49,7 +51,7 @@ const BackgroundVideo = styled.div`
   z-index: -1;
   background-image: linear-gradient(
     to right,
-    rgba(255, 255, 255, 80%) 50%,
+    rgba(255, 255, 255, 75%) 50%,
     rgba(0, 0, 0, 0)
   );
 

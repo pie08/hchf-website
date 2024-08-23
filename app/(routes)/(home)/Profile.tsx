@@ -44,7 +44,7 @@ const ProfileTextContainer = styled.div`
   }
 
   & p {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 

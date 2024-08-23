@@ -12,9 +12,17 @@ const StyledTestimonialSlider = styled.div`
 `;
 
 const Slider = styled.div`
-  height: 55rem;
+  height: 46rem;
   position: relative;
   overflow: visible;
+
+  @media screen and (max-width: 72em) {
+    height: 50rem;
+  }
+
+  @media screen and (max-width: 52em) {
+    height: 60rem;
+  }
 `;
 
 const TestimonialSlide = styled.div`

@@ -7,4 +7,6 @@ export const SectionHeading = styled(Container)`
   align-items: center;
   flex-direction: column;
   gap: 1.2rem;
+
+  text-align: center;
 `;

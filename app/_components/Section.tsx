@@ -14,4 +14,8 @@ export const Section = styled.section`
   &[data-dark-gray] {
     background-color: var(--color-gray-100);
   }
+
+  @media screen and (max-width: 52em) {
+    padding: 9.6rem 2.4rem;
+  }
 `;

@@ -22,7 +22,7 @@ const Services: FC<ServicesProps> = async ({}) => {
     <Section>
       <SectionHeading>
         <h4>Services</h4>
-        <h2>Persinalized training programs</h2>
+        <h2>Personalized training programs</h2>
       </SectionHeading>
 
       <ServicesContainer>
