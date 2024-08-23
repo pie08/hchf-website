@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@linaria/react";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 
 const StyledTestimonialSlider = styled.div`
   grid-column: 3 / 11;
@@ -12,17 +12,8 @@ const StyledTestimonialSlider = styled.div`
 `;
 
 const Slider = styled.div`
-  height: 46rem;
   position: relative;
   overflow: visible;
-
-  @media screen and (max-width: 72em) {
-    height: 50rem;
-  }
-
-  @media screen and (max-width: 52em) {
-    height: 60rem;
-  }
 `;
 
 const TestimonialSlide = styled.div`
@@ -33,6 +24,7 @@ const TestimonialSlide = styled.div`
 
 const SliderButtons = styled.div`
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   gap: 1.6rem;
   align-items: center;
@@ -61,6 +53,8 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({
   autoSlide = true,
 }) => {
   const [curSlide, setCurSlide] = useState(0);
+  const [sliderHeight, setSliderHeight] = useState(560);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const maxSlide = children.length - 1;
   // num of seconds before each slide change
   const seconds = 20;
@@ -89,15 +83,31 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({
     [handleNextSlide, autoSlide]
   );
 
+  useEffect(() => {
+    let maxHeight = 0;
+    sliderRef.current?.childNodes.forEach((node) => {
+      if (node instanceof Element) {
+        const nodeHeight = node.getBoundingClientRect().height;
+        console.log(node.getBoundingClientRect());
+        if (nodeHeight > maxHeight) {
+          maxHeight = nodeHeight;
+        }
+      }
+    });
+    setSliderHeight(maxHeight);
+  }, []);
+
   return (
     <StyledTestimonialSlider>
-      <Slider>
+      <Slider ref={sliderRef} style={{ height: sliderHeight + "px" }}>
         {/* render children in a testimonial slide */}
         {/* translate each slide relaive to index */}
         {React.Children.map(children, (child, i) => {
           return (
             <TestimonialSlide
-              style={{ translate: `${115 * (i - curSlide)}%` }}
+              style={{
+                translate: `${115 * (i - curSlide)}%`,
+              }}
               onClick={() => setCurSlide(i)}
             >
               {child}
