@@ -18,6 +18,10 @@ const ProfileCardsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.2rem;
+
+  @media screen and (max-width: 52em) {
+    grid-column: 2 / 12;
+  }
 `;
 
 interface ClientProfilesProps {}

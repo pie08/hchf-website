@@ -9,7 +9,6 @@ import {
   PiPersonSimpleRun,
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
-import { css } from "@linaria/core";
 import { Container } from "@/app/_components/Container";
 
 const GridContainer = styled(Container)`

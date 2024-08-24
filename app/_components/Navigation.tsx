@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@linaria/react";
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 import { Container } from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
@@ -94,7 +94,6 @@ const NavList = styled.ul`
 const NavLink = styled(Link)`
   font-size: 1.8rem;
   font-weight: 600;
-  line-height: 1.25;
 
   box-shadow: inset 0 -2px 0 0 transparent;
   transition: all 0.2s;
@@ -105,11 +104,12 @@ const NavLink = styled(Link)`
 `;
 
 const MenuButton = styled.button`
+  display: none;
+
   @media screen and (max-width: 52em) {
     display: block;
   }
 
-  display: none;
   width: 5.6rem;
   height: 5.6rem;
   background: none;
@@ -120,6 +120,7 @@ const MenuButton = styled.button`
     width: 100%;
     height: 2px;
     background-color: var(--color-gray-800);
+    transition: all 0.2s;
 
     &::before {
       content: "";
@@ -130,6 +131,7 @@ const MenuButton = styled.button`
       position: absolute;
       top: -1.3rem;
       left: 0;
+      transition: all 0.2s;
     }
 
     &::after {
@@ -142,6 +144,28 @@ const MenuButton = styled.button`
       position: absolute;
       top: 1.2rem;
       left: 0;
+      transition: all 0.2s;
+    }
+  }
+
+  &.open {
+    & span {
+      background-color: transparent;
+
+      &::before {
+        rotate: -45deg;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+      }
+
+      &::after {
+        width: 100%;
+        rotate: 45deg;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+      }
     }
   }
 `;
@@ -151,6 +175,13 @@ interface NavigationProps {}
 const Navigation: FC<NavigationProps> = ({}) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  function close() {
+    setOpen(false);
+  }
+
+  // close on url change
+  useEffect(close, [pathname]);
 
   return (
     <Header>
@@ -208,7 +239,10 @@ const Navigation: FC<NavigationProps> = ({}) => {
           </NavList>
         </Nav>
 
-        <MenuButton onClick={() => setOpen((curState) => !curState)}>
+        <MenuButton
+          className={`${open ? "open" : ""}`}
+          onClick={() => setOpen((curState) => !curState)}
+        >
           <span>&nbsp;</span>
         </MenuButton>
       </StyledNavigation>
@@ -221,7 +255,7 @@ const DropdownParent = styled.li`
   position: relative;
 
   & a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.6rem;
 
@@ -316,10 +350,20 @@ const DropdownList = styled.ul`
 const Icon = styled(PiCaretDown)`
   width: 2rem;
   height: 2rem;
+
+  @media screen and (max-width: 52em) {
+    width: 2.4rem;
+    height: 2.4rem;
+    rotate: -90deg;
+  }
 `;
 
 const rotate = css`
   rotate: 180deg;
+
+  @media screen and (max-width: 52em) {
+    rotate: 0deg;
+  }
 `;
 
 interface DropdownProps {

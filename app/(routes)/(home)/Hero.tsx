@@ -40,6 +40,12 @@ const HeroTextContainer = styled.div`
       font-weight: 600;
     }
   }
+
+  @media screen and (max-width: 52em) {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const BackgroundVideo = styled.div`
@@ -49,12 +55,6 @@ const BackgroundVideo = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 75%) 50%,
-    rgba(0, 0, 0, 0)
-  );
-
   & video {
     width: 100%;
     height: 100%;
@@ -74,6 +74,14 @@ const BackgroundVideo = styled.div`
       rgba(255, 255, 255, 85%) 55%,
       rgba(0, 0, 0, 0%)
     );
+
+    @media screen and (max-width: 52em) {
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 85%),
+        rgba(255, 255, 255, 85%)
+      );
+    }
   }
 `;
 

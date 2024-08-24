@@ -40,12 +40,19 @@ const HeadingContainer = styled.div`
     height: 4rem;
     color: var(--color-primary-200);
   }
+
+  & h3 {
+    /* @media screen and (max-width: 52em) {
+      font-size: 2.8rem;
+    } */
+  }
 `;
 
 const ArrowDown = styled.div`
   position: absolute;
   top: 0;
-  translate: 25% -25%;
+  left: 50%;
+  translate: -25% -25%;
 
   & svg {
     color: var(--color-primary-200);
@@ -70,7 +77,8 @@ const ArrowDown = styled.div`
 const ArrowUp = styled.div`
   position: absolute;
   top: 0;
-  translate: 25% -10%;
+  left: 50%;
+  translate: -25% -10%;
 
   & svg {
     color: var(--color-primary-200);
