@@ -37,8 +37,6 @@ const SliderButtons: FC<SliderButtonsProps> = ({
   slideIndex,
   callback,
 }) => {
-  console.log(Array(numSlides));
-
   return (
     <StyledSliderButtons>
       {/* render buttons for each slide */}
