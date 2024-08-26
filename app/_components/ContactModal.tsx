@@ -10,7 +10,7 @@ import TextInput from "./TextInput";
 import Modal from "@/app/_components/Modal";
 
 const ModalContainer = styled.div`
-  width: clamp(30rem, 100vw, 50rem);
+  width: clamp(30rem, 90vw, 50rem);
 
   padding: 4.8rem;
   display: flex;
@@ -20,6 +20,10 @@ const ModalContainer = styled.div`
 
   & h3 {
     color: var(--color-primary-800);
+  }
+
+  @media screen and (max-width: 38em) {
+    padding: 2.4rem;
   }
 `;
 
@@ -45,6 +49,16 @@ const Form = styled.form`
     &:nth-child(2) {
       grid-column: 5 / -1;
     }
+
+    @media screen and (max-width: 38em) {
+      &:nth-child(1) {
+        grid-column: 1 / -1;
+      }
+
+      &:nth-child(2) {
+        grid-column: 1 / -1;
+      }
+    }
   }
 
   & button {
@@ -54,6 +68,20 @@ const Form = styled.form`
 
     &:nth-of-type(2) {
       grid-column: 6 / -1;
+    }
+
+    @media screen and (max-width: 38em) {
+      &:nth-of-type(1) {
+        grid-column: 1 / -1;
+      }
+
+      &:nth-of-type(2) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media screen and (max-width: 38em) {
+      grid-template-columns: 1fr;
     }
   }
 `;

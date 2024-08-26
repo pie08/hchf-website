@@ -63,6 +63,10 @@ const Quotes = styled.span`
   top: -4rem;
   left: 0;
   translate: -125% 0;
+
+  @media screen and (max-width: 38em) {
+    display: none;
+  }
 `;
 
 interface TestimonialProps {

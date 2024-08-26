@@ -55,6 +55,11 @@ const StyledProfile = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 38em) {
+    flex-direction: column;
+    max-width: 40rem;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -73,6 +78,10 @@ const VideoContainer = styled.div`
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+  }
+
+  @media screen and (max-width: 38em) {
+    align-items: center;
   }
 `;
 

@@ -1,11 +1,9 @@
-"use client";
-
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
 import Testimonial from "@/app/_components/Testimonial";
 import { styled } from "@linaria/react";
 import { FC, useEffect, useRef, useState } from "react";
-import TestimonialSlider from "./TestimonialSlider";
+import Slider from "../../_components/Slider";
 import ButtonLink from "@/app/_components/ButtonLink";
 import Image from "next/image";
 import bg from "@/public/assets/images/beach-bg.webp";
@@ -52,20 +50,8 @@ const Background = styled.div`
 interface TestimonialsProps {}
 
 const Testimonials: FC<TestimonialsProps> = ({}) => {
-  // state for setting autoSlide on TestimonialSlider
-  const [autoSlide, setAutoSlide] = useState(false);
-
-  const { isVisible, targetRef } = useIsVisible();
-
-  // set isVisible ot truw when section is in view
-  useEffect(() => {
-    if (isVisible) {
-      setAutoSlide(true);
-    }
-  }, [isVisible]);
-
   return (
-    <TestimonialsSection ref={targetRef}>
+    <TestimonialsSection>
       <Background>
         <Image src={bg} alt="Background of a beach" fill sizes="100vw" />
       </Background>
@@ -77,7 +63,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
 
       <GridContainer>
         {/* begin sliding only after being viewed */}
-        <TestimonialSlider autoSlide={autoSlide}>
+        <Slider autoSlide={true}>
           {/* render testimonialData as Testimonial components */}
           {testimonialData.map(({ text, author }, i) => (
             <Testimonial
@@ -89,7 +75,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
               limitText
             />
           ))}
-        </TestimonialSlider>
+        </Slider>
       </GridContainer>
 
       <ButtonLink href="/testimonials">See all testimonials</ButtonLink>

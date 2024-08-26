@@ -15,6 +15,10 @@ const ProfileContainer = styled(Container)`
   flex-direction: column;
   align-items: center;
   gap: 6.4rem;
+
+  @media screen and (max-width: 38em) {
+    align-items: center;
+  }
 `;
 
 interface pageProps {}

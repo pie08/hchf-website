@@ -10,11 +10,19 @@ export const StyledButton = styled.button`
   &[data-size="large"] {
     font-size: 1.8rem;
     padding: 1.2rem 2rem;
+
+    @media screen and (max-width: 38em) {
+      padding: 1.6rem 2.4rem;
+    }
   }
 
   &[data-size="small"] {
     font-size: 1.6rem;
     padding: 0.8rem;
+
+    @media screen and (max-width: 38em) {
+      padding: 1.2rem;
+    }
   }
 
   &[data-variation="cta"] {

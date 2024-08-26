@@ -10,37 +10,42 @@ import {
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
 import { Container } from "@/app/_components/Container";
-import Swipe from "./Swipe";
+import Slider from "../../_components/Slider";
+import CombatEffectsSlider from "./CombatEffectsSlider";
 
 const GridContainer = styled(Container)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
-  width: 100%;
+  overflow-x: clip;
+
+  & > div.slider {
+    display: none;
+  }
 
   @media screen and (max-width: 38em) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
+    & > div {
+      display: none;
+    }
 
-    scroll-snap-type: x mandatory;
+    & > div.slider {
+      display: flex;
+    }
   }
 `;
 
 const CardWrapper = styled.div`
   @media screen and (max-width: 38em) {
     width: 100%;
-    flex: 0 0 100%;
-    scroll-snap-stop: always;
-    scroll-snap-align: start;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: stretch;
   }
 
-  & div {
+  & > div {
     height: 100%;
   }
 `;
@@ -93,6 +98,8 @@ const CombatEffects: FC<CombatEffectsProps> = ({}) => {
             ]}
           />
         </CardWrapper>
+
+        <CombatEffectsSlider />
       </GridContainer>
     </Section>
   );

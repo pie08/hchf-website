@@ -51,7 +51,7 @@ const Nav = styled.nav`
     left: 100%;
     z-index: -1;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     background-color: rgba(255, 255, 255, 95%);
     padding: 0 2.4rem;
     transition: all 0.2s;
@@ -92,6 +92,7 @@ const NavList = styled.ul`
 `;
 
 const NavLink = styled(Link)`
+  display: inline-block;
   font-size: 1.8rem;
   font-weight: 600;
 

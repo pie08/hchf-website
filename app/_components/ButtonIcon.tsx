@@ -15,4 +15,8 @@ export const ButtonIcon = styled.button`
     width: 2.4rem;
     height: 2.4rem;
   }
+
+  @media screen and (max-width: 38em) {
+    padding: 1.2rem;
+  }
 `;

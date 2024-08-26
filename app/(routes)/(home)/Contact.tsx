@@ -34,7 +34,7 @@ const Form = styled.form`
 `;
 
 const bgWhite = css`
-  background-color: var(--color-gray-white);
+  background-color: var(--color-gray-white) !important;
 `;
 
 const FullColWrapper = styled.div`

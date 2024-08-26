@@ -7,10 +7,6 @@ const StyledSliderButtons = styled.div`
   justify-content: center;
   gap: 1.6rem;
   align-items: center;
-
-  @media screen and (max-width: 38em) {
-    display: none;
-  }
 `;
 
 const SliderButton = styled.button`
