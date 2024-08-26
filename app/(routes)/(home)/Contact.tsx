@@ -22,6 +22,15 @@ const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3.2rem;
+
+  @media screen and (max-width: 52em) {
+    gap: 2.4rem;
+  }
+
+  @media screen and (max-width: 38em) {
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const bgWhite = css`

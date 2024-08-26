@@ -28,6 +28,11 @@ const AgingCard = styled.div`
       font-size: 1.8rem;
     }
   }
+
+  @media screen and (max-width: 38em) {
+    max-width: 55rem;
+    width: 100%;
+  }
 `;
 
 const HeadingContainer = styled.div`
@@ -39,12 +44,6 @@ const HeadingContainer = styled.div`
     width: 4rem;
     height: 4rem;
     color: var(--color-primary-200);
-  }
-
-  & h3 {
-    /* @media screen and (max-width: 52em) {
-      font-size: 2.8rem;
-    } */
   }
 `;
 
@@ -58,6 +57,11 @@ const ArrowDown = styled.div`
     color: var(--color-primary-200);
     width: 50rem;
     height: 50rem;
+
+    @media screen and (max-width: 52em) {
+      width: 40rem;
+      height: 40rem;
+    }
   }
 
   &::after {
@@ -76,14 +80,19 @@ const ArrowDown = styled.div`
 
 const ArrowUp = styled.div`
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
-  translate: -25% -10%;
+  translate: -25% 25%;
 
   & svg {
     color: var(--color-primary-200);
     width: 50rem;
     height: 50rem;
+
+    @media screen and (max-width: 52em) {
+      width: 40rem;
+      height: 40rem;
+    }
   }
 
   &::after {

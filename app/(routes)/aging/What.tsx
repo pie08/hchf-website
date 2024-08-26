@@ -12,6 +12,10 @@ const GridContainer = styled(Container)`
   gap: 3.2rem;
   width: 100%;
   align-items: center;
+
+  @media screen and (max-width: 38em) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -23,6 +27,10 @@ const ImageWrapper = styled.div`
     display: block;
     max-width: 30rem;
     height: 100%;
+  }
+
+  @media screen and (max-width: 38em) {
+    grid-row: 1 / 2;
   }
 `;
 

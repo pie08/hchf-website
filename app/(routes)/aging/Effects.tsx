@@ -12,6 +12,11 @@ const GridContainer = styled(Container)`
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
   width: 100%;
+
+  @media screen and (max-width: 38em) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 `;
 
 interface EffectsProps {}

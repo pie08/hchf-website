@@ -2,6 +2,10 @@
 
 import { styled } from "@linaria/react";
 import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import SliderButtons from "@/app/_components/SliderButtons";
 
 const StyledTestimonialSlider = styled.div`
   grid-column: 3 / 11;
@@ -9,37 +13,43 @@ const StyledTestimonialSlider = styled.div`
   flex-direction: column;
   gap: 4.8rem;
   overflow: visible;
+
+  @media screen and (max-width: 52em) {
+    grid-column: 2 / 12;
+  }
+
+  @media screen and (max-width: 38em) {
+    grid-column: 1 / -1;
+  }
 `;
 
 const Slider = styled.div`
   position: relative;
   overflow: visible;
+
+  @media screen and (max-width: 38em) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    gap: 6.4rem;
+    height: auto !important;
+
+    scroll-snap-type: x mandatory;
+  }
 `;
 
 const TestimonialSlide = styled.div`
   position: absolute;
   transition: all 0.2s;
   cursor: pointer;
-`;
 
-const SliderButtons = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  gap: 1.6rem;
-  align-items: center;
-`;
-
-const SliderButton = styled.button`
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 100%;
-  background-color: var(--color-gray-200);
-  transition: all 0.2s;
-
-  &.active {
-    background-color: transparent;
-    box-shadow: 0 0 0 2px var(--color-primary-200);
+  @media screen and (max-width: 38em) {
+    position: static;
+    translate: 0 0 !important;
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
   }
 `;
 
@@ -83,6 +93,7 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({
     [handleNextSlide, autoSlide]
   );
 
+  // set container height
   useEffect(() => {
     let maxHeight = 0;
     sliderRef.current?.childNodes.forEach((node) => {
@@ -116,15 +127,13 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({
         })}
       </Slider>
 
-      <SliderButtons>
-        {/* render buttons for each slide */}
-        {React.Children.map(children, (_, i) => (
-          <SliderButton
-            className={curSlide === i ? "active" : ""}
-            onClick={() => setCurSlide(i)}
-          />
-        ))}
-      </SliderButtons>
+      <SliderButtons
+        numSlides={maxSlide + 1}
+        slideIndex={curSlide}
+        callback={(i) => {
+          setCurSlide(i);
+        }}
+      />
     </StyledTestimonialSlider>
   );
 };

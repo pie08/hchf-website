@@ -12,6 +12,11 @@ const GridContainer = styled(Container)`
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
   align-items: center;
+
+  @media screen and (max-width: 38em) {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -24,6 +29,18 @@ const LogoWrapper = styled.div`
     display: block;
     max-width: 30rem;
     height: auto;
+  }
+
+  @media screen and (max-width: 38em) {
+    grid-row: 1 / 2;
+    height: auto;
+    padding: 4.8rem 0;
+  }
+`;
+
+const imgSliderClass = css`
+  @media screen and (max-width: 38em) {
+    grid-row: 1 / 2;
   }
 `;
 
@@ -44,7 +61,9 @@ const Service: FC<ServiceProps> = ({
 }) => {
   return (
     <GridContainer>
-      {!right && srcArr && <ImageSlider srcArr={srcArr} />}
+      {!right && srcArr && (
+        <ImageSlider srcArr={srcArr} className={imgSliderClass} />
+      )}
       {!right && !srcArr && (
         <LogoWrapper>
           <Logo />
@@ -56,7 +75,9 @@ const Service: FC<ServiceProps> = ({
         <p>{text}</p>
       </TextContainer>
 
-      {right && srcArr && <ImageSlider srcArr={srcArr} />}
+      {right && srcArr && (
+        <ImageSlider srcArr={srcArr} className={imgSliderClass} />
+      )}
       {right && !srcArr && (
         <LogoWrapper>
           <Logo />

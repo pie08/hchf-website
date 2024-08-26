@@ -22,6 +22,10 @@ const ProfileCardsContainer = styled.div`
   @media screen and (max-width: 52em) {
     grid-column: 2 / 12;
   }
+
+  @media screen and (max-width: 38em) {
+    grid-column: 1 / -1;
+  }
 `;
 
 interface ClientProfilesProps {}

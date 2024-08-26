@@ -10,12 +10,39 @@ import {
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
 import { Container } from "@/app/_components/Container";
+import Swipe from "./Swipe";
 
 const GridContainer = styled(Container)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
   width: 100%;
+
+  @media screen and (max-width: 38em) {
+    grid-template-columns: 1fr;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+
+    scroll-snap-type: x mandatory;
+  }
+`;
+
+const CardWrapper = styled.div`
+  @media screen and (max-width: 38em) {
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  & div {
+    height: 100%;
+  }
 `;
 
 interface CombatEffectsProps {}
@@ -29,30 +56,43 @@ const CombatEffects: FC<CombatEffectsProps> = ({}) => {
       </SectionHeading>
 
       <GridContainer>
-        <Card
-          heading="Move"
-          headingIcon={<PiPersonSimpleRun />}
-          listItems={["Rotate", "Move sideways", "Move forwards", "Jump"]}
-        />
-        <Card
-          heading="Lengthen"
-          headingIcon={<PiPersonSimpleTaiChi />}
-          listItems={["Active stretching", "Yoga", "Static moving"]}
-        />
-        <Card
-          heading="Strengthen & Stabilize"
-          headingIcon={<PiBarbell />}
-          listItems={[
-            "Bu-Lateral movements",
-            "Unilateral movements",
-            "Compound movements",
-          ]}
-        />
-        <Card
-          heading="Eat healthy"
-          headingIcon={<PiAppleLogo />}
-          listItems={["Active stretching", "Yoga", "Static stretching", "Jump"]}
-        />
+        <CardWrapper>
+          <Card
+            heading="Move"
+            headingIcon={<PiPersonSimpleRun />}
+            listItems={["Rotate", "Move sideways", "Move forwards", "Jump"]}
+          />
+        </CardWrapper>
+        <CardWrapper>
+          <Card
+            heading="Lengthen"
+            headingIcon={<PiPersonSimpleTaiChi />}
+            listItems={["Active stretching", "Yoga", "Static moving"]}
+          />
+        </CardWrapper>
+        <CardWrapper>
+          <Card
+            heading="Strengthen & Stabilize"
+            headingIcon={<PiBarbell />}
+            listItems={[
+              "Bu-Lateral movements",
+              "Unilateral movements",
+              "Compound movements",
+            ]}
+          />
+        </CardWrapper>
+        <CardWrapper>
+          <Card
+            heading="Eat healthy"
+            headingIcon={<PiAppleLogo />}
+            listItems={[
+              "Active stretching",
+              "Yoga",
+              "Static stretching",
+              "Jump",
+            ]}
+          />
+        </CardWrapper>
       </GridContainer>
     </Section>
   );

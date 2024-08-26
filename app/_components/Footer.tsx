@@ -8,12 +8,20 @@ const FooterContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3.2rem;
+
+  @media screen and (max-width: 38em) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledLogo = styled(Logo)`
   display: block;
   max-width: 20rem;
   height: auto;
+
+  @media screen and (max-width: 38em) {
+    justify-self: center;
+  }
 `;
 
 const FooterItem = styled.nav`

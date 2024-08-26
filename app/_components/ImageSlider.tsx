@@ -53,21 +53,20 @@ const SliderButton = styled.button`
   }
 
   &:nth-of-type(1) {
-    right: 6.4rem;
     right: 0;
   }
 
   &:nth-of-type(2) {
-    left: 6.4rem;
     left: 0;
   }
 `;
 
 interface ImageSliderProps {
   srcArr: string[];
+  className?: string;
 }
 
-const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
+const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
   const [curSlide, setCurSlide] = useState(0);
   const maxSlide = srcArr.length - 1;
 
@@ -92,7 +91,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr }) => {
   }
 
   return (
-    <Slider>
+    <Slider className={className}>
       <SliderButton onClick={handleNextSlide}>
         <PiCaretRight />
       </SliderButton>
