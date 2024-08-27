@@ -117,6 +117,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
         swiperInstance.current = swiper;
       }}
       onSlideChange={(swiper) => setCurSlide(swiper.activeIndex)}
+      className={className}
     >
       <SliderButton onClick={handleNextSlide}>
         <PiCaretRight />
