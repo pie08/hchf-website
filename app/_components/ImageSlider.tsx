@@ -1,11 +1,13 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { styled } from "@linaria/react";
 import Image from "next/image";
 import { PiCaretLeft, PiCaretRight } from "react-icons/pi";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
 
-const Slider = styled.div`
+const Slider = styled(Swiper)`
   position: relative;
   height: 53rem;
   overflow: hidden;
@@ -16,7 +18,7 @@ const Slider = styled.div`
   justify-self: center;
 `;
 
-const Slide = styled.div`
+const Slide = styled(SwiperSlide)`
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -42,6 +44,7 @@ const SliderButton = styled.button`
   top: 50%;
   translate: 0 -50%;
   transition: all 0.2s;
+  z-index: 2;
 
   &:hover {
     box-shadow: inset 0 0 0 1px var(--color-gray-200);
@@ -68,8 +71,19 @@ interface ImageSliderProps {
 
 // todo: convert custom slider to swiper component
 const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
+  // state for controlling slider position
   const [curSlide, setCurSlide] = useState(0);
+  // stored swiper instance
+  const swiperInstance = useRef<SwiperType | null>(null);
+  // maximum slide index
   const maxSlide = srcArr.length - 1;
+
+  // update slider positon on state change
+  useEffect(() => {
+    if (swiperInstance.current) {
+      swiperInstance.current?.slideTo(curSlide);
+    }
+  }, [curSlide]);
 
   // change to next slide if not the last slide
   function handleNextSlide() {
@@ -92,7 +106,18 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
   }
 
   return (
-    <Slider className={className}>
+    <Slider
+      spaceBetween={48}
+      slidesPerView="auto"
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => {
+        setCurSlide(swiper.activeIndex);
+        swiperInstance.current = swiper;
+      }}
+      onSlideChange={(swiper) => setCurSlide(swiper.activeIndex)}
+    >
       <SliderButton onClick={handleNextSlide}>
         <PiCaretRight />
       </SliderButton>
@@ -100,12 +125,13 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
         <PiCaretLeft />
       </SliderButton>
 
-      {/* render images in slides */}
-      {/* translate each slide relaive to index */}
+      {/* render children inside SwiperSlide */}
       {srcArr.map((src, i) => (
-        <Slide key={i} style={{ translate: `${100 * (i - curSlide)}%` }}>
-          <Image src={src} alt="alt" fill />
-        </Slide>
+        <SwiperSlide key={i}>
+          <Slide>
+            <Image src={src} alt="alt" fill />
+          </Slide>
+        </SwiperSlide>
       ))}
     </Slider>
   );
