@@ -8,7 +8,16 @@ import {
   PiPersonSimpleRun,
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
-import { useIsVisible } from "@/app/_hooks/useIsVisible";
+
+const StyledSlider = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  & .swiper-slide {
+    cursor: pointer;
+  }
+`;
 
 const CardWrapper = styled.div`
   @media screen and (max-width: 38em) {

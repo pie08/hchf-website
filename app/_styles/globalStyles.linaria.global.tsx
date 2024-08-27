@@ -85,10 +85,18 @@ export const globalStyles = css`
     h1 {
       font-size: 6.4rem;
       letter-spacing: -0.5px;
+
+      @media screen and (max-width: 38em) {
+        font-size: 4.8rem;
+      }
     }
 
     h2 {
       font-size: 4.8rem;
+
+      @media screen and (max-width: 38em) {
+        font-size: 4rem;
+      }
     }
 
     h3 {
@@ -117,6 +125,10 @@ export const globalStyles = css`
     input,
     textarea {
       border: none;
+    }
+
+    .swiper {
+      width: 100%;
     }
   }
 `;

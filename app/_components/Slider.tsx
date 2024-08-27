@@ -23,26 +23,12 @@ import { Swiper as SwiperType } from "swiper/types";
 import { useIsVisible } from "../_hooks/useIsVisible";
 
 const StyledSlider = styled.div`
-  grid-column: 3 / 11;
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
-  overflow: visible;
-
-  & .swiper {
-    overflow: visible;
-  }
 
   & .swiper-slide {
     cursor: pointer;
-  }
-
-  @media screen and (max-width: 52em) {
-    grid-column: 2 / 12;
-  }
-
-  @media screen and (max-width: 38em) {
-    grid-column: 1 / -1;
   }
 `;
 

@@ -10,7 +10,6 @@ import {
   PiPersonSimpleTaiChi,
 } from "react-icons/pi";
 import { Container } from "@/app/_components/Container";
-import Slider from "../../_components/Slider";
 import CombatEffectsSlider from "./CombatEffectsSlider";
 
 const GridContainer = styled(Container)`

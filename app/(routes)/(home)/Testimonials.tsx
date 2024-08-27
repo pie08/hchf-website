@@ -47,6 +47,30 @@ const Background = styled.div`
   }
 `;
 
+const StyledSlider = styled.div`
+  grid-column: 3 / 11;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  overflow: visible;
+
+  & .swiper {
+    overflow: visible;
+  }
+
+  & .swiper-slide {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 52em) {
+    grid-column: 2 / 12;
+  }
+
+  @media screen and (max-width: 38em) {
+    grid-column: 1 / -1;
+  }
+`;
+
 interface TestimonialsProps {}
 
 const Testimonials: FC<TestimonialsProps> = ({}) => {
@@ -63,19 +87,21 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
 
       <GridContainer>
         {/* begin sliding only after being viewed */}
-        <Slider autoSlide={true}>
-          {/* render testimonialData as Testimonial components */}
-          {testimonialData.map(({ text, author }, i) => (
-            <Testimonial
-              key={i}
-              text={text}
-              author={author}
-              quote={false}
-              textFill
-              limitText
-            />
-          ))}
-        </Slider>
+        <StyledSlider>
+          <Slider autoSlide={true}>
+            {/* render testimonialData as Testimonial components */}
+            {testimonialData.map(({ text, author }, i) => (
+              <Testimonial
+                key={i}
+                text={text}
+                author={author}
+                quote={false}
+                textFill
+                limitText
+              />
+            ))}
+          </Slider>
+        </StyledSlider>
       </GridContainer>
 
       <ButtonLink href="/testimonials">See all testimonials</ButtonLink>
