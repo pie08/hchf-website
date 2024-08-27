@@ -135,6 +135,7 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
   }, [targetRef, isVisible]);
 
   // todo: possibly add low res loading image instead of spinner
+  // todo: fix layout shift
   return (
     <StyledProfile id={name}>
       <VideoContainer>

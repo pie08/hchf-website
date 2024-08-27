@@ -1,18 +1,19 @@
 import { Container } from "@/app/_components/Container";
 import { Section } from "@/app/_components/Section";
 import { SectionHeading } from "@/app/_components/SectionHeading";
+import Service from "@/app/_components/Service";
+import getRelativeDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
 import { styled } from "@linaria/react";
 import { FC } from "react";
-import ImageSlider from "@/app/_components/ImageSlider";
-import getDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
-import getRelativeDirFilePaths from "@/app/_lib/getRelativeDirFilePaths";
-import Logo from "@/app/_components/Logo";
-import Service from "@/app/_components/Service";
 
 const ServicesContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
+
+  @media screen and (max-width: 38em) {
+    gap: 6.4rem;
+  }
 `;
 
 interface ServicesProps {}

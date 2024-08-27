@@ -16,6 +16,10 @@ const ContactContainer = styled(Container)`
   & h2 {
     color: var(--color-primary-800);
   }
+  @media screen and (max-width: 38em) {
+    padding: 2.4rem;
+    gap: 3.2rem;
+  }
 `;
 
 const Form = styled.form`
@@ -28,7 +32,7 @@ const Form = styled.form`
   }
 
   @media screen and (max-width: 38em) {
-    gap: 1.2rem;
+    gap: 1.6rem;
     grid-template-columns: 1fr;
   }
 `;

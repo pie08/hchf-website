@@ -25,6 +25,8 @@ const ProfileCardsContainer = styled.div`
 
   @media screen and (max-width: 38em) {
     grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 `;
 

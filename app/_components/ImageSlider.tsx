@@ -66,6 +66,7 @@ interface ImageSliderProps {
   className?: string;
 }
 
+// todo: convert custom slider to swiper component
 const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
   const [curSlide, setCurSlide] = useState(0);
   const maxSlide = srcArr.length - 1;

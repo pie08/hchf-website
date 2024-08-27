@@ -110,6 +110,10 @@ export const globalStyles = css`
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       color: var(--color-primary-800);
+
+      @media screen and (max-width: 38em) {
+        font-size: 2rem;
+      }
     }
 
     a {

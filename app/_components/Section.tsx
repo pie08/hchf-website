@@ -20,7 +20,7 @@ export const Section = styled.section`
   }
 
   @media screen and (max-width: 38em) {
-    /* gap: 6.4rem;
-    padding: 6.4rem 2.4rem; */
+    gap: 6.4rem;
+    padding: 6.4rem 2.4rem;
   }
 `;

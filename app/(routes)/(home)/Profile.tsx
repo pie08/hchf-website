@@ -13,6 +13,7 @@ const StyledProfile = styled.div`
   padding: 1.6rem;
   background-color: var(--color-gray-white);
   border: 2px solid var(--color-gray-200);
+  max-width: 35rem;
   transition: all 0.2s;
 
   &:hover {

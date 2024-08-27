@@ -31,6 +31,18 @@ const Button = styled(Link)`
     height: 2.4rem;
     transition: all 0.2s;
   }
+
+  @media screen and (max-width: 38em) {
+    & span {
+      font-size: 2rem;
+    }
+
+    & svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: all 0.2s;
+    }
+  }
 `;
 
 interface ButtonLinkProps {

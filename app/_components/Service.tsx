@@ -15,7 +15,6 @@ const GridContainer = styled(Container)`
 
   @media screen and (max-width: 38em) {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
   }
 `;
 
