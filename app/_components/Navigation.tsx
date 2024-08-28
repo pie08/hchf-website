@@ -245,6 +245,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
         <MenuButton
           className={`${open ? "open" : ""}`}
           onClick={() => setOpen((curState) => !curState)}
+          aria-label="Menu"
         >
           <span>&nbsp;</span>
         </MenuButton>

@@ -97,15 +97,21 @@ const ContactModal: FC<ModalProps> = ({}) => {
         <h3>Send me a message</h3>
 
         <Form action="">
-          <TextInput fieldName="First Name" required />
-          <TextInput fieldName="Last Name" required />
+          <TextInput fieldName="First Name" fieldId="firstName" required />
+          <TextInput fieldName="Last Name" fieldId="lastName" required />
           <TextInput
             fieldName="Email"
+            fieldId="email"
             inputType="input"
             type="email"
             required
           />
-          <TextInput fieldName="Message" inputType="textarea" required />
+          <TextInput
+            fieldName="Message"
+            fieldId="message"
+            inputType="textarea"
+            required
+          />
           <Button type="submit">Send your message!</Button>
           <Button type="reset" variation="gray" aria-label="Close">
             Clear

@@ -2,6 +2,7 @@ import Button from "@/app/_components/Button";
 import { Container } from "@/app/_components/Container";
 import { Section } from "@/app/_components/Section";
 import TextInput from "@/app/_components/TextInput";
+import { sendMessage } from "@/app/_lib/actions";
 import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
 import { FC } from "react";
@@ -65,11 +66,22 @@ const Contact: FC<ContactProps> = ({}) => {
       <ContactContainer>
         <h2>Contact me</h2>
 
-        <Form action="">
-          <TextInput fieldName="First Name" className={bgWhite} required />
-          <TextInput fieldName="Last Name" className={bgWhite} required />
+        <Form action={sendMessage}>
+          <TextInput
+            fieldName="First Name"
+            fieldId="firstName"
+            className={bgWhite}
+            required
+          />
+          <TextInput
+            fieldName="Last Name"
+            fieldId="lastName"
+            className={bgWhite}
+            required
+          />
           <TextInput
             fieldName="Email"
+            fieldId="email"
             type="email"
             className={bgWhite}
             required
@@ -77,6 +89,7 @@ const Contact: FC<ContactProps> = ({}) => {
           <FullColWrapper>
             <TextInput
               fieldName="Message"
+              fieldId="message"
               inputType="textarea"
               className={bgWhite}
               required

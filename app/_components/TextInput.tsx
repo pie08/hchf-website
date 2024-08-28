@@ -74,6 +74,7 @@ const Label = styled.label`
 
 interface TextInputProps {
   fieldName: string;
+  fieldId: string;
   inputType?: "input" | "textarea";
   className?: string;
   style?: {};
@@ -82,6 +83,7 @@ interface TextInputProps {
 
 const TextInput: FC<TextInputProps> = ({
   fieldName,
+  fieldId,
   inputType = "input",
   ...props
 }) => {
@@ -89,11 +91,16 @@ const TextInput: FC<TextInputProps> = ({
     <FormRow>
       {/* conditionally render inputType */}
       {inputType === "input" ? (
-        <StyledTextInput id={fieldName} placeholder="" {...props} />
+        <StyledTextInput
+          id={fieldId}
+          name={fieldId}
+          placeholder=""
+          {...props}
+        />
       ) : (
-        <StyledTextArea id={fieldName} placeholder="" {...props} />
+        <StyledTextArea id={fieldId} name={fieldId} placeholder="" {...props} />
       )}
-      <Label htmlFor={fieldName}>{fieldName}</Label>
+      <Label htmlFor={fieldId}>{fieldName}</Label>
     </FormRow>
   );
 };

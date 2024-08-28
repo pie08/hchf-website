@@ -125,7 +125,11 @@ const Window: FC<WindowProps> = ({ children, windowId }) => {
     <>
       <Overlay onClick={close} data-open={open && "open"} />
       <StyledModal data-open={open && "open"} key={key}>
-        <ButtonIcon onClick={close} className={ExitButtonPosition}>
+        <ButtonIcon
+          onClick={close}
+          className={ExitButtonPosition}
+          aria-label="Close"
+        >
           <Icon />
         </ButtonIcon>
         {children}
