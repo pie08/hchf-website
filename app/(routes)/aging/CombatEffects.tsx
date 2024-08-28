@@ -71,7 +71,7 @@ const CombatEffects: FC<CombatEffectsProps> = ({}) => {
           <Card
             heading="Lengthen"
             headingIcon={<PiPersonSimpleTaiChi />}
-            listItems={["Active stretching", "Yoga", "Static moving"]}
+            listItems={["Active stretching", "Yoga", "Static stretching"]}
           />
         </CardWrapper>
         <CardWrapper>
@@ -79,7 +79,7 @@ const CombatEffects: FC<CombatEffectsProps> = ({}) => {
             heading="Strengthen & Stabilize"
             headingIcon={<PiBarbell />}
             listItems={[
-              "Bu-Lateral movements",
+              "Bi-Lateral movements",
               "Unilateral movements",
               "Compound movements",
             ]}

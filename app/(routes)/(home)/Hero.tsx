@@ -103,7 +103,7 @@ const Hero: FC<HeroProps> = ({}) => {
             <div></div>
           </BackgroundVideo>
 
-          <h1>Personalized fitness for adults over 50+ years old</h1>
+          <h1>Personalized fitness for adults 50+ years old</h1>
 
           <p>
             Providing Adults 50+

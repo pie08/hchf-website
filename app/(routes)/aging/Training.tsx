@@ -44,7 +44,7 @@ const Training: FC<TrainingProps> = ({}) => {
     <Section data-gray>
       <GridContainer>
         <TextContainer>
-          <h2>How will this impact your training with me?</h2>
+          <h2>Benefits of training with me</h2>
           <p>
             I will explain, simplify, organize, and structure all of this
             information into terms that are easy to understand and follow. I

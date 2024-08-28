@@ -1,6 +1,6 @@
 [
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/elaine-profile-g4U1qsIJcq35KEKmUPZVimtRkJu2kW.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/elaine-profile.mp4?t=2024-08-28T00%3A32%3A29.886Z",
     "fallbackVideoSrc": "/assets/video/profiles/elaine-profile.mp4",
     "name": "elaine",
     "age": "68",
@@ -12,7 +12,7 @@
     }
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/keith-profile-AZXlR2o5sVXvaFZRvt7UDbYAGYTI0r.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/keith-profile.mp4?t=2024-08-28T00%3A37%3A51.790Z",
     "fallbackVideoSrc": "/assets/video/profiles/keith-profile.mp4",
     "name": "keith",
     "age": "69",
@@ -25,7 +25,7 @@
     "testimonialLink": "/testimonials#keith"
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/ray-profile-UGhLl1QjtJ0J6AtRNXGfIzR86FBEvD.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/ray-profile.mp4?t=2024-08-28T00%3A38%3A01.136Z",
     "fallbackVideoSrc": "/assets/video/profiles/ray-profile.mp4",
     "name": "ray",
     "age": "63",
@@ -37,7 +37,7 @@
     }
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/anna-profile-ziPFIy3OGMqSMOJwLzUK2f5PcJ58zK.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/anna-profile.mp4?t=2024-08-28T00%3A38%3A10.305Z",
     "fallbackVideoSrc": "/assets/video/profiles/anna-profile.mp4",
     "name": "anna",
     "age": "63",
@@ -49,7 +49,7 @@
     "testimonialLink": "/testimonials#anna"
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/tom-profile-JsqJxfMUKJCNg0h3HcFZAWMnLTE6AV.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/tom-profile.mp4?t=2024-08-28T00%3A38%3A20.672Z",
     "fallbackVideoSrc": "/assets/video/profiles/tom-profile.mp4",
     "name": "tom",
     "age": "71",
@@ -62,7 +62,7 @@
     "testimonialLink": "/testimonials#tom"
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/alex-profile-Dg9b66LfiOMUe6t8t4HsOF9kRjK9cY.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/alex-profile.mp4?t=2024-08-28T00%3A38%3A28.537Z",
     "fallbackVideoSrc": "/assets/video/profiles/alex-profile.mp4",
     "name": "alex",
     "age": "19",
@@ -74,7 +74,7 @@
     "college": "Penn State"
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/lizzie-profile-C0Y6W4gVZoF7EHhS0WbPqcao2jLUJL.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/lizzie-profile.mp4?t=2024-08-28T00%3A38%3A34.698Z",
     "fallbackVideoSrc": "/assets/video/profiles/lizzie-profile.mp4",
     "name": "lizzie",
     "age": "17",
@@ -85,7 +85,7 @@
     }
   },
   {
-    "vercelVideoSrc": "https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/profiles/hailey-profile-H9nt4mQgrOQRNSWEAUe0aOJgzwdLZp.mp4",
+    "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/hailey-profile.mp4?t=2024-08-28T00%3A38%3A41.319Z",
     "fallbackVideoSrc": "/assets/video/profiles/hailey-profile.mp4",
     "name": "hailey",
     "age": "18",

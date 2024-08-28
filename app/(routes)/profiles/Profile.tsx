@@ -68,7 +68,9 @@ const VideoContainer = styled.div`
   & video {
     display: block;
     max-width: 30rem;
-    height: 100%;
+    /* normalized aspect ratio */
+    aspect-ratio: 960 / 1706;
+    object-fit: cover;
     z-index: 2;
   }
 
@@ -135,7 +137,6 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
   }, [targetRef, isVisible]);
 
   // todo: possibly add low res loading image instead of spinner
-  // todo: fix layout shift
   return (
     <StyledProfile id={name}>
       <VideoContainer>
@@ -146,8 +147,6 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
           preload="none"
           disablePictureInPicture
           playsInline
-          width={300}
-          height={533}
           onLoadedData={() => setVideoLoaded(true)}
           ref={targetRef}
         >

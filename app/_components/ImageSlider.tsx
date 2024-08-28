@@ -16,9 +16,13 @@ const Slider = styled(Swiper)`
   width: 100%;
 
   justify-self: center;
+
+  @media screen and (max-width: 38em) {
+    height: 45rem;
+  }
 `;
 
-const Slide = styled(SwiperSlide)`
+const Slide = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;

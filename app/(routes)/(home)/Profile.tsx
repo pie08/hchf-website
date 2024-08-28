@@ -20,6 +20,10 @@ const StyledProfile = styled.div`
     cursor: pointer;
     border: 2px solid var(--color-gray-300);
   }
+
+  @media screen and (max-width: 38em) {
+    max-width: 30rem;
+  }
 `;
 
 const ProfileImage = styled(Image)`
