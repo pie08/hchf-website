@@ -6,5 +6,11 @@ declare namespace JSX {
       speed?: string;
       color?: string;
     };
+    "l-right-2": {
+      size?: string;
+      stroke?: string;
+      speed?: string;
+      color?: string;
+    };
   }
 }

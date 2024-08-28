@@ -90,10 +90,10 @@ const CombatEffects: FC<CombatEffectsProps> = ({}) => {
             heading="Eat healthy"
             headingIcon={<PiAppleLogo />}
             listItems={[
-              "Active stretching",
-              "Yoga",
-              "Static stretching",
-              "Jump",
+              "Proper macronutrient choices",
+              "Proper macronutrient ratios",
+              "Sufficient protein intake",
+              "Drink plenty of water",
             ]}
           />
         </CardWrapper>

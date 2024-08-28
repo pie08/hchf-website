@@ -1,11 +1,12 @@
-import { Metadata } from "next";
-import { Poppins, Playfair_Display } from "next/font/google";
-import "./_styles/globalStyles.linaria.global";
-import Navigation from "./_components/Navigation";
-import Footer from "./_components/Footer";
 import Modal from "@/app/_components/Modal";
+import { Metadata } from "next";
+import { Playfair_Display, Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import ContactModal from "./_components/ContactModal";
+import Footer from "./_components/Footer";
+import Navigation from "./_components/Navigation";
 import ProgressBar from "./_components/ProgressBar";
+import "./_styles/globalStyles.linaria.global";
 
 // loading fonts
 export const poppins = Poppins({
@@ -42,6 +43,7 @@ export default function RootLayout({
     >
       <body>
         <ProgressBar />
+        <Toaster />
         <Modal>
           <ContactModal />
           <Navigation />
