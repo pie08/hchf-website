@@ -95,7 +95,7 @@ const Hero: FC<HeroProps> = ({}) => {
         <HeroTextContainer>
           <BackgroundVideo>
             <video loop muted autoPlay disablePictureInPicture>
-              <source src="https://ipofgt4sminu9rdg.public.blob.vercel-storage.com/client-comp-1-1fIxMKEXOfbD0T0suxK7kWKjF84kZI.mp4" />
+              <source src="https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/client-comp-1.mp4?t=2024-08-28T00%3A32%3A22.831Z" />
               <source src="/assets/video/client-comp-1.mp4" />
               Your browser does not support the video tag. Please view in a
               modern browser
