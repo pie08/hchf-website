@@ -234,7 +234,9 @@ const Navigation: FC<NavigationProps> = ({}) => {
             </li>
             <li>
               <Modal.Open opens="contact">
-                <Button size="large">Contact me</Button>
+                <Button size="large" aria-label="Contact">
+                  Contact me
+                </Button>
               </Modal.Open>
             </li>
           </NavList>

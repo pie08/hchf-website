@@ -106,8 +106,8 @@ const ContactModal: FC<ModalProps> = ({}) => {
             required
           />
           <TextInput fieldName="Message" inputType="textarea" required />
-          <Button>Send your message!</Button>
-          <Button type="reset" variation="gray">
+          <Button type="submit">Send your message!</Button>
+          <Button type="reset" variation="gray" aria-label="Close">
             Clear
           </Button>
         </Form>

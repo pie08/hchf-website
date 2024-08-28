@@ -47,7 +47,7 @@ const PageHeader: FC<PageHeaderProps> = ({ title }) => {
   return (
     <StyledPageHeader>
       <Background>
-        <Image src={bg} alt="Background of a beach" fill />
+        <Image src={bg} alt="Background of a beach" fill sizes="100vw" />
       </Background>
 
       <Container>

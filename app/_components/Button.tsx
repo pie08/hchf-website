@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { ElementType, FC } from "react";
 import { styled } from "@linaria/react";
 
 export const StyledButton = styled.button`
@@ -49,7 +49,7 @@ export const StyledButton = styled.button`
   }
 `;
 
-interface ButtonProps {
+interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   size?: "large" | "small";
   variation?: "cta" | "gray";

@@ -83,7 +83,7 @@ const Contact: FC<ContactProps> = ({}) => {
             />
           </FullColWrapper>
 
-          <Button>Send your message!</Button>
+          <Button type="submit">Send your message!</Button>
           <GrayButton type="reset" variation="gray">
             Clear
           </GrayButton>

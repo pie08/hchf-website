@@ -39,6 +39,7 @@ const SliderButtons: FC<SliderButtonsProps> = ({
       {Array.from({ length: numSlides }).map((_, i) => (
         <SliderButton
           key={i}
+          aria-label={`Naviate to testimonial slide ${i}`}
           className={slideIndex === i ? "active" : ""}
           onClick={() => {
             callback(i);

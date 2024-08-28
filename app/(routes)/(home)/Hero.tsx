@@ -88,7 +88,6 @@ const BackgroundVideo = styled.div`
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
-  // todo: optimze video srcs
   return (
     <Section>
       <HeroContainer>
@@ -115,7 +114,7 @@ const Hero: FC<HeroProps> = ({}) => {
           </p>
 
           <Modal.Open opens="contact">
-            <Button>Contact me</Button>
+            <Button aria-label="Contact">Contact me</Button>
           </Modal.Open>
         </HeroTextContainer>
       </HeroContainer>

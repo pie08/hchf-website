@@ -73,7 +73,6 @@ interface ImageSliderProps {
   className?: string;
 }
 
-// todo: convert custom slider to swiper component
 const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
   // state for controlling slider position
   const [curSlide, setCurSlide] = useState(0);
@@ -113,9 +112,6 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
     <Slider
       spaceBetween={48}
       slidesPerView="auto"
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       onSwiper={(swiper) => {
         setCurSlide(swiper.activeIndex);
         swiperInstance.current = swiper;
@@ -123,10 +119,10 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
       onSlideChange={(swiper) => setCurSlide(swiper.activeIndex)}
       className={className}
     >
-      <SliderButton onClick={handleNextSlide}>
+      <SliderButton onClick={handleNextSlide} aria-label="Next slide">
         <PiCaretRight />
       </SliderButton>
-      <SliderButton onClick={handlePrevSlide}>
+      <SliderButton onClick={handlePrevSlide} aria-label="Previous slide">
         <PiCaretLeft />
       </SliderButton>
 
@@ -134,7 +130,12 @@ const ImageSlider: FC<ImageSliderProps> = ({ srcArr, className = "" }) => {
       {srcArr.map((src, i) => (
         <SwiperSlide key={i}>
           <Slide>
-            <Image src={src} alt="alt" fill />
+            <Image
+              src={src}
+              alt="Slide of a client"
+              fill
+              sizes="(max-width: 72em) 405px, (max-width: 60em) 360px, 450px"
+            />
           </Slide>
         </SwiperSlide>
       ))}
