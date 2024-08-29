@@ -5,6 +5,7 @@ import React, {
   cloneElement,
   createContext,
   FC,
+  useCallback,
   useContext,
   useState,
 } from "react";
@@ -87,13 +88,13 @@ const Modal: ModalComponent = ({ children }) => {
     setOpenId(id);
   }
 
-  function close() {
+  const close = useCallback(function () {
     setOpenId("");
 
     setTimeout(() => {
       setKey((n) => n + 1);
     }, 200);
-  }
+  }, []);
 
   return (
     <ModalContext.Provider value={{ openId, open, close, key }}>
@@ -152,3 +153,11 @@ const Open: FC<OpenProps> = ({ children, opens }) => {
 Modal.Window = Window;
 Modal.Open = Open;
 export default Modal;
+
+export const useModal = () => {
+  const context = useContext(ModalContext);
+  if (context === undefined) {
+    throw new Error("ModalContext used outside of provider");
+  }
+  return context;
+};

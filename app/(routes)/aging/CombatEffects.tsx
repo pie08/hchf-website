@@ -52,7 +52,6 @@ const CardWrapper = styled.div`
 interface CombatEffectsProps {}
 
 const CombatEffects: FC<CombatEffectsProps> = ({}) => {
-  // todo: change list of eat healthy card
   return (
     <Section>
       <SectionHeading>

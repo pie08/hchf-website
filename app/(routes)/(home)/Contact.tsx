@@ -155,7 +155,6 @@ const RingContainer = styled.div`
 
 const Buttons: FC = () => {
   const { pending } = useFormStatus();
-  console.log(pending);
 
   return (
     <>

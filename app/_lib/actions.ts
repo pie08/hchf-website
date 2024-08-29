@@ -5,13 +5,12 @@ import { Resend } from "resend";
 import { ContactFormResponse } from "@/types/contactFormResponse";
 import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const transporter = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
+  host: "smtp-mail.outlook.com",
+  port: 587,
   auth: {
-    user: "d54c5eda8534c0",
-    pass: "fb4ed5df6f4570",
+    user: process.env.FROM_EMAIL_USERNAME,
+    pass: process.env.FROM_EMAIL_PASSWORD,
   },
 });
 
@@ -58,14 +57,20 @@ export async function sendMessage(
 
   // configure amil options
   const mailOptions = {
-    from: "no-reply@halfcenturyhealthandfitness.com",
-    to: `${email}`,
+    from: process.env.FROM_EMAIL_USERNAME,
+    to: process.env.SENDTO_EMAIL,
+    replyTo: `${email}`,
     subject: `New Message from ${firstName} ${lastName} <${email}>`,
     text: `------------- NAME & EMAIL --------------\n${firstName} ${lastName} <${email}>\n\n---------------- MESSAGE ----------------\n${message}`,
   };
 
-  // send email
-  await transporter.sendMail(mailOptions);
+  try {
+    // send email
+    await transporter.sendMail(mailOptions);
+  } catch (err) {
+    console.error(err);
+    return { message: "Message failed to send!", success: false };
+  }
 
   // send success message to client
   return { message: "Message sent!", success: true };
