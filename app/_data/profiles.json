@@ -3,10 +3,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/elaine-profile.mp4?t=2024-08-28T00%3A32%3A29.886Z",
     "fallbackVideoSrc": "/assets/video/profiles/elaine-profile.mp4",
     "name": "elaine",
-    "age": "68",
+    "dateOfBirth": "1956-11-02T00:00:00.000Z",
     "info": {
       "reason": "Osteoporosis / General fitness",
-      "timePeriod": "6 years",
+      "timePeriod": { "start": "2017-12-08T00:00:00.000Z", "end": null },
       "activities": ["Gardening", "Sailing"],
       "priorExperience": false
     }
@@ -15,10 +15,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/keith-profile.mp4?t=2024-08-28T00%3A37%3A51.790Z",
     "fallbackVideoSrc": "/assets/video/profiles/keith-profile.mp4",
     "name": "keith",
-    "age": "69",
+    "dateOfBirth": "1955-08-25T00:00:00.000Z",
     "info": {
       "reason": "Rotator cuff surgery",
-      "timePeriod": "3 years",
+      "timePeriod": { "start": "2020-12-08T00:00:00.000Z", "end": null },
       "activities": ["Skiing", "Sailing", "Hiking"],
       "priorExperience": false
     },
@@ -28,10 +28,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/ray-profile.mp4?t=2024-08-28T00%3A38%3A01.136Z",
     "fallbackVideoSrc": "/assets/video/profiles/ray-profile.mp4",
     "name": "ray",
-    "age": "63",
+    "dateOfBirth": "1960-08-03T00:00:00.000Z",
     "info": {
       "reason": "Knee replacement surgery",
-      "timePeriod": "7 years",
+      "timePeriod": { "start": "2019-03-18T00:00:00.000Z", "end": null },
       "activities": ["Skiing", "Hiking", "Boating"],
       "priorExperience": false
     }
@@ -40,10 +40,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/anna-profile.mp4?t=2024-08-28T00%3A38%3A10.305Z",
     "fallbackVideoSrc": "/assets/video/profiles/anna-profile.mp4",
     "name": "anna",
-    "age": "63",
+    "dateOfBirth": "1961-10-28T00:00:00.000Z",
     "info": {
       "reason": "Knee replacement surgery / General fitness",
-      "timePeriod": "4 years",
+      "timePeriod": { "start": "2020-06-24T00:00:00.000Z", "end": null },
       "priorExperience": true
     },
     "testimonialLink": "/testimonials#anna"
@@ -52,10 +52,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/tom-profile.mp4?t=2024-08-28T00%3A38%3A20.672Z",
     "fallbackVideoSrc": "/assets/video/profiles/tom-profile.mp4",
     "name": "tom",
-    "age": "71",
+    "dateOfBirth": "1952-10-12T00:00:00.000Z",
     "info": {
       "reason": "Rotator cuff surgery",
-      "timePeriod": "2 years",
+      "timePeriod": { "start": "2022-06-09T00:00:00.000Z", "end": null },
       "activities": ["Tennis", "Surfing", "Skiing"],
       "priorExperience": false
     },
@@ -65,10 +65,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/alex-profile.mp4?t=2024-08-28T00%3A38%3A28.537Z",
     "fallbackVideoSrc": "/assets/video/profiles/alex-profile.mp4",
     "name": "alex",
-    "age": "19",
+    "dateOfBirth": "2006-02-23T00:00:00.000Z",
     "info": {
       "reason": "Baseball / Pitcher",
-      "timePeriod": "4 years 6 months",
+      "timePeriod": { "start": "2020-02-09T00:00:00.000Z", "end": null },
       "priorExperience": false
     },
     "college": "Penn State"
@@ -77,10 +77,10 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/lizzie-profile.mp4?t=2024-08-28T00%3A38%3A34.698Z",
     "fallbackVideoSrc": "/assets/video/profiles/lizzie-profile.mp4",
     "name": "lizzie",
-    "age": "17",
+    "dateOfBirth": "2007-04-26T00:00:00.000Z",
     "info": {
       "reason": "Softball / Catcher",
-      "timePeriod": "2 years",
+      "timePeriod": { "start": "2022-06-09T00:00:00.000Z", "end": null },
       "priorExperience": false
     }
   },
@@ -88,10 +88,13 @@
     "vercelVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/hailey-profile.mp4?t=2024-08-28T00%3A38%3A41.319Z",
     "fallbackVideoSrc": "/assets/video/profiles/hailey-profile.mp4",
     "name": "hailey",
-    "age": "18",
+    "dateOfBirth": "2005-02-23T00:00:00.000Z",
     "info": {
       "reason": "Softball / Pitcher",
-      "timePeriod": "4 years",
+      "timePeriod": {
+        "start": "2020-06-09T00:00:00.000Z",
+        "end": "2024-06-09T00:00:00.000Z"
+      },
       "priorExperience": false
     }
   }

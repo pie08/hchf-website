@@ -14,6 +14,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// todo: abstract mailing
 export async function sendMessage(
   prevState: any,
   formData: FormData

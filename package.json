@@ -14,6 +14,7 @@
     "@linaria/react": "^6.2.1",
     "@stitches/react": "^1.2.8",
     "@vercel/blob": "^0.23.4",
+    "date-fns": "^3.6.0",
     "ldrs": "^1.0.2",
     "modern-normalize": "^2.0.0",
     "next": "^14.2.6",

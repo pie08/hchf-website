@@ -2,7 +2,9 @@
 
 import ButtonLink from "@/app/_components/ButtonLink";
 import { useIsVisible } from "@/app/_hooks/useIsVisible";
+import calcClientTimePeriod from "@/app/_lib/calcClientTimePeriod";
 import { styled } from "@linaria/react";
+import { differenceInYears } from "date-fns";
 import { FC, useEffect, useState } from "react";
 import {
   PiBuildingApartment,
@@ -100,7 +102,7 @@ const IconWrapper = styled.div`
 
 interface infoObj {
   reason: string;
-  timePeriod: string;
+  timePeriod: { start: string; end: string | null };
   activities?: string[];
   priorExperience: boolean;
 }
@@ -109,7 +111,7 @@ interface Profile {
   vercelVideoSrc: string;
   fallbackVideoSrc: string;
   name: string;
-  age: string;
+  dateOfBirth: string;
   info: infoObj;
   testimonialLink?: string;
   college?: string;
@@ -120,18 +122,22 @@ interface ProfileProps {
 }
 
 const Profile: FC<ProfileProps> = ({ profile }) => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const { isVisible, targetRef } = useIsVisible<HTMLVideoElement>();
+
   const {
     vercelVideoSrc,
     fallbackVideoSrc,
     name,
-    age,
+    dateOfBirth,
     info,
     testimonialLink,
     college,
   } = profile;
 
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const { isVisible, targetRef } = useIsVisible<HTMLVideoElement>();
+  // calculate age
+  const age = differenceInYears(Date.now(), new Date(dateOfBirth));
+  const clientTimePeriod = calcClientTimePeriod(info.timePeriod);
 
   useEffect(() => {
     if (isVisible) {
@@ -186,7 +192,7 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
             <IconWrapper>
               <PiClock />
             </IconWrapper>
-            <p>Client for {info.timePeriod}</p>
+            <p>Client for {clientTimePeriod}</p>
           </li>
           <li>
             <IconWrapper>
