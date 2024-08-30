@@ -5,7 +5,7 @@ import { Container } from "@/app/_components/Container";
 import { Section } from "@/app/_components/Section";
 import TextInput from "@/app/_components/TextInput";
 import { sendMessage } from "@/app/_lib/actions";
-import { ContactFormResponse } from "@/types/contactFormResponse";
+import { ContactFormResponse } from "@/types/contactFormResponse.type";
 import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
 import { FC, useEffect } from "react";

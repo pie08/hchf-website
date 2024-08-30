@@ -11,7 +11,7 @@ import Modal, { useModal } from "@/app/_components/Modal";
 import { useFormState, useFormStatus } from "react-dom";
 import toast from "react-hot-toast";
 import { sendMessage } from "../_lib/actions";
-import { ContactFormResponse } from "@/types/contactFormResponse";
+import { ContactFormResponse } from "@/types/contactFormResponse.type";
 
 const ModalContainer = styled.div`
   width: clamp(30rem, 90vw, 50rem);
