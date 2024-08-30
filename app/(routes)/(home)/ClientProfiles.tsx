@@ -16,11 +16,14 @@ const GridContainer = styled(Container)`
 `;
 
 const ProfileCardsContainer = styled.div`
-  grid-column: 3 / 11;
+  /* grid-column: 3 / 11; */
+  grid-column: 1 / -1;
+  justify-self: center;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.2rem;
+  justify-items: center;
 
   @media screen and (max-width: 52em) {
     grid-column: 2 / 12;
@@ -29,7 +32,6 @@ const ProfileCardsContainer = styled.div`
   @media screen and (max-width: 38em) {
     grid-column: 1 / -1;
     grid-template-columns: 1fr;
-    justify-items: center;
   }
 `;
 

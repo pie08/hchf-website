@@ -1,7 +1,6 @@
 "use server";
 
 import { z, ZodError } from "zod";
-import { Resend } from "resend";
 import nodemailer from "nodemailer";
 import { ContactFormResponse } from "@/types/contactFormResponse.type";
 

@@ -8,8 +8,6 @@ import Navigation from "./_components/Navigation";
 import ProgressBar from "./_components/ProgressBar";
 import "./_styles/globalStyles.linaria.global";
 
-// todo: add DOB and start date to client profile data, compute for each profile
-
 // loading fonts
 export const poppins = Poppins({
   subsets: ["latin"],
