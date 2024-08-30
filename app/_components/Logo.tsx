@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import { FC } from "react";
 import Image from "next/image";
-import logo from "./../../public/assets/images/logos/hchf-logo-black.png";
+import logo from "../../public/assets/images/logos/HCHF-logo-black.png";
 import { css } from "@linaria/core";
 
 interface LogoProps {
