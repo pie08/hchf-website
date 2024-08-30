@@ -6,11 +6,11 @@ import { ContactFormResponse } from "@/types/contactFormResponse";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
+  host: "smtp.sendgrid.net",
   port: 587,
   auth: {
-    user: process.env.FROM_EMAIL_USERNAME,
-    pass: process.env.FROM_EMAIL_PASSWORD,
+    user: process.env.SENDGRID_EMAIL_USERNAME,
+    pass: process.env.SENDGRID_EMAIL_KEY,
   },
 });
 
