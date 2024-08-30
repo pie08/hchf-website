@@ -3,26 +3,19 @@
 import { z, ZodError } from "zod";
 import nodemailer from "nodemailer";
 import { ContactFormResponse } from "@/types/contactFormResponse.type";
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.sendgrid.net",
-  port: 587,
-  auth: {
-    user: process.env.SENDGRID_EMAIL_USERNAME,
-    pass: process.env.SENDGRID_EMAIL_KEY,
-  },
-});
+import sendContactEmail from "./sendContactEmail";
+import { ContactFormData } from "@/types/contactFormData.type";
 
 // todo: abstract mailing
 export async function sendMessage(
-  prevState: any,
+  _: any,
   formData: FormData
 ): Promise<ContactFormResponse> {
-  console.log(prevState);
-  const data = Object.fromEntries(formData.entries());
-  const { firstName, lastName, email, message } = data;
+  // create object from formData
+  const formDataObj = Object.fromEntries(formData.entries());
 
-  //  validation
+  // Validation
+  // create schema
   const dataSchema = z.object({
     firstName: z.string({
       required_error: "First name is required",
@@ -42,8 +35,9 @@ export async function sendMessage(
     }),
   });
 
+  // check against schema
   try {
-    dataSchema.parse(data);
+    dataSchema.parse(formDataObj);
   } catch (err) {
     // error handling
     if (err instanceof ZodError) {
@@ -55,19 +49,20 @@ export async function sendMessage(
     }
   }
 
-  // configure amil options
-  const mailOptions = {
-    from: process.env.FROM_EMAIL_USERNAME,
-    to: process.env.SENDTO_EMAIL,
-    replyTo: `${email}`,
-    subject: `New Message from ${firstName} ${lastName} <${email}>`,
-    text: `------------- NAME & EMAIL --------------\n${firstName} ${lastName} <${email}>\n\n---------------- MESSAGE ----------------\n${message}`,
+  // Emailing
+  // object to be submited to sendContactEmail
+  const data = {
+    firstName: formDataObj.firstName.toString(),
+    lastName: formDataObj.lastName.toString(),
+    email: formDataObj.email.toString(),
+    message: formDataObj.message.toString(),
   };
 
   try {
     // send email
-    await transporter.sendMail(mailOptions);
+    await sendContactEmail(data);
   } catch (err) {
+    // error handling
     console.error(err);
     return { message: "Message failed to send!", success: false };
   }
