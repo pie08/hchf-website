@@ -29,7 +29,8 @@ const StyledProfile = styled.div`
 const ProfileImage = styled(Image)`
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 `;
 
 const ProfileTextContainer = styled.div`
@@ -50,6 +51,7 @@ const ProfileTextContainer = styled.div`
 
   & p {
     font-size: 1.8rem;
+    text-align: center;
   }
 `;
 
