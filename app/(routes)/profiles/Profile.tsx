@@ -1,8 +1,9 @@
 "use client";
 
 import ButtonLink from "@/app/_components/ButtonLink";
+import { useIsVisible } from "@/app/_hooks/useIsVisible";
 import { styled } from "@linaria/react";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   PiBuildingApartment,
   PiCheck,
@@ -11,8 +12,8 @@ import {
   PiPersonSimpleRun,
   PiX,
 } from "react-icons/pi";
-import Loader from "@/app/_components/Loader";
-import { useIsVisible } from "@/app/_hooks/useIsVisible";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const StyledProfile = styled.div`
   max-width: 80rem;
@@ -80,6 +81,8 @@ const VideoContainer = styled.div`
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+    width: 100%;
+    height: 100%;
   }
 
   @media screen and (max-width: 38em) {
@@ -157,7 +160,12 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
 
         {!videoLoaded && (
           <span className="loader">
-            <Loader />
+            <Skeleton
+              height="100%"
+              baseColor="var(--color-gray-200)"
+              highlightColor="var(--color-gray-100)"
+              duration={1}
+            />
           </span>
         )}
       </VideoContainer>
