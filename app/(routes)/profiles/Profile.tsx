@@ -51,10 +51,10 @@ const StyledProfile = styled.div`
       & li {
         display: flex;
         gap: 0.8rem;
-        align-items: center;
 
         & p {
           font-size: 1.8rem;
+          align-self: center;
         }
       }
     }
@@ -201,7 +201,7 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
               <IconWrapper>
                 <PiBuildingApartment />
               </IconWrapper>
-              <p>Commited to {college}</p>
+              <p>{college}</p>
             </li>
           )}
         </ul>
