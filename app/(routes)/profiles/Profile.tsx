@@ -3,6 +3,7 @@
 import ButtonLink from "@/app/_components/ButtonLink";
 import { useIsVisible } from "@/app/_hooks/useIsVisible";
 import calcClientTimePeriod from "@/app/_lib/calcClientTimePeriod";
+import { Profile as ProfileType } from "@/types/profile";
 import { styled } from "@linaria/react";
 import { differenceInYears } from "date-fns";
 import { FC, useEffect, useState } from "react";
@@ -100,25 +101,8 @@ const IconWrapper = styled.div`
   }
 `;
 
-interface infoObj {
-  reason: string;
-  timePeriod: { start: string; end: string | null };
-  activities?: string[];
-  priorExperience: boolean;
-}
-
-interface Profile {
-  vercelVideoSrc: string;
-  fallbackVideoSrc: string;
-  name: string;
-  dateOfBirth: string;
-  info: infoObj;
-  testimonialLink?: string;
-  college?: string;
-}
-
 interface ProfileProps {
-  profile: Profile;
+  profile: ProfileType;
 }
 
 const Profile: FC<ProfileProps> = ({ profile }) => {
@@ -126,7 +110,7 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
   const { isVisible, targetRef } = useIsVisible<HTMLVideoElement>();
 
   const {
-    vercelVideoSrc,
+    cdnVideoSrc,
     fallbackVideoSrc,
     name,
     dateOfBirth,
@@ -158,7 +142,7 @@ const Profile: FC<ProfileProps> = ({ profile }) => {
           onLoadedData={() => setVideoLoaded(true)}
           ref={targetRef}
         >
-          <source src={vercelVideoSrc} />
+          <source src={cdnVideoSrc} />
           <source src={fallbackVideoSrc} />
           Your browser does not support the video tag. Please view in a modern
           browser

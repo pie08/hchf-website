@@ -2,8 +2,8 @@
 
 import { z, ZodError } from "zod";
 import { Resend } from "resend";
-import { ContactFormResponse } from "@/types/contactFormResponse";
 import nodemailer from "nodemailer";
+import { ContactFormResponse } from "@/types/contactFormResponse.type";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.sendgrid.net",
