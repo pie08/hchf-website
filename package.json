@@ -1,0 +1,42 @@
+{
+  "name": "hchf",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@linaria/babel-preset": "^5.0.4",
+    "@linaria/core": "^6.2.0",
+    "@linaria/react": "^6.2.1",
+    "@stitches/react": "^1.2.8",
+    "@vercel/blob": "^0.23.4",
+    "date-fns": "^3.6.0",
+    "ldrs": "^1.0.2",
+    "modern-normalize": "^2.0.0",
+    "next": "^14.2.6",
+    "next-nprogress-bar": "^2.3.13",
+    "next-with-linaria": "^0.7.0",
+    "nodemailer": "^6.9.14",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.2.1",
+    "react-loading-skeleton": "^3.4.0",
+    "sharp": "^0.33.5",
+    "swiper": "^11.1.10",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/elaine-profile.mp4?t=2024-08-28T00%3A32%3A29.886Z",
+    "fallbackVideoSrc": "/assets/video/profiles/elaine-profile.mp4",
+    "name": "elaine",
+    "dateOfBirth": "1956-11-02T00:00:00.000Z",
+    "info": {
+      "reason": "Osteoporosis / General fitness",
+      "timePeriod": { "start": "2017-12-08T00:00:00.000Z", "end": null },
+      "activities": ["Gardening", "Sailing"],
+      "priorExperience": false
+    }
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/keith-profile.mp4?t=2024-08-28T00%3A37%3A51.790Z",
+    "fallbackVideoSrc": "/assets/video/profiles/keith-profile.mp4",
+    "name": "keith",
+    "dateOfBirth": "1955-08-25T00:00:00.000Z",
+    "info": {
+      "reason": "Rotator cuff surgery",
+      "timePeriod": { "start": "2020-12-08T00:00:00.000Z", "end": null },
+      "activities": ["Skiing", "Sailing", "Hiking"],
+      "priorExperience": false
+    },
+    "testimonialLink": "/testimonials#keith"
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/ray-profile.mp4?t=2024-08-28T00%3A38%3A01.136Z",
+    "fallbackVideoSrc": "/assets/video/profiles/ray-profile.mp4",
+    "name": "ray",
+    "dateOfBirth": "1960-08-03T00:00:00.000Z",
+    "info": {
+      "reason": "Knee replacement surgery",
+      "timePeriod": { "start": "2018-03-18T00:00:00.000Z", "end": null },
+      "activities": ["Skiing", "Hiking", "Boating"],
+      "priorExperience": false
+    }
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/anna-profile.mp4?t=2024-08-28T00%3A38%3A10.305Z",
+    "fallbackVideoSrc": "/assets/video/profiles/anna-profile.mp4",
+    "name": "anna",
+    "dateOfBirth": "1961-10-28T00:00:00.000Z",
+    "info": {
+      "reason": "Knee replacement surgery / General fitness",
+      "timePeriod": { "start": "2020-06-24T00:00:00.000Z", "end": null },
+      "priorExperience": true
+    },
+    "testimonialLink": "/testimonials#anna"
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/tom-profile.mp4?t=2024-08-28T00%3A38%3A20.672Z",
+    "fallbackVideoSrc": "/assets/video/profiles/tom-profile.mp4",
+    "name": "tom",
+    "dateOfBirth": "1952-10-12T00:00:00.000Z",
+    "info": {
+      "reason": "Rotator cuff surgery",
+      "timePeriod": { "start": "2022-06-09T00:00:00.000Z", "end": null },
+      "activities": ["Tennis", "Surfing", "Skiing"],
+      "priorExperience": false
+    },
+    "testimonialLink": "/testimonials#tom"
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/alex-profile.mp4?t=2024-08-28T00%3A38%3A28.537Z",
+    "fallbackVideoSrc": "/assets/video/profiles/alex-profile.mp4",
+    "name": "alex",
+    "dateOfBirth": "2006-02-23T00:00:00.000Z",
+    "info": {
+      "reason": "Baseball / Pitcher",
+      "timePeriod": { "start": "2020-02-09T00:00:00.000Z", "end": null },
+      "priorExperience": false
+    },
+    "college": "Penn State"
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/lizzie-profile.mp4?t=2024-08-28T00%3A38%3A34.698Z",
+    "fallbackVideoSrc": "/assets/video/profiles/lizzie-profile.mp4",
+    "name": "lizzie",
+    "dateOfBirth": "2007-04-26T00:00:00.000Z",
+    "info": {
+      "reason": "Softball / Catcher",
+      "timePeriod": { "start": "2022-06-09T00:00:00.000Z", "end": null },
+      "priorExperience": false
+    }
+  },
+  {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/hailey-profile.mp4?t=2024-08-28T00%3A38%3A41.319Z",
+    "fallbackVideoSrc": "/assets/video/profiles/hailey-profile.mp4",
+    "name": "hailey",
+    "dateOfBirth": "2005-02-23T00:00:00.000Z",
+    "info": {
+      "reason": "Softball / Pitcher",
+      "timePeriod": {
+        "start": "2020-06-09T00:00:00.000Z",
+        "end": "2024-06-09T00:00:00.000Z"
+      },
+      "priorExperience": false
+    }
+  }
+]
