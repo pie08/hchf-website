@@ -3,7 +3,7 @@
 import ButtonLink from "@/app/_components/ButtonLink";
 import { useIsVisible } from "@/app/_hooks/useIsVisible";
 import calcClientTimePeriod from "@/app/_lib/calcClientTimePeriod";
-import { Profile as ProfileType } from "@/types/profile";
+import { Profile as ProfileType } from "@/types/profile.type";
 import { styled } from "@linaria/react";
 import { differenceInYears } from "date-fns";
 import { FC, useEffect, useState } from "react";
@@ -84,8 +84,9 @@ const VideoContainer = styled.div`
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    width: 100%;
+    max-width: 30rem;
     height: 100%;
+    aspect-ratio: 960 / 1706;
   }
 
   @media screen and (max-width: 38em) {
@@ -105,6 +106,7 @@ interface ProfileProps {
   profile: ProfileType;
 }
 
+// todo: fix skeleton being too wide on mobile
 const Profile: FC<ProfileProps> = ({ profile }) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const { isVisible, targetRef } = useIsVisible<HTMLVideoElement>();
