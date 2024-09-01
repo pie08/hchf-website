@@ -351,7 +351,7 @@ const DropdownList = styled.ul`
     pointer-events: none;
 
     & li {
-      /* padding: 1.2rem 0; */
+      padding: 0;
       border: none !important;
       color: var(--color-gray-600);
     }
@@ -361,7 +361,6 @@ const DropdownList = styled.ul`
       opacity: 1;
       visibility: visible;
       pointer-events: all;
-      /* padding-top: 1.2rem; */
     }
   }
 `;
@@ -406,7 +405,7 @@ const Dropdown: FC<DropdownProps> = ({ children, text }) => {
       <DropdownWrapper className="wrapper">
         <DropdownList className={`${open ? "open" : ""} list`}>
           {React.Children.map(children, (child, i) => (
-            <li key={i}>{child}</li>
+            <NavItem key={i}>{child}</NavItem>
           ))}
         </DropdownList>
       </DropdownWrapper>
