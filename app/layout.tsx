@@ -6,6 +6,7 @@ import ContactModal from "./_components/ContactModal";
 import Footer from "./_components/Footer";
 import Navigation from "./_components/Navigation";
 import ProgressBar from "./_components/ProgressBar";
+import { Analytics } from "@vercel/analytics/react";
 import "./_styles/globalStyles.linaria.global";
 
 // loading fonts
@@ -41,6 +42,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${playfairDisplay.variable}`}
     >
+      <Analytics />
       <body>
         <ProgressBar />
         <Toaster />
