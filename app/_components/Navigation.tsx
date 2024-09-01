@@ -68,25 +68,29 @@ const NavList = styled.ul`
   align-items: center;
   gap: 2.4rem;
 
-  & li {
-    transition: all 0.2s;
-
-    &:hover {
-      opacity: 1 !important;
-    }
-  }
-
   @media screen and (max-width: 52em) {
     gap: 0;
     align-items: stretch;
     flex-direction: column;
+  }
+`;
 
-    & li {
+const NavItem = styled.li`
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  @media screen and (max-width: 52em) {
+    padding: 0 2.4rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    &:has(button) {
       padding: 1.6rem 2.4rem;
-
-      &:not(:last-child) {
-        border-bottom: 1px solid var(--color-gray-200);
-      }
     }
   }
 `;
@@ -101,6 +105,15 @@ const NavLink = styled(Link)`
 
   &.active {
     box-shadow: inset 0 -2px 0 0 var(--color-primary-600);
+
+    @media screen and (max-width: 52em) {
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (max-width: 52em) {
+    padding: 1.6rem 0;
+    width: 100%;
   }
 `;
 
@@ -191,13 +204,14 @@ const Navigation: FC<NavigationProps> = ({}) => {
           <StyledLogo />
         </Link>
 
+        {/* add open classname if open, only needed for mobile screens */}
         <Nav className={open ? "open" : ""}>
           <NavList>
-            <li>
+            <NavItem>
               <NavLink href="/" className={pathname === "/" ? "active" : ""}>
                 Home
               </NavLink>
-            </li>
+            </NavItem>
 
             <Dropdown text="Services">
               <NavLink href="/services/adult">Adult Training</NavLink>
@@ -208,40 +222,41 @@ const Navigation: FC<NavigationProps> = ({}) => {
               <NavLink href="/services/online">Online Consulting</NavLink>
             </Dropdown>
 
-            <li>
+            <NavItem>
               <NavLink
                 href="/aging"
                 className={pathname === "/aging" ? "active" : ""}
               >
                 Aging & Hormones
               </NavLink>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <NavLink
                 href="/profiles"
                 className={pathname === "/profiles" ? "active" : ""}
               >
                 Client Profiles
               </NavLink>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <NavLink
                 href="/testimonials"
                 className={pathname === "/testimonials" ? "active" : ""}
               >
                 Testimonials
               </NavLink>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <Modal.Open opens="contact">
                 <Button size="large" aria-label="Contact">
                   Contact me
                 </Button>
               </Modal.Open>
-            </li>
+            </NavItem>
           </NavList>
         </Nav>
 
+        {/* menu button only rendered on mobile screens */}
         <MenuButton
           className={`${open ? "open" : ""}`}
           onClick={() => setOpen((curState) => !curState)}
@@ -255,7 +270,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
 };
 
 // Drop down
-const DropdownParent = styled.li`
+const DropdownParent = styled(NavItem)`
   position: relative;
 
   & a {
@@ -336,7 +351,7 @@ const DropdownList = styled.ul`
     pointer-events: none;
 
     & li {
-      padding: 1.2rem 0;
+      /* padding: 1.2rem 0; */
       border: none !important;
       color: var(--color-gray-600);
     }
@@ -346,7 +361,7 @@ const DropdownList = styled.ul`
       opacity: 1;
       visibility: visible;
       pointer-events: all;
-      padding-top: 1.2rem;
+      /* padding-top: 1.2rem; */
     }
   }
 `;
