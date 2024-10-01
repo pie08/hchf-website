@@ -25,6 +25,18 @@
     "testimonialLink": "/testimonials#keith"
   },
   {
+    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/juleen-profile.mp4?t=2024-09-30T23%3A39%3A50.303Z",
+    "fallbackVideoSrc": "/assets/video/profiles/juleen-profile.mp4",
+    "name": "juleen",
+    "dateOfBirth": "1973-10-04T00:00:00.000Z",
+    "info": {
+      "reason": "General fitness",
+      "timePeriod": { "start": "2021-02-18T00:00:00.000Z", "end": null },
+      "activities": ["None"],
+      "priorExperience": true
+    }
+  },
+  {
     "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/ray-profile.mp4?t=2024-08-28T00%3A38%3A01.136Z",
     "fallbackVideoSrc": "/assets/video/profiles/ray-profile.mp4",
     "name": "ray",
@@ -60,18 +72,6 @@
       "priorExperience": false
     },
     "testimonialLink": "/testimonials#tom"
-  },
-  {
-    "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/juleen-profile.mp4?t=2024-09-30T23%3A39%3A50.303Z",
-    "fallbackVideoSrc": "/assets/video/profiles/juleen-profile.mp4",
-    "name": "juleen",
-    "dateOfBirth": "1973-10-04T00:00:00.000Z",
-    "info": {
-      "reason": "General fitness",
-      "timePeriod": { "start": "2021-02-18T00:00:00.000Z", "end": null },
-      "activities": ["None"],
-      "priorExperience": true
-    }
   },
   {
     "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/alex-profile.mp4?t=2024-08-28T00%3A38%3A28.537Z",
