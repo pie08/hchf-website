@@ -34,7 +34,8 @@
       "timePeriod": { "start": "2021-02-18T00:00:00.000Z", "end": null },
       "activities": ["None"],
       "priorExperience": true
-    }
+    },
+    "testimonialLink": "/testimonials#juleen"
   },
   {
     "cdnVideoSrc": "https://yegakkaqzwoysxhecspi.supabase.co/storage/v1/object/public/video/profiles/ray-profile.mp4?t=2024-08-28T00%3A38%3A01.136Z",
