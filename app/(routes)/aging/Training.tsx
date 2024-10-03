@@ -49,7 +49,7 @@ const Training: FC<TrainingProps> = ({}) => {
             I will explain, simplify, organize, and structure all of this
             information into terms that are easy to understand and follow. I
             will also speak with you regularly to discuss any aspects of your
-            program to ensure you become detail oriented and continuously
+            program to ensure you become detail-oriented and continuously
             progress.
           </p>
         </TextContainer>
